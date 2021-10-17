@@ -1,0 +1,240 @@
+/* nav and it's sub-menus are 100% browser width and height,
+   just hidden at first. Then on clicks, they transition to
+   visible and opaque, giving them a fading in and out effect*/
+
+.navigation,
+.sub-menu {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: rgb(32, 32, 32);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 750ms, visibility 750ms;
+  transition-timing-function: ease-in-out;
+}
+
+.navigation {
+  background-color: white;
+}
+
+.sub-menu {
+  background-color: #e5e5e5;
+  z-index: 5;
+}
+
+/* The nav-open class is added and removed to either the
+   nav or the applicable sub-menu via JavaScript. When it's
+   added, the menu becomes visible. When it's removed, the
+   respective menu then becomes invisible. The fading in and
+   out effect is accomplished via transitioning the opacity
+   and visibility.
+   
+   Both styles/transitions are needed. Without transitioning
+   opacity, the fade effect does not occur. Without visibility,
+   everything is invisible, but still clickable. */
+.nav-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-menu,
+.sub-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.hamburger,
+.close-nav,
+.close-sub-menu-1,
+.close-sub-menu-2,
+.close-sub-menu-3,
+.close-sub-menu-4 {
+  cursor: pointer;
+}
+
+.close-nav {
+  font-size: 2rem;
+}
+
+.close-sub-menu-1,
+.close-sub-menu-2,
+.close-sub-menu-3,
+.close-sub-menu-4 {
+  font-size: 1rem;
+}
+
+.hamburger {
+  display: block;
+
+  /* Added position and z-index because hamburger was fading
+     in on media query transition. But actually nav was fading
+     out and then hamburger would slowly appear. z-index 3 put
+     hamburger above nav, but below sub-menus still.
+  */
+  position: relative;
+  z-index: 3;
+
+  margin-left: auto;
+  margin-right: 1em;
+  font-size: 1.75rem;
+}
+
+.main-menu,
+.sub-menu__list {
+  list-style-type: none;
+}
+
+.main-menu__list-item,
+.sub-menu__list-item {
+  display: inline-block;
+  position: relative;
+  letter-spacing: 1px;
+  padding: 1em 1em;
+  border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-menu__text,
+.sub-menu__text {
+  color: rgb(32, 32, 32);
+  text-transform: uppercase;
+}
+
+.sub-menu__text:active {
+  opacity: 0.65;
+}
+
+.main-menu__title-text,
+.sub-menu__title-text {
+  padding-left: 1em;
+  opacity: 0.65;
+}
+
+/* Media query */
+
+@media screen and (min-width: 675px) {
+  .navigation {
+    margin-top: 1em;
+  }
+
+  .hamburger,
+  .close-nav,
+  .close-sub-menu-1,
+  .close-sub-menu-2,
+  .close-sub-menu-3,
+  .close-sub-menu-4,
+  .main-menu__title-text,
+  .main-menu__list-item--title,
+  .sub-menu__list-item--title,
+  .sub-menu__title-text {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Need to reset positioning, opacity, visibility and
+     background, as well as transitions, on nav and
+     sub-menus. */
+  .navigation,
+  .sub-menu {
+    display: block;
+    position: unset;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    margin-left: auto;
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+    transition: none;
+  }
+
+  .main-menu {
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-right: 1em;
+    padding: 0;
+
+    font-size: 12px;
+  }
+
+  .main-menu__list-item,
+  .sub-menu__list-item {
+    margin: 0 1em;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  /* Sub-menus start out as display none which makes them invisible. */
+  .sub-menu {
+    display: none;
+  }
+
+  /* On hover of the main menu list items, the sub-menus
+     appear with display block, but position absolute helps them appear over
+     exisitng content, instead of affecting the layout. */
+  .main-menu__list-item:hover .sub-menu-1,
+  .main-menu__list-item:hover .sub-menu-2,
+  .main-menu__list-item:hover .sub-menu-3,
+  .main-menu__list-item:hover .sub-menu-4 {
+    display: block;
+    position: absolute;
+    border: 2px solid rgb(var(--accent-color-1));
+  }
+
+  .js-announcements > a,
+  .js-education > a,
+  .js-services > a,
+  .js-support > a {
+    cursor: default;
+  }
+
+  .sub-menu__list {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .sub-menu__list-item {
+    margin: 0.5em 1em;
+  }
+
+  .sub-menu__text:hover {
+    opacity: 0.65;
+  }
+
+  /* The effect class and it's hover state puts a
+     blue line under each main-menu list item that
+     appears starting from the middle and increasing
+     outward. */
+  .effect::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 17px;
+    height: 0px;
+    background-color: rgb(var(--accent-color-1));
+    transition: right 500ms, left 500ms;
+  }
+
+  .effect:hover::after {
+    left: 0px;
+    right: 0px;
+    height: 4px;
+  }
+}
