@@ -124,6 +124,9 @@ h1 {
   max-width: 100%;
 }
 
-.btn {
-  /* display: inline-block; */
+.intro__p {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 250px;
+  line-height: 1.5;
 }
