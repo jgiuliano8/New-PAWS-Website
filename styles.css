@@ -38,7 +38,7 @@ header {
 .logo {
   grid-area: logo;
   justify-self: center;
-  margin-block: 1em;
+  margin-block: 2em;
 }
 
 .paws-search {
