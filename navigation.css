@@ -190,7 +190,7 @@ a {
   .main-menu__list-item:hover .sub-menu-4 {
     display: block;
     position: absolute;
-    border: 2px solid rgb(var(--accent-color-1));
+    border: 2px solid rgb(var(--base-color));
   }
 
   .js-announcements > a,
@@ -225,7 +225,7 @@ a {
     right: 50%;
     top: 17px;
     height: 0px;
-    background-color: rgb(var(--accent-color-1));
+    background-color: rgb(var(--base-color));
     transition: right 500ms, left 500ms;
   }
 

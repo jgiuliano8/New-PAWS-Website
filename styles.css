@@ -7,7 +7,9 @@
 :root {
   font-size: 16px;
   color: rgb(32, 32, 32);
-  --accent-color-1: 55, 122, 167;
+  --base-color: 55, 122, 167;
+  --light-accent-color: 114, 154, 181;
+  --dark-accent-color: 38, 84, 115;
 }
 
 body {
@@ -29,7 +31,7 @@ header {
   gap: 0.5em;
   grid-template-areas:
     ". logo logo ."
-    ". paws-search open-nav ."
+    ". paws-search nav ."
     ". donate-button volunteer-button .";
 }
 
@@ -43,29 +45,69 @@ header {
   grid-area: paws-search;
   align-self: center;
   display: flex;
-}
-
-.paws-search__lbl,
-.paws-search__inpt {
-  display: inline-block;
+  margin-top: 0.1em;
 }
 
 .paws-search__inpt {
   min-width: 50px;
   max-width: 150px;
+  padding: 0.3125em;
+  border: 2px solid rgb(var(--base-color));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  outline: none;
+}
+
+.paws-search__inpt:focus + .paws-search__icn {
+  background-color: rgb(var(--light-accent-color));
+}
+
+.paws-search__inpt:focus {
+  border: 2px solid rgb(var(--light-accent-color));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.paws-search__icn {
+  align-self: center;
+  display: inline-block;
+  padding: 0.375em;
+  background-color: rgb(var(--base-color));
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: rgb(255, 255, 255);
 }
 
 .hamburger {
-  grid-area: open-nav;
+  grid-area: nav;
   justify-self: right;
+  align-self: center;
+  margin-bottom: 0.1em;
+}
+
+.btn {
+  padding: 1em 2.5em;
+  border-radius: 4px;
+  border: none;
+  text-transform: uppercase;
 }
 
 .btn--donate {
   grid-area: donate-button;
+  background-color: rgb(var(--dark-accent-color));
+  color: #fff;
 }
 
 .btn--volunteer {
   grid-area: volunteer-button;
+  background-color: rgb(var(--base-color));
+  color: #fff;
+}
+
+.btn--donate:is(:hover, :focus, :active),
+.btn--volunteer:is(:hover, :focus, :active) {
+  background-color: rgb(var(--light-accent-color));
+  color: rgb(0, 0, 0);
 }
 
 main {
