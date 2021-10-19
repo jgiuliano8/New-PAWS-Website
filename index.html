@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navigation.css" />
     <script defer src="navigation.js"></script>
+    <script
+      src="https://kit.fontawesome.com/38f08b7a2b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <img class="logo" src="PAWS-logo-v1_3.svg" alt="PAWS Logo" />
+      <a href="index.html" class="logo">
+        <img src="PAWS-logo-v1_4.svg" alt="PAWS Logo" class="logo__img" />
       </a>
       <a aria-label="Open navigation" class="hamburger">&#9776;</a>
       <nav class="navigation">
@@ -131,8 +135,11 @@
           </li>
         </ul>
       </nav>
-      <label for="paws-search">Search:</label>
-      <input type="search" id="paws-search" name="paws-search" />
+      <form action="" class="paws-search">
+        <label for="paws-search" class="paws-search__lbl"></label>
+        <input type="search" name="paws-search" class="paws-search__inpt" />
+        <i class="fas fa-search"></i>
+      </form>
       <button class="btn btn--donate">Donate</button>
       <button class="btn btn--volunteer">Volunteer</button>
     </header>
@@ -140,6 +147,13 @@
       <h1>Pioneers for Animal Welfare Society</h1>
 
       <!-- Image slideshow goes here-->
+      <div class="slideshow">
+        <img
+          src="images/eric-ward-ISg37AI2A-s-unsplash.jpg"
+          alt="Man hugging a golden retriever"
+          class="slideshow__img"
+        />
+      </div>
 
       <section class="intro">
         <p class="intro__p">

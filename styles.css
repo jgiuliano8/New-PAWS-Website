@@ -17,18 +17,68 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
+/* Layout - Mobile First*/
+
 header {
+  display: grid;
+  grid: auto-flow / 0.5em 1fr 1fr 0.5em;
+  gap: 0.5em;
+  grid-template-areas:
+    ". logo logo ."
+    ". paws-search open-nav ."
+    ". donate-button volunteer-button .";
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: center;
+  margin-block: 1em;
+}
+
+.paws-search {
+  grid-area: paws-search;
+  align-self: center;
   display: flex;
-  flex-direction: row;
+}
+
+.paws-search__lbl,
+.paws-search__inpt {
+  display: inline-block;
+}
+
+.paws-search__inpt {
+  min-width: 50px;
+  max-width: 150px;
+}
+
+.hamburger {
+  grid-area: open-nav;
+  justify-self: right;
+}
+
+.btn--donate {
+  grid-area: donate-button;
+}
+
+.btn--volunteer {
+  grid-area: volunteer-button;
+}
+
+main {
 }
 
 h1 {
   text-align: center;
 }
 
-.logo {
-  width: 105px;
-  height: auto;
-  margin: 0.75em;
-  /* border: 1px solid black; */
+.slideshow__img {
+  max-width: 100%;
+}
+
+.btn {
+  /* display: inline-block; */
 }
