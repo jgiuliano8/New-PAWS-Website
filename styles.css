@@ -28,7 +28,8 @@ img {
 header {
   display: grid;
   grid: auto-flow / 0.5em 1fr 1fr 0.5em;
-  gap: 0.5em;
+  row-gap: 1.5em;
+  column-gap: 0.75em;
   grid-template-areas:
     ". logo logo ."
     ". paws-search nav ."
@@ -111,10 +112,12 @@ header {
 }
 
 main {
+  margin-inline: 1.25em;
 }
 
 h1 {
   text-align: center;
+  margin-top: 1.25em;
 }
 
 .slideshow__img {
