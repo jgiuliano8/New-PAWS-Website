@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="165.61827"
+   height="122.59332"
+   viewBox="0 0 43.819834 32.436147"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="PAWS-logo-v1_6.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.3494889"
+     inkscape:cx="95.591746"
+     inkscape:cy="61.134256"
+     inkscape:window-width="1083"
+     inkscape:window-height="1033"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.941575,-110.07606)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0793746px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 102.54478,142.29845 c 1.56162,0.65484 5.81423,-0.73788 7.02877,-1.13701 1.21453,-0.39912 3.88542,0.77234 5.89176,1.13701 1.2092,0.21978 2.61538,-0.44067 3.30766,-1.96392 0.33465,-0.73636 0.0847,-2.52022 -1.03365,-3.51439 -2.92832,-2.6031 -3.29706,-3.00591 -6.04681,-6.46026 -0.69788,-0.87671 -3.16163,-1.28136 -4.18625,-0.0517 -1.81416,2.17723 -2.37744,3.56521 -5.37494,6.20185 -0.58588,0.51535 -1.67333,2.00143 -1.55047,2.99757 0.20589,1.6695 0.4023,2.13599 1.96393,2.79083 z"
+       id="path42"
+       sodipodi:nodetypes="zzsssssssz" />
+    <ellipse
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.112335"
+       id="path2937-4"
+       cx="141.63031"
+       cy="92.0933"
+       rx="2.4139309"
+       ry="3.2977993"
+       transform="matrix(0.9652826,0.26120776,-0.25644906,0.96655775,0,0)" />
+    <ellipse
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.112335"
+       id="path2937-4-4"
+       cx="147.91476"
+       cy="95.775162"
+       rx="2.4139309"
+       ry="3.2977993"
+       transform="matrix(0.9652826,0.26120776,-0.25644906,0.96655775,0,0)" />
+    <ellipse
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.112843"
+       id="path2937-4-9"
+       cx="67.595177"
+       cy="148.31448"
+       rx="2.5028806"
+       ry="3.2093971"
+       transform="matrix(0.96979772,-0.24391062,0.27450095,0.96158683,0,0)" />
+    <ellipse
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.113753"
+       id="path2937-4-9-2"
+       cx="61.67239"
+       cy="152.45074"
+       rx="2.5053458"
+       ry="3.2581789"
+       transform="matrix(0.9688435,-0.24767373,0.27039109,0.96275057,0,0)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.3333px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:'Tahoma, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;stroke-width:0.264583"
+       id="text3421"
+       transform="matrix(0.3,0,0,0.3,144.57699,89.036224)"><textPath
+         xlink:href="#path31348"
+         id="textPath32234">PAWS</textPath></text>
+    <path
+       style="display:none;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -174.68562,124.28287 c -1.63867,-1.36556 31.1573,-21.88347 52.37124,-22.39556 21.21395,-0.51209 57.415647,19.80269 55.472154,21.01737"
+       id="path31348"
+       sodipodi:nodetypes="csc" />
+  </g>
+</svg>
