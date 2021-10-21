@@ -143,12 +143,23 @@ h1 {
   object-fit: cover;
 }
 
-.quick-link--SWAP::after {
+.quick-link::after {
   position: absolute;
-  content: "Seniors With Animals Program";
-  left: 50%;
-  bottom: 5px;
+  left: 0;
+  bottom: 4px;
+  right: 0;
+  background-color: rgb(var(--base-color), 0.5);
+  padding-block: 10px;
   color: rgb(255, 255, 255);
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
+  text-align: center;
   white-space: nowrap;
+}
+
+.quick-link--SWAP::after {
+  content: "Seniors With Animals Program";
+}
+
+.quick-link--adopt::after {
+  content: "Adopt a Pet";
 }
