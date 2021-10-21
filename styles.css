@@ -113,7 +113,8 @@ header {
   color: rgb(0, 0, 0);
 }
 
-main {
+main,
+footer {
   margin-inline: 1.25em;
 }
 
@@ -191,4 +192,33 @@ h1 {
 .quick-link--estate-planning::after {
   content: "Estate Planning";
   /* color: rgb(0, 0, 0); */
+}
+
+.footer-links,
+.social-media {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links {
+  font-size: 0.875rem;
+  margin-bottom: 1em;
+}
+
+.social-media {
+  font-family: FontAwesome;
+  font-style: normal;
+}
+
+.footer-links__li,
+.social-media__li {
+  margin-right: 0.5rem;
+  font-style: normal;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.75rem;
 }
