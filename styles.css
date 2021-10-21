@@ -204,18 +204,17 @@ h1 {
 
 .footer-links {
   font-size: 0.875rem;
-  margin-bottom: 1em;
+  margin-block: 2em;
 }
 
 .social-media {
   font-family: FontAwesome;
-  font-style: normal;
+  font-size: 1.5rem;
 }
 
 .footer-links__li,
 .social-media__li {
-  margin-right: 0.5rem;
-  font-style: normal;
+  margin-right: 1em;
 }
 
 .copyright {
