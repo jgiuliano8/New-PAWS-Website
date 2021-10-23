@@ -14,8 +14,8 @@
 
 body {
   position: relative;
-  background-color: #fff;
   margin: 0;
+  background-color: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -42,9 +42,23 @@ header {
   margin-block: 2em;
 }
 
+.logo:visited {
+  color: rgb(0, 0, 0);
+}
+
+.logo__txt {
+  max-width: 45mm;
+  margin: 0;
+  font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
 .paws-search {
   grid-area: paws-search;
   align-self: center;
+
+  /* Display is flex on search form to put the input
+  field and the icon next to each other */
   display: flex;
   margin-top: 0.1em;
 }
@@ -52,6 +66,8 @@ header {
 .paws-search__inpt {
   min-width: 50px;
   max-width: 150px;
+
+  /* This padding is specific to line up the search input with the search icon next to it */
   padding: 0.3125em;
   border: 2px solid rgb(var(--base-color));
   border-top-left-radius: 4px;
@@ -71,7 +87,6 @@ header {
 
 .paws-search__icn {
   align-self: center;
-  display: inline-block;
   padding: 0.375em;
   background-color: rgb(var(--base-color));
   border-top-right-radius: 4px;
@@ -87,22 +102,33 @@ header {
 }
 
 .btn {
-  padding: 1em 2.5em;
+  /* max-width: 225px; */
+  padding: 0.75em 1.75em;
   border-radius: 4px;
   border: none;
+  font-size: 0.75rem;
   text-align: center;
   text-transform: uppercase;
   -webkit-tap-highlight-color: transparent;
 }
 
+@media screen and (min-width: 375px) {
+  .btn {
+    /* max-width: 225px; */
+    padding: 1em 2.5em;
+  }
+}
+
 .btn--donate {
   grid-area: donate-button;
+  /* justify-self: right; */
   background-color: rgb(var(--dark-accent-color));
   color: #fff;
 }
 
 .btn--volunteer {
   grid-area: volunteer-button;
+  /* justify-self: left; */
   background-color: rgb(var(--base-color));
   color: #fff;
 }
@@ -118,10 +144,10 @@ footer {
   margin-inline: 1.25em;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   margin-top: 1.25em;
-}
+} */
 
 .slideshow__img {
   max-width: 100%;
@@ -146,6 +172,8 @@ h1 {
   object-fit: cover;
 }
 
+/* Altered image position to get view of the signature
+   and also not too much hand. */
 .quick-link__img--estate-planning {
   object-position: 65% 100%;
 }
@@ -244,4 +272,7 @@ h1 {
 .copyright {
   text-align: center;
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 550px) {
 }
