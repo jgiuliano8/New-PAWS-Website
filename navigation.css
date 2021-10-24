@@ -162,10 +162,7 @@ a {
   .main-menu {
     flex-direction: row;
     justify-content: space-between;
-
-    margin-right: 1em;
     padding: 0;
-
     font-size: 12px;
   }
 
