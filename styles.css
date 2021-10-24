@@ -27,13 +27,14 @@ img {
 
 header {
   display: grid;
-  grid: auto-flow / 0.5em 1fr 1fr 0.5em;
+  grid: repeat(3, auto) 3em / 1fr 1fr;
   row-gap: 1.5em;
   column-gap: 0.75em;
   grid-template-areas:
-    ". logo logo ."
-    ". paws-search nav ."
-    ". donate-button volunteer-button .";
+    "logo logo"
+    "paws-search nav"
+    "donate-button volunteer-button"
+    " . .";
 }
 
 .logo {
@@ -102,7 +103,6 @@ header {
 }
 
 .btn {
-  /* max-width: 225px; */
   padding: 0.75em 1.75em;
   border-radius: 4px;
   border: none;
@@ -114,21 +114,20 @@ header {
 
 @media screen and (min-width: 375px) {
   .btn {
-    /* max-width: 225px; */
+    max-width: 225px;
     padding: 1em 2.5em;
   }
 }
 
 .btn--donate {
   grid-area: donate-button;
-  /* justify-self: right; */
+  /* justify-self: ; */
   background-color: rgb(var(--dark-accent-color));
   color: #fff;
 }
 
 .btn--volunteer {
   grid-area: volunteer-button;
-  /* justify-self: left; */
   background-color: rgb(var(--base-color));
   color: #fff;
 }
@@ -139,15 +138,11 @@ header {
   color: rgb(0, 0, 0);
 }
 
+header,
 main,
 footer {
   margin-inline: 1.25em;
 }
-
-/* h1 {
-  text-align: center;
-  margin-top: 1.25em;
-} */
 
 .slideshow__img {
   max-width: 100%;
@@ -274,5 +269,97 @@ footer {
   font-size: 0.75rem;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 565px) {
+  header {
+    display: grid;
+    grid: 1fr 1fr 2.5em 3em / repeat(12, 1fr);
+    row-gap: 1.5em;
+    column-gap: 0.75em;
+  }
+
+  .logo {
+    grid-row: 1 / 3;
+    grid-column: 1 / 5;
+  }
+
+  .paws-search {
+    grid-row: 1 / 2;
+    grid-column: 7 / 12;
+    justify-self: right;
+  }
+
+  /* Adjusted padding to realign input field and search
+     icon */
+  .paws-search__inpt {
+    padding: 0.3em;
+  }
+
+  .hamburger {
+    grid-row: 1 / 2;
+    grid-column: 12 / 13;
+  }
+
+  .btn--donate {
+    grid-row: 3 / 4;
+    grid-column: 2 / 6;
+    align-self: center;
+  }
+
+  .btn--volunteer {
+    grid-row: 3 / 4;
+    grid-column: 8 / 12;
+  }
+
+  main {
+    display: grid;
+    grid: auto auto 1fr / repeat(12, 1fr);
+  }
+
+  .slideshow {
+    grid-row: 1 / 2;
+    grid-column: 1 / 13;
+  }
+
+  .intro {
+    grid-row: 2 / 3;
+    grid-column: 3 / 11;
+  }
+
+  .quick-links {
+    grid-row: 3 / 4;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(12, 1fr);
+    column-gap: 1em;
+  }
+
+  .quick-link--adopt {
+    grid-row: 1 / 2;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--SWAP {
+    grid-row: 1 / 2;
+    grid-column: 7 / 13;
+  }
+
+  .quick-link--TNR {
+    grid-row: 2 / 3;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--take-action {
+    grid-row: 2 / 3;
+    grid-column: 7 / 13;
+  }
+
+  .quick-link--education {
+    grid-row: 3 / 4;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--estate-planning {
+    grid-row: 3 / 4;
+    grid-column: 7 / 13;
+  }
 }
