@@ -14,7 +14,8 @@
 
 body {
   position: relative;
-  margin: 0;
+  max-width: 1024px;
+  margin: 0 auto;
   background-color: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -51,6 +52,7 @@ header {
   max-width: 45mm;
   margin: 0;
   font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -122,13 +124,14 @@ header {
 
 .btn--donate {
   grid-area: donate-button;
-  /* justify-self: ; */
+  justify-self: left;
   background-color: rgb(var(--dark-accent-color));
   color: #fff;
 }
 
 .btn--volunteer {
   grid-area: volunteer-button;
+  justify-self: left;
   background-color: rgb(var(--base-color));
   color: #fff;
 }
@@ -287,6 +290,7 @@ footer {
     grid-row: 1 / 2;
     grid-column: 7 / 12;
     justify-self: right;
+    margin-top: 2.25em;
   }
 
   /* Adjusted padding to realign input field and search
@@ -298,17 +302,19 @@ footer {
   .hamburger {
     grid-row: 1 / 2;
     grid-column: 12 / 13;
+    margin-top: 1.125em;
   }
 
   .btn--donate {
     grid-row: 4 / 5;
-    grid-column: 2 / 6;
-    align-self: center;
+    grid-column: 3 / 6;
+    justify-self: right;
   }
 
   .btn--volunteer {
     grid-row: 4 / 5;
     grid-column: 8 / 12;
+    justify-self: left;
   }
 
   main {
