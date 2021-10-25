@@ -12,7 +12,7 @@
     <ellipse transform="matrix(.96884 -.24767 .27039 .96275 0 0)" cx="61.672" cy="152.45" rx="2.5053" ry="3.2582" stroke-width=".11375"/>
    </g>
   </g>
-  <text font-family="Tahoma" font-size="12.7px" font-weight="bold" letter-spacing="0px" stroke-width=".079375" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><textPath xlink:href="#path13383">PAWS</textPath></text>
-  <path id="path13383" d="m91.891 127.27s9.5364-5.8921 18.025-5.8921c8.4884 0 18.647 5.8921 18.647 5.8921" display="none" fill="none" stroke="#000" stroke-width=".26458px"/>
+  <text font-family="sans-serif" font-size="12.7px" font-weight="bold" letter-spacing="0px" stroke-width=".079375" word-spacing="0px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><textPath xlink:href="#path13383">PAWS</textPath></text>
+  <path id="path13383" d="m91.165 127.27s9.5364-5.8921 18.025-5.8921c8.4884 0 18.647 5.8921 18.647 5.8921" display="none" fill="none" stroke="#000" stroke-width=".26458px"/>
  </g>
 </svg>
