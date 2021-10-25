@@ -67,8 +67,8 @@ function closeMenu(subMenu) {
 // the main-menu back to display: flex, after the 750ms timer.
 
 function removeInvisibility() {
-  const menuElement = document.querySelector(".main-menu");
-  menuElement.style.display = "flex";
+  const navElement = document.querySelector(".navigation");
+  navElement.style.display = "flex";
 }
 
 // This function *mostly* adds and removes the event listeners
@@ -120,12 +120,12 @@ function toggleListeners(mql) {
       { capture: true }
     );
 
-    // Make main menu invisible momentarily.
-    // Transitioning visibility made the main menu
+    // Make navigation invisible momentarily.
+    // Transitioning visibility made the navigation
     // visible and then fade to hidden, when resizing
     // browser from larger to smaller widths
-    const menuElement = document.querySelector(".main-menu");
-    menuElement.style.display = "none";
+    const navElement = document.querySelector(".navigation");
+    navElement.style.display = "none";
     setTimeout(removeInvisibility, 750);
   } else {
     // Else browser is larger than 675px
