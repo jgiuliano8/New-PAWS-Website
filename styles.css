@@ -45,6 +45,10 @@ header {
   color: rgb(0, 0, 0);
 }
 
+.logo__img {
+  max-width: 166px;
+}
+
 .logo:visited {
   color: rgb(0, 0, 0);
 }
