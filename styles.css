@@ -46,7 +46,7 @@ header {
 }
 
 .logo__img {
-  max-width: 166px;
+  max-width: 167px;
 }
 
 .logo:visited {
@@ -128,14 +128,14 @@ header {
 
 .btn--donate {
   grid-area: donate-button;
-  justify-self: left;
+  justify-self: stretch;
   background-color: rgb(var(--dark-accent-color));
   color: #fff;
 }
 
 .btn--volunteer {
   grid-area: volunteer-button;
-  justify-self: left;
+  justify-self: stretch;
   background-color: rgb(var(--base-color));
   color: #fff;
 }
@@ -312,13 +312,13 @@ footer {
   .btn--donate {
     grid-row: 4 / 5;
     grid-column: 3 / 6;
-    justify-self: right;
+    justify-self: stretch;
   }
 
   .btn--volunteer {
     grid-row: 4 / 5;
-    grid-column: 8 / 12;
-    justify-self: left;
+    grid-column: 8 / 11;
+    justify-self: stretch;
   }
 
   main {
