@@ -127,10 +127,6 @@ a {
 /* Media query */
 
 @media screen and (min-width: 675px) {
-  .navigation {
-    margin-top: 3.25em;
-  }
-
   .hamburger,
   .close-nav,
   .close-sub-menu-1,
@@ -168,7 +164,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .main-menu__li,
