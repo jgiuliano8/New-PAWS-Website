@@ -179,8 +179,7 @@ a {
   }
 
   .main-menu__li--current > a {
-    background-color: rgb(var(--base-color), 0.4);
-    color: rgb(0, 0, 0);
+    border: 2px solid rgb(var(--light-accent-color));
   }
 
   /* Sub-menus start out as display none which makes them invisible. */
