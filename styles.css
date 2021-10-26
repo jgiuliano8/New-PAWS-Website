@@ -28,18 +28,19 @@ img {
 
 header {
   display: grid;
-  grid: repeat(3, auto) 3em / 1fr 1fr;
+  grid-template: repeat(3, auto) 3em / repeat(12, 1fr);
   row-gap: 1.5em;
   column-gap: 0.75em;
-  grid-template-areas:
+  /* grid-template-areas:
     "logo logo"
     "paws-search nav"
     "donate-button volunteer-button"
-    " . .";
+    " . ."; */
 }
 
 .logo {
-  grid-area: logo;
+  grid-row: 1 / 2;
+  grid-column: 1 / 13;
   justify-self: center;
   margin-block: 2em;
   color: rgb(0, 0, 0);
@@ -61,9 +62,14 @@ header {
 }
 
 .paws-search {
-  grid-area: paws-search;
+  grid-row: 2 / 3;
+  grid-column: 7 / 13;
+  justify-self: right;
+  margin-right: 2em;
+  /* align-self: center -> removes the desire for the
+  search input to stretch to the full height of the
+  grid-item */
   align-self: center;
-
   /* Display is flex on search form to put the input
   field and the icon next to each other */
   display: flex;
@@ -82,6 +88,9 @@ header {
   outline: none;
 }
 
+/* When the search input field is in focus, both
+   the search field and the icon to the right
+   turn light blue */
 .paws-search__inpt:focus + .paws-search__icn {
   background-color: rgb(var(--light-accent-color));
 }
@@ -102,7 +111,8 @@ header {
 }
 
 .hamburger {
-  grid-area: nav;
+  grid-row: 2 / 3;
+  grid-column: 12 / 13;
   justify-self: right;
   align-self: center;
   margin-bottom: 0.1em;
@@ -121,20 +131,22 @@ header {
 
 @media screen and (min-width: 375px) {
   .btn {
-    max-width: 225px;
+    /* max-width: 225px; */
     padding: 1em 2.5em;
   }
 }
 
 .btn--donate {
-  grid-area: donate-button;
+  grid-row: 3 / 4;
+  grid-column: 1 / 7;
   justify-self: stretch;
   background-color: rgb(var(--dark-accent-color));
   color: #fff;
 }
 
 .btn--volunteer {
-  grid-area: volunteer-button;
+  grid-row: 3 / 4;
+  grid-column: 7 / 13;
   justify-self: stretch;
   background-color: rgb(var(--base-color));
   color: #fff;
@@ -163,13 +175,20 @@ footer {
   line-height: 1.5;
 }
 
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .quick-link {
   position: relative;
-  margin-block: 1em;
+  margin-block: 0.5em;
 }
 
 .quick-link__img {
   width: 100%;
+  max-width: 350px;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -192,7 +211,6 @@ footer {
   background-color: rgb(var(--base-color), 0.45);
   padding-block: 10px;
   color: rgb(255, 255, 255);
-  /* transform: translateX(-50%); */
   text-align: center;
   white-space: nowrap;
 }
@@ -222,7 +240,6 @@ footer {
 
 .quick-link--estate-planning::after {
   content: "Estate Planning";
-  /* color: rgb(0, 0, 0); */
 }
 
 .footer-nav,
@@ -278,7 +295,7 @@ footer {
 }
 
 @media screen and (min-width: 565px) {
-  header {
+  /* header {
     display: grid;
     grid: 2em 2em 1fr 2.5em 3em / repeat(12, 1fr);
     row-gap: 1.5em;
@@ -296,10 +313,10 @@ footer {
     justify-self: right;
     margin-top: 2.25em;
   }
-
+ */
   /* Adjusted padding to realign input field and search
      icon */
-  .paws-search__inpt {
+  /* .paws-search__inpt {
     padding: 0.3em;
   }
 
@@ -307,18 +324,43 @@ footer {
     grid-row: 1 / 2;
     grid-column: 12 / 13;
     margin-top: 1.125em;
-  }
+  } */
 
   .btn--donate {
-    grid-row: 4 / 5;
-    grid-column: 3 / 6;
-    justify-self: stretch;
+    grid-row: 3 / 4;
+    grid-column: 2 / 6;
   }
 
   .btn--volunteer {
-    grid-row: 4 / 5;
-    grid-column: 8 / 11;
-    justify-self: stretch;
+    grid-row: 3 / 4;
+    grid-column: 8 / 12;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .logo {
+    grid-row: 1 / 3;
+    grid-column: 1 / 4;
+  }
+
+  .navigation {
+    grid-row: 1 / 2;
+    grid-column: 4 / 13;
+    align-self: start;
+  }
+
+  .paws-search {
+    grid-row: 1 / 2;
+    grid-column: 10 / 13;
+    align-self: start;
+    justify-self: right;
+    margin-top: 0.75em;
+    margin-right: 0;
+  }
+
+  /* 'Support PAWS' main menu text was wrapping */
+  .main-menu__text {
+    white-space: nowrap;
   }
 
   main {
@@ -372,24 +414,5 @@ footer {
   .quick-link--estate-planning {
     grid-row: 3 / 4;
     grid-column: 7 / 13;
-  }
-}
-
-@media screen and (min-width: 675px) {
-  .navigation {
-    grid-row: 1 / 2;
-    grid-column: 4 / 13;
-    align-self: flex-end;
-  }
-
-  .paws-search {
-    grid-row: 2 / 3;
-    grid-column: 10 / 13;
-    align-self: flex-start;
-  }
-
-  /* 'Support PAWS' main menu text was wrapping */
-  .main-menu__text {
-    white-space: nowrap;
   }
 }

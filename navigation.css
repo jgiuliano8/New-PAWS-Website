@@ -95,11 +95,11 @@
   list-style-type: none;
 }
 
-.main-menu__list-item,
-.sub-menu__list-item {
+.main-menu__li,
+.sub-menu__li {
   display: inline-block;
   position: relative;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   padding: 1em 1em;
   border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
 }
@@ -128,7 +128,7 @@ a {
 
 @media screen and (min-width: 675px) {
   .navigation {
-    margin-top: 1em;
+    margin-top: 3.25em;
   }
 
   .hamburger,
@@ -138,8 +138,8 @@ a {
   .close-sub-menu-3,
   .close-sub-menu-4,
   .main-menu__title-text,
-  .main-menu__list-item--title,
-  .sub-menu__list-item--title,
+  .main-menu__li--title,
+  .sub-menu__li--title,
   .sub-menu__title-text {
     display: none;
     margin: 0;
@@ -171,11 +171,20 @@ a {
     font-size: 12px;
   }
 
-  .main-menu__list-item,
-  .sub-menu__list-item {
+  .main-menu__li,
+  .sub-menu__li {
     margin: 0 0.75em;
     padding: 0;
     border-bottom: none;
+  }
+
+  .main-menu__li + .main-menu__li {
+    margin: 0 0 0 1.25em;
+  }
+
+  .main-menu__li--current > a {
+    background-color: rgb(var(--base-color), 0.4);
+    color: rgb(0, 0, 0);
   }
 
   /* Sub-menus start out as display none which makes them invisible. */
@@ -186,16 +195,16 @@ a {
   /* On hover of the main menu list items, the sub-menus
      appear with display block, but position absolute helps them appear over
      exisitng content, instead of affecting the layout. */
-  .main-menu__list-item:hover .sub-menu-1,
-  .main-menu__list-item:hover .sub-menu-2,
-  .main-menu__list-item:hover .sub-menu-3,
-  .main-menu__list-item:hover .sub-menu-4 {
+  .main-menu__li:hover .sub-menu-1,
+  .main-menu__li:hover .sub-menu-2,
+  .main-menu__li:hover .sub-menu-3,
+  .main-menu__li:hover .sub-menu-4 {
     display: block;
     position: absolute;
     border: 2px solid rgb(var(--base-color));
   }
 
-  .main-menu__list-item > a {
+  .main-menu__li > a {
     cursor: default;
   }
 
@@ -205,7 +214,7 @@ a {
     background-color: rgb(255, 255, 255);
   }
 
-  .sub-menu__list-item {
+  .sub-menu__li {
     margin: 0.5em 1em;
   }
 
