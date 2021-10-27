@@ -29,30 +29,31 @@ img {
 header {
   display: grid;
   grid-template: repeat(4, auto) / repeat(12, 1fr);
-  row-gap: 1.5em;
+  row-gap: 1em;
   column-gap: 0.75em;
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .logo {
   grid-row: 1 / 3;
   grid-column: 1 / 13;
   justify-self: center;
-  margin-block: 2em;
+  /* margin-block: 0.5em; */
+  max-width: 150px;
   color: rgb(0, 0, 0);
 }
 
-.logo__img {
-  max-width: 167px;
-}
+/* .logo__img {
+  max-width: 150px;
+} */
 
 .logo:visited {
   color: rgb(0, 0, 0);
 }
 
 .logo__txt {
-  max-width: 45mm;
+  /* max-width: 150px; */
   margin: 0;
   font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
   text-align: center;
@@ -117,7 +118,7 @@ header {
 }
 
 .btn {
-  padding: 0.75em 1.75em;
+  padding: 0.75em 1.5em;
   border-radius: 4px;
   border: none;
   font-size: 0.75rem;
@@ -125,13 +126,6 @@ header {
   text-transform: uppercase;
   letter-spacing: 1px;
   -webkit-tap-highlight-color: transparent;
-}
-
-@media screen and (min-width: 375px) {
-  .btn {
-    /* max-width: 225px; */
-    padding: 1em 2.5em;
-  }
 }
 
 .btn--donate {
@@ -162,8 +156,73 @@ footer {
   margin-inline: 1.25em;
 }
 
+main {
+  display: grid;
+  grid: auto auto 1fr / repeat(12, 1fr);
+}
+
+.slideshow {
+  grid-row: 1 / 2;
+  grid-column: 1 / 13;
+  justify-self: center;
+}
+
+.intro {
+  grid-row: 2 / 3;
+  grid-column: 3 / 11;
+}
+
+/* Slideshow */
+
+.slideshow {
+  display: inline-block;
+  position: relative;
+  align-self: center;
+  max-width: 500px;
+}
+
 .slideshow__img {
-  max-width: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+.slideshow__img--1 {
+  z-index: 5;
+}
+
+.slideshow__img--2 {
+  z-index: 0;
+}
+
+.slideshow__img--3 {
+  z-index: 0;
+}
+
+.slideshow::after {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  right: 0;
+  background-color: rgb(var(--base-color), 0.45);
+  padding-block: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.slideshow--1::after {
+  content: "I am Loveable.";
+}
+
+.slideshow--2::after {
+  content: "Help us complete the circle. Adopt, support, volunteer.";
+}
+
+.slideshow--3::after {
+  content: "We're their safety net. You're their home, sweet home.";
 }
 
 .intro__p {
@@ -174,6 +233,9 @@ footer {
 }
 
 .quick-links {
+  grid-row: 3 / 4;
+  grid-column: 1 / 13;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,9 +356,45 @@ footer {
   font-size: 0.75rem;
 }
 
+@media screen and (min-width: 375px) {
+  .btn {
+    padding: 1em 2.5em;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .logo {
+    grid-row: 1 / 4;
+    grid-column: 1 / 6;
+  }
+
+  .paws-search,
+  .hamburger {
+    grid-row: 1 / 2;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .btn {
+    padding: 0.75em 1em;
+  }
+  .btn--donate,
+  .btn--volunteer {
+    grid-row: 2/3;
+    align-self: start;
+  }
+
+  .btn--donate {
+    grid-column: 6 / 9;
+  }
+
+  .btn--volunteer {
+    grid-column: 10 / 13;
+  }
+}
 /* Small media query to adjust buttons so they don't
    get too long */
-@media screen and (min-width: 565px) {
+/* @media screen and (min-width: 565px) {
   .btn--donate {
     grid-column: 2 / 6;
   }
@@ -304,11 +402,11 @@ footer {
   .btn--volunteer {
     grid-column: 8 / 12;
   }
-}
+} */
 
 @media screen and (min-width: 675px) {
   .logo {
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
     grid-column: 1 / 4;
   }
 
@@ -325,24 +423,15 @@ footer {
     align-self: start;
   }
 
+  .btn--donate,
+  .btn--volunteer {
+    grid-row: 3/4;
+    align-self: start;
+  }
+
   /* 'Support PAWS' main menu text was wrapping */
   .main-menu__text {
     white-space: nowrap;
-  }
-
-  main {
-    display: grid;
-    grid: auto auto 1fr / repeat(12, 1fr);
-  }
-
-  .slideshow {
-    grid-row: 1 / 2;
-    grid-column: 1 / 13;
-  }
-
-  .intro {
-    grid-row: 2 / 3;
-    grid-column: 3 / 11;
   }
 
   .quick-links {
