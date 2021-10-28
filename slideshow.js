@@ -40,4 +40,4 @@ function nextSlide() {
   setCurrDot();
 }
 
-setInterval(nextSlide, 4000);
+setInterval(nextSlide, 4500);
