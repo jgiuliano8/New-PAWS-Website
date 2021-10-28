@@ -66,15 +66,19 @@
   cursor: pointer;
 }
 
+/* The next two sets of rules help align the right
+   arrows and the close nav 'X' with their
+   surrounding text.  */
 .close-nav,
 .main-menu__arrw {
   position: relative;
-  top: 4px;
+  top: -5px;
   font-size: 2rem;
+  vertical-align: middle;
 }
 
 .main-menu__arrw {
-  top: 2px;
+  top: -7px;
 }
 
 .close-sub-menu-1,
@@ -106,8 +110,16 @@
 .sub-menu__li {
   display: inline-block;
   position: relative;
-  padding: 1em 1em;
+  padding: 1em;
   border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
+}
+
+/* The following rule was added to help with
+   overriding the padding set above for the list
+   items with symbols in the text. */
+.main-menu__li--title,
+.main-menu__li--adjst {
+  padding-block: 0.5em;
 }
 
 a {
