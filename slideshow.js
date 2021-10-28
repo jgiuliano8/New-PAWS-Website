@@ -1,5 +1,6 @@
 "use strict";
 
+const dotCntnr = document.querySelector(".dots");
 const dots = document.querySelectorAll(".dots__dot");
 const slides = document.querySelectorAll(".slideshow__img");
 const slideshowElem = document.querySelector(".slideshow");
@@ -18,11 +19,11 @@ function setCurrDot() {
   });
 }
 
-function nextSlide() {
+function nextSlide(fromClick) {
   slideshowElem.classList.remove(`slideshow--${currSlide}`);
-  currSlide++;
-  if (currSlide > maxSlides) {
-    currSlide = 1;
+  if (!fromClick) {
+    currSlide++;
+    if (currSlide > maxSlides) currSlide = 1;
   }
 
   slides.forEach(function (slide) {
@@ -40,4 +41,10 @@ function nextSlide() {
   setCurrDot();
 }
 
-setInterval(nextSlide, 4500);
+dotCntnr.addEventListener("click", function (e) {
+  if (e.target === dotCntnr) return;
+  currSlide = e.target.dataset.dotNumber;
+  nextSlide(true);
+});
+
+setInterval(nextSlide, 4500, false);
