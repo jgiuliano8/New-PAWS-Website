@@ -159,7 +159,7 @@ footer {
 main {
   display: grid;
   grid: auto auto 1fr / repeat(12, 1fr);
-  z-index: -2;
+  z-index: -5;
 }
 
 .slideshow {
