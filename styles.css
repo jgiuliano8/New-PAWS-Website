@@ -159,13 +159,13 @@ footer {
 main {
   display: grid;
   grid: auto auto 1fr / repeat(12, 1fr);
-  z-index: -5;
 }
 
 .slideshow {
   grid-row: 1 / 2;
   grid-column: 1 / 13;
   justify-self: center;
+  z-index: -1;
 }
 
 .intro {
@@ -231,6 +231,7 @@ main {
   margin: 2em auto;
   max-width: 300px;
   line-height: 1.5;
+  z-index: -1;
 }
 
 .quick-links {
@@ -240,6 +241,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: -1;
 }
 
 .quick-link {
