@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navigation.css" />
     <script defer src="navigation.js"></script>
+    <script defer src="slideshow.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -156,12 +157,16 @@
     </header>
     <main>
 
-      <!-- Image slideshow goes here-->
+      <!-- Image slideshow/carousel goes here-->
       <div class="slideshow slideshow--1">
-        <img src="images/carousel/i-am-loveable-1.jpg" alt="Two scared puppies" class="slideshow__img slideshow__img--1" />
+        <div class="dots">
+          <div class="dots__dot dots__dot--current" data-dot-number="1"></div>
+          <div class="dots__dot" data-dot-number="2"></div>
+          <div class="dots__dot" data-dot-number="3"></div>
+        </div>
+        <img src="images/carousel/i-am-loveable-1.jpg" alt="Two scared puppies" class="slideshow__img slideshow__img--1 slideshow__img--current" />
         <img src="images/carousel/adopt-support-volunteer.jpg" alt="Man facing away, volunteering and holding dog" class="slideshow__img slideshow__img--2" />
         <img src="images/carousel/home-sweet-home.jpg" alt="Puppy cradled in woman's lap" class="slideshow__img slideshow__img--3" />
-        <img src="" alt="" class="slideshow__img slideshow__img--4" />
         <img src="images/carousel/placeholder.png" alt="" />
       </div>
 

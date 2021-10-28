@@ -183,13 +183,37 @@ main {
   max-width: 500px;
 }
 
+.dots {
+  display: flex;
+  justify-content: space-around;
+  width: 50px;
+  position: absolute;
+  z-index: 2;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots__dot {
+  padding: 0.25em;
+  border-radius: 50%;
+  background-color: rgb(var(--light-accent-color));
+}
+
+.dots__dot--current {
+  background-color: rgb(var(--dark-accent-color));
+}
+
 .slideshow__img {
   position: absolute;
   object-fit: cover;
+  transition: z-index 500ms;
+  z-index: 0;
 }
 
-.slideshow__img--1 {
-  z-index: 1;
+/* .slideshow__img--1 {
+  z-index: 0;
+  transition: ;
 }
 
 .slideshow__img--2 {
@@ -198,6 +222,10 @@ main {
 
 .slideshow__img--3 {
   z-index: 0;
+} */
+
+.slideshow__img--current {
+  z-index: 1;
 }
 
 .slideshow::after {
@@ -208,8 +236,6 @@ main {
   background-color: rgb(var(--base-color), 0.45);
   padding-block: 10px;
   color: rgb(255, 255, 255);
-  font-size: 1.5rem;
-  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   z-index: 5;
@@ -217,14 +243,18 @@ main {
 
 .slideshow--1::after {
   content: "I am Loveable.";
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .slideshow--2::after {
   content: "Help us complete the circle. Adopt, support, volunteer.";
+  font-weight: 400;
 }
 
 .slideshow--3::after {
   content: "We're their safety net. You're their home, sweet home.";
+  font-weight: 400;
 }
 
 .intro__p {
