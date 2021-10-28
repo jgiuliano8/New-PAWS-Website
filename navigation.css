@@ -66,8 +66,13 @@
   cursor: pointer;
 }
 
-.close-nav {
+.close-nav,
+.main-menu__arrw {
   font-size: 2rem;
+}
+
+.main-menu__arrw {
+  vertical-align: sup;
 }
 
 .close-sub-menu-1,
@@ -98,7 +103,7 @@
 .main-menu__li,
 .sub-menu__li {
   display: inline-block;
-  position: relative;
+  /* position: relative; */
   /* letter-spacing: 1px; */
   padding: 1em 1em;
   border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
@@ -136,7 +141,8 @@ a {
   .main-menu__title-text,
   .main-menu__li--title,
   .sub-menu__li--title,
-  .sub-menu__title-text {
+  .sub-menu__title-text,
+  .main-menu__arrw {
     display: none;
     margin: 0;
     padding: 0;
@@ -148,7 +154,7 @@ a {
   .navigation,
   .sub-menu {
     display: block;
-    position: unset;
+    position: relative;
     top: unset;
     right: unset;
     bottom: unset;

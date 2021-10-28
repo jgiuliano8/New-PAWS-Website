@@ -177,6 +177,7 @@ main {
 .slideshow {
   display: inline-block;
   position: relative;
+  z-index: -1;
   align-self: center;
   max-width: 500px;
 }
@@ -187,7 +188,7 @@ main {
 }
 
 .slideshow__img--1 {
-  z-index: 5;
+  z-index: 1;
 }
 
 .slideshow__img--2 {
