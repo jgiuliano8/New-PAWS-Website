@@ -68,11 +68,13 @@
 
 .close-nav,
 .main-menu__arrw {
+  position: relative;
+  top: 4px;
   font-size: 2rem;
 }
 
 .main-menu__arrw {
-  vertical-align: sup;
+  top: 2px;
 }
 
 .close-sub-menu-1,
