@@ -105,8 +105,7 @@
 .main-menu__li,
 .sub-menu__li {
   display: inline-block;
-  /* position: relative; */
-  /* letter-spacing: 1px; */
+  position: relative;
   padding: 1em 1em;
   border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
 }
@@ -156,7 +155,7 @@ a {
   .navigation,
   .sub-menu {
     display: block;
-    position: relative;
+    position: unset;
     top: unset;
     right: unset;
     bottom: unset;

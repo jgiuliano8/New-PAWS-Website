@@ -7,7 +7,11 @@ const hamburgerElement = document.querySelector(".hamburger");
 // level list items
 hamburgerElement.addEventListener("click", function () {
   const nav = document.querySelector(".navigation");
+  const mainElement = document.querySelector("main");
+  const ftrElement = document.querySelector("footer");
   nav.classList.add("nav-open");
+  mainElement.style.display = "none";
+  ftrElement.style.display = "none";
 
   // Hamburger element z-index is set to 0 so it fades when
   // other menus open.
@@ -18,7 +22,11 @@ hamburgerElement.addEventListener("click", function () {
 // level list items
 document.querySelector(".close-nav").addEventListener("click", function () {
   const nav = document.querySelector(".navigation");
+  const mainElement = document.querySelector("main");
+  const ftrElement = document.querySelector("footer");
   nav.classList.remove("nav-open");
+mainElement.style.display = "grid";
+  ftrElement.style.display = "grid";
 });
 
 // clearNav clears out the .nav-open class on the HTML element
