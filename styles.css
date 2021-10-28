@@ -159,6 +159,7 @@ footer {
 main {
   display: grid;
   grid: auto auto 1fr / repeat(12, 1fr);
+  z-index: -2;
 }
 
 .slideshow {
@@ -177,7 +178,6 @@ main {
 .slideshow {
   display: inline-block;
   position: relative;
-  z-index: -1;
   align-self: center;
   max-width: 500px;
 }
