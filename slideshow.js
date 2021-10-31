@@ -20,8 +20,8 @@ function setCurrDot() {
 }
 
 function nextSlide(fromClick) {
-  slideshowElem.classList.remove(`slideshow--${currSlide}`);
   if (!fromClick) {
+    slideshowElem.classList.remove(`slideshow--${currSlide}`);
     currSlide++;
     if (currSlide > maxSlides) currSlide = 1;
   }
@@ -43,6 +43,7 @@ function nextSlide(fromClick) {
 
 dotCntnr.addEventListener("click", function (e) {
   if (e.target === dotCntnr) return;
+  slideshowElem.classList.remove(`slideshow--${currSlide}`);
   currSlide = e.target.dataset.dotNumber;
   nextSlide(true);
 });
