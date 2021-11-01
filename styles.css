@@ -107,11 +107,13 @@ header {
 }
 
 .hamburger {
+  position: relative;
   grid-row: 3 / 4;
   grid-column: 12 / 13;
   justify-self: right;
   align-self: center;
   margin-bottom: 0.1em;
+  top: 1px;
 }
 
 .btn {
