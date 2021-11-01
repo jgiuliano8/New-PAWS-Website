@@ -103,6 +103,7 @@
   border-radius: 5px;
   margin-block: 1em;
   background-color: rgb(32, 32, 32);
+  transition: transform 300ms, background-color 300ms;
 }
 
 .hamburger::after,
@@ -118,13 +119,28 @@
 .hamburger::after {
   left: 0;
   top: -10px;
+  transition: transform 300ms;
 }
 
 .hamburger::before {
   left: 0;
   bottom: -10px;
+  transition: transform 300ms;
 }
-  
+
+.hamburger:active {
+  transform: translateX(-50px);
+  background-color: transparent;
+}
+
+.hamburger:active .hamburger::before {
+  transform: rotate(45deg);
+}
+
+.hamburger:active .hamburger::after {
+  transform: rotate(-45deg);
+}
+
 .main-menu,
 .sub-menu__list {
   list-style-type: none;
