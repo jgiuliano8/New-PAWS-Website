@@ -64,12 +64,12 @@
 .slideshow--2::after {
   content: "Help us complete the circle. Adopt, support, volunteer.";
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .slideshow--3::after {
   content: "We're their safety net.\000D\000A You're their home, sweet home.";
   white-space: pre-wrap;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 600;
 }
