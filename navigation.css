@@ -114,6 +114,7 @@
   height: 5px;
   border-radius: 5px;
   background-color: rgb(32, 32, 32);
+  transition: transform 300ms;
 }
 
 .hamburger::after {
