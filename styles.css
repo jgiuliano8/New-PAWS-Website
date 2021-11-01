@@ -58,9 +58,9 @@ header {
 
 .paws-search {
   grid-row: 3 / 4;
-  grid-column: 7 / 13;
+  grid-column: 7 / 12;
   justify-self: right;
-  margin-right: 2em;
+  /* margin-right: 2em; */
   /* align-self: center -> removes the desire for the
   search input to stretch to the full height of the
   grid-item */
