@@ -119,13 +119,13 @@
 
 .hamburger::after {
   left: 0;
-  top: -10px;
+  top: -8px;
   transition: transform 300ms;
 }
 
 .hamburger::before {
   left: 0;
-  bottom: -10px;
+  bottom: -8px;
   transition: transform 300ms;
 }
 
