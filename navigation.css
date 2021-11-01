@@ -135,10 +135,10 @@
 }
 
 .hamburger:active::before {
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate(35px, -35px);
 }
 
-.hamburger:active .hamburger::after {
+.hamburger:active::after {
   transform: rotate(-45deg);
 }
 
