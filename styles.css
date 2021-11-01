@@ -323,6 +323,11 @@ main {
   .hamburger {
     grid-row: 1 / 2;
   }
+
+  .hamburger {
+    position: unset;
+    top: unset;
+  }
 }
 
 @media screen and (min-width: 480px) {
