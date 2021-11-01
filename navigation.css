@@ -100,7 +100,7 @@
   z-index: 3;
   width: 30px;
   height: 5px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-block: 1em;
   background-color: rgb(32, 32, 32);
   transition: transform 300ms, background-color 300ms;
@@ -111,7 +111,7 @@
   content: '';
   position: absolute;
   width: 30px;
-  height: 5px;
+  height: 4px;
   border-radius: 5px;
   background-color: rgb(32, 32, 32);
   transition: transform 300ms;
