@@ -212,7 +212,11 @@ a {
   .main-menu__li:hover .sub-menu-1,
   .main-menu__li:hover .sub-menu-2,
   .main-menu__li:hover .sub-menu-3,
-  .main-menu__li:hover .sub-menu-4 {
+  .main-menu__li:hover .sub-menu-4,
+  .main-menu__li:focus-within > .sub-menu-1,
+  .main-menu__li:focus-within .sub-menu-2,
+  .main-menu__li:focus-within .sub-menu-3,
+  .main-menu__li:focus-within .sub-menu-4 {
     display: block;
     position: absolute;
     border: 2px solid rgb(var(--base-color));
@@ -232,7 +236,8 @@ a {
     margin: 0.5em 1em;
   }
 
-  .sub-menu__text:hover {
+  .sub-menu__text:hover,
+  .sub-menu__text:focus {
     opacity: 0.65;
   }
 
@@ -252,7 +257,8 @@ a {
     transition: right 500ms, left 500ms;
   }
 
-  .effect:hover::after {
+  .effect:hover::after,
+  .effect:focus::after {
     z-index: 10;
     left: 0px;
     right: 0px;
