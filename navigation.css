@@ -134,7 +134,7 @@
   background-color: transparent;
 }
 
-.hamburger:active .hamburger::before {
+.hamburger:active::before {
   transform: rotate(45deg);
 }
 
