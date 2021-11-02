@@ -108,7 +108,7 @@
 
 .hamburger::after,
 .hamburger::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 28px;
   height: 3px;
@@ -129,7 +129,7 @@
   transition: transform 300ms;
 }
 
-.hamburger:active {
+/* .hamburger:active {
   transform: translateX(-50px);
   background-color: transparent;
 }
@@ -141,7 +141,7 @@
 .hamburger:active::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
-
+ */
 .main-menu,
 .sub-menu__list {
   list-style-type: none;
