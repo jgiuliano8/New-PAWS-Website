@@ -89,7 +89,7 @@
 }
 
 .hamburger {
-  display: block;
+  display: flex;
 
   /* Added position and z-index because hamburger was fading
      in on media query transition. But actually nav was fading
@@ -98,50 +98,37 @@
   */
   position: relative;
   z-index: 3;
+  align-items: center;
+  height: 20px;
+}
+
+.hamburger__bar {
   width: 28px;
   height: 3px;
   border-radius: 5px;
-  margin-block: 1em;
   background-color: rgb(32, 32, 32);
-  transition: transform 300ms, background-color 300ms;
 }
 
-.hamburger::after,
-.hamburger::before {
+.hamburger__bar::after,
+.hamburger__bar::before {
   content: "";
   position: absolute;
   width: 28px;
   height: 3px;
   border-radius: 5px;
   background-color: rgb(32, 32, 32);
-  transition: transform 300ms;
 }
 
-.hamburger::after {
+.hamburger__bar::before {
   left: 0;
-  top: -8px;
-  transition: transform 300ms;
+  top: 0px;
 }
 
-.hamburger::before {
+.hamburger__bar::after {
   left: 0;
-  bottom: -8px;
-  transition: transform 300ms;
+  bottom: 0;
 }
 
-/* .hamburger:active {
-  transform: translateX(-50px);
-  background-color: transparent;
-}
-
-.hamburger:active::before {
-  transform: rotate(45deg) translate(35px, -35px);
-}
-
-.hamburger:active::after {
-  transform: rotate(-45deg) translate(35px, 35px);
-}
- */
 .main-menu,
 .sub-menu__list {
   list-style-type: none;
