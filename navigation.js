@@ -52,8 +52,9 @@ document.querySelector(".close-nav").addEventListener("keydown", (e) => {
 // clearNav clears out the .nav-open class on the HTML element
 // when the browswer goes back to desktop mode
 function clearNav(mql) {
-  // If the meddia query list does NOT match, i.e. device
-  // is NOT small, then...
+  // If the media query list does NOT match, i.e. device
+  // is NOT small, then remove nav-open class which
+  // closes the navigation
   if (!mql.matches) {
     const navigation = document.querySelector(".navigation");
     navigation.classList.remove("nav-open");
@@ -184,8 +185,6 @@ function toggleListeners(mql) {
     hamburgerElement.style.zIndex = "3";
   }
 }
-
-function tempInvisible() {}
 
 // Call listener functions at run time
 clearNav(deviceIsSmall);
