@@ -1,32 +1,52 @@
 "use strict";
 
-// Media query
-let deviceIsSmall = window.matchMedia("(max-width: 675px)");
-const hamburgerElement = document.querySelector(".hamburger");
-// On click of the hamburger, open the nav/main-menu top
-// level list items
-hamburgerElement.addEventListener("click", function () {
+function openMainMenu() {
   const nav = document.querySelector(".navigation");
   const mainElement = document.querySelector("main");
   const ftrElement = document.querySelector("footer");
   nav.classList.add("nav-open");
   mainElement.style.display = "none";
   ftrElement.style.display = "none";
-
   // Hamburger element z-index is set to 0 so it fades when
   // other menus open.
   hamburgerElement.style.zIndex = "0";
-});
+  console.log("Trying to open menu...");
+}
 
-// On click of the "x", close the nav/main-menu top
-// level list items
-document.querySelector(".close-nav").addEventListener("click", function () {
+function closeMainMenu() {
   const nav = document.querySelector(".navigation");
   const mainElement = document.querySelector("main");
   const ftrElement = document.querySelector("footer");
   nav.classList.remove("nav-open");
-mainElement.style.display = "grid";
+  mainElement.style.display = "grid";
   ftrElement.style.display = "grid";
+}
+
+// Media query
+let deviceIsSmall = window.matchMedia("(max-width: 675px)");
+const hamburgerElement = document.querySelector(".hamburger");
+// On click of the hamburger, open the nav/main-menu top
+// level list items
+hamburgerElement.addEventListener("click", openMainMenu);
+
+// On pressing the enter key when hamburger has
+// focus, open the main - menu
+hamburgerElement.addEventListener("keydown", (e) => {
+  // e.preventDefault();
+  if (e.code === "Enter") {
+    console.log("key pressed ", e.code, typeof e.code);
+    openMainMenu();
+  }
+});
+
+// On click of the "x", close the nav/main-menu top
+// level list items
+document.querySelector(".close-nav").addEventListener("click", closeMainMenu);
+
+// On pressing Enter key when 'x' has focuse, close
+// the main menu
+document.querySelector(".close-nav").addEventListener("keydown", (e) => {
+  if (e.code === "Enter") closeMainMenu();
 });
 
 // clearNav clears out the .nav-open class on the HTML element
@@ -54,6 +74,13 @@ function openMenu(subMenu) {
     .querySelector(`.close-${newSubMenu}`)
     .addEventListener("click", function () {
       closeMenu(subMenu);
+    });
+  // Adds an Event listener for 'Enter' key,
+  // Closes the sub-menu if Enter key is pressed
+  document
+    .querySelector(`.close-${newSubMenu}`)
+    .addEventListener("keydown", (e) => {
+      if (e.code === "Enter") closeMenu(subMenu);
     });
 }
 
