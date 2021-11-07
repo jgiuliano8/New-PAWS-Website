@@ -13,7 +13,6 @@
 }
 
 body {
-  position: relative;
   max-width: 850px;
   margin: 0 auto;
   background-color: #fff;
@@ -30,6 +29,8 @@ header {
   display: grid;
   grid-template: repeat(4, auto) / repeat(12, 1fr);
   row-gap: 1em;
+  /* Relative position and z-index here so nav sub-menus
+     display above the slideshow. */
   position: relative;
   z-index: 5;
   column-gap: 0.75em;
@@ -50,7 +51,6 @@ header {
 }
 
 .logo__txt {
-  /* max-width: 150px; */
   margin: 0;
   font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
   text-align: center;
@@ -60,7 +60,6 @@ header {
   grid-row: 3 / 4;
   grid-column: 7 / 12;
   justify-self: right;
-  /* margin-right: 2em; */
   /* align-self: center -> removes the desire for the
   search input to stretch to the full height of the
   grid-item */
@@ -74,9 +73,6 @@ header {
 .paws-search__inpt {
   min-width: 50px;
   max-width: 150px;
-
-  /* This padding is specific to line up the search input with the search icon next to it
-  padding-left: 0.325em; */
   border: 2px solid rgb(var(--base-color));
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -92,9 +88,7 @@ header {
 }
 
 .paws-search__inpt:focus {
-  border: 2px solid rgb(var(--light-accent-color));
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-color: rgb(var(--light-accent-color));
 }
 
 .paws-search__icn {
@@ -249,11 +243,6 @@ main {
   content: "Estate Planning";
 }
 
-/* footer {
-  position: relative;
-  z-index: 1;
-} */
-
 .footer-nav,
 .social-media {
   display: flex;
@@ -354,17 +343,6 @@ main {
     font-size: 1rem;
   }
 }
-/* Small media query to adjust buttons so they don't
-   get too long */
-/* @media screen and (min-width: 565px) {
-  .btn--donate {
-    grid-column: 2 / 6;
-  }
-
-  .btn--volunteer {
-    grid-column: 8 / 12;
-  }
-} */
 
 @media screen and (min-width: 675px) {
   .logo {
