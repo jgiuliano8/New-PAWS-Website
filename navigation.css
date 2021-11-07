@@ -1,5 +1,11 @@
-/* nav and it's sub-menus are 100% browser width and height,
-   just hidden at first. Then on clicks, they transition to
+/* This is the external CSS for the navigation menu. Most
+   of the CSS rules for the navigation are in here. Some
+   layout for the nav is in styles.css.*/
+
+/* In the mobile-first layout, nav and it's sub-menus
+   are 100% browser width and height,
+   just hidden at first. Then when the user clicks/presses
+   on the hamburger or sub-menus, they transition to
    visible and opaque, giving them a fading in and out effect*/
 
 .navigation,
@@ -40,8 +46,8 @@
    and visibility.
    
    Both styles/transitions are needed. Without transitioning
-   opacity, the fade effect does not occur. Without visibility,
-   everything is invisible, but still clickable. */
+   opacity, the fade effect does not occur. Without
+   visibility, everything is invisible, but still clickable. */
 .nav-open {
   opacity: 1;
   visibility: visible;
@@ -88,7 +94,11 @@
   font-size: 1rem;
 }
 
+/* Hamburger class is on the container div so that the
+   whole hamburger is clickable. */
 .hamburger {
+  /* Tinkered with display to get the best look of the
+     hamburger bars on desktop/laptop. */
   display: flex;
 
   /* Added position and z-index because hamburger was fading
@@ -99,8 +109,16 @@
   position: relative;
   z-index: 3;
   align-items: center;
+  /* Height is here so that whole hamburger is clickable, ie
+     all three bars and the space between are clickable/
+     pressable. */
   height: 20px;
 }
+
+/* The hamburger__bar class is the middle bar of the
+   hamburger. Then there is the before and after
+   pseudo-elements that are the top and bottom bars,
+   respectively. */
 
 .hamburger__bar {
   width: 28px;
@@ -170,7 +188,8 @@ a {
   opacity: 0.65;
 }
 
-/* Media query */
+/* Media query for larger screens. The hamburger disappears
+   and the nav text appears and there are dropdowns on hover */
 
 @media screen and (min-width: 675px) {
   .hamburger,
@@ -226,6 +245,9 @@ a {
     margin: 0 0 0 1.25em;
   }
 
+  /* The menu list item text color for the current page
+     is the base website color to set it apart from the
+     other menu item pages.  */
   .main-menu__li--current > a {
     color: rgb(var(--base-color));
   }
