@@ -268,7 +268,7 @@ main {
 }
 
 .footer-nav__li--current {
-  color: rgb(var(--base-color));
+  color: rgb(var(--light-accent-color));
 }
 
 .footer-nav a {
