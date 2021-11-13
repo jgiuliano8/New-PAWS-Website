@@ -267,15 +267,15 @@ main {
   margin-right: 1em;
 }
 
-.footer-nav__li--current {
-  color: rgb(var(--light-accent-color));
-}
-
 .footer-nav a {
   display: inline-block;
   color: rgb(var(--dark-accent-color));
   transform: scale(1);
   transition: transform 250ms;
+}
+
+.footer-nav__li--current a {
+  color: rgb(var(--light-accent-color));
 }
 
 .footer-nav a:hover {
