@@ -1,0 +1,458 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  color: rgb(32, 32, 32);
+  --base-color: 55, 122, 167;
+  --light-accent-color: 114, 154, 181;
+  --dark-accent-color: 38, 84, 115;
+}
+
+body {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Layout - Mobile First*/
+
+header {
+  display: grid;
+  grid-template: repeat(4, auto) / repeat(12, 1fr);
+  row-gap: 1em;
+  /* Relative position and z-index here so nav sub-menus
+     display above the slideshow. */
+  position: relative;
+  z-index: 5;
+  column-gap: 0.75em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.logo {
+  grid-row: 1 / 3;
+  grid-column: 1 / 13;
+  justify-self: center;
+  max-width: 150px;
+  color: rgb(0, 0, 0);
+}
+
+.logo:visited {
+  color: rgb(0, 0, 0);
+}
+
+.logo__txt {
+  margin: 0;
+  font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.paws-search {
+  grid-row: 3 / 4;
+  grid-column: 7 / 12;
+  justify-self: right;
+  /* align-self: center -> removes the desire for the
+  search input to stretch to the full height of the
+  grid-item */
+  align-self: center;
+  /* Display is flex on search form to put the input
+  field and the icon next to each other */
+  display: flex;
+  margin-top: 0.1em;
+}
+
+.paws-search__inpt {
+  min-width: 50px;
+  max-width: 150px;
+  border: 2px solid rgb(var(--base-color));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  outline: none;
+  font-size: 0.75rem;
+}
+
+/* When the search input field is in focus, both
+   the search field and the icon to the right
+   turn light blue */
+.paws-search__inpt:focus + .paws-search__icn {
+  background-color: rgb(var(--light-accent-color));
+}
+
+.paws-search__inpt:focus {
+  border-color: rgb(var(--light-accent-color));
+}
+
+.paws-search__icn {
+  align-self: center;
+  padding: 0.25em;
+  background-color: rgb(var(--base-color));
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: rgb(255, 255, 255);
+}
+
+.hamburger {
+  position: relative;
+  grid-row: 3 / 4;
+  grid-column: 12 / 13;
+  justify-self: right;
+  align-self: center;
+  margin-bottom: 0.1em;
+  top: 1px;
+}
+
+.btn {
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn--donate {
+  grid-row: 4 / 5;
+  grid-column: 1 / 7;
+  justify-self: stretch;
+  background-color: rgb(var(--dark-accent-color));
+  color: #fff;
+}
+
+.btn--volunteer {
+  grid-row: 4 / 5;
+  grid-column: 7 / 13;
+  justify-self: stretch;
+  background-color: rgb(var(--base-color));
+  color: #fff;
+}
+
+.btn--donate:is(:hover, :focus, :active),
+.btn--volunteer:is(:hover, :focus, :active) {
+  background-color: rgb(var(--light-accent-color));
+  color: rgb(0, 0, 0);
+}
+
+header,
+main,
+footer {
+  margin-inline: 1.25em;
+}
+
+main {
+  display: grid;
+  grid: auto auto 1fr / repeat(12, 1fr);
+}
+
+.slideshow {
+  grid-row: 1 / 2;
+  grid-column: 1 / 13;
+  justify-self: center;
+}
+
+.slideshow img {
+  max-width: fit-content(100%);
+}
+
+.intro {
+  grid-row: 2 / 3;
+  grid-column: 3 / 11;
+}
+
+.intro__p {
+  text-align: center;
+  margin: 2em auto;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.quick-links {
+  grid-row: 3 / 4;
+  grid-column: 1 / 13;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-link {
+  position: relative;
+  max-width: 350px;
+  margin-block: 0.5em;
+}
+
+.quick-link__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Altered image position to get view of the signature
+   and also not too much hand. */
+.quick-link__img--estate-planning {
+  object-position: 65% 100%;
+}
+
+/* This pseudo-element creates the translucent blue
+   bar at the bottom of each quicklink. The text is
+   centered and white.*/
+.quick-link::after {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  right: 0;
+  background-color: rgb(var(--base-color), 0.45);
+  padding-block: 10px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* With the modifier pseudo-elements, each quicklink
+   then gets its custom text, and any overrides, color,
+   etc., that are necessary. */
+.quick-link--adopt::after {
+  content: "Adopt a Pet";
+}
+
+.quick-link--SWAP::after {
+  content: "Seniors With Animals Program";
+}
+
+.quick-link--TNR::after {
+  content: "Feral Cat Resource";
+}
+
+.quick-link--take-action::after {
+  content: "Take Action";
+}
+
+.quick-link--education::after {
+  content: "Animal Welfare Education";
+}
+
+.quick-link--estate-planning::after {
+  content: "Estate Planning";
+}
+
+.footer-nav,
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav {
+  font-size: 0.875rem;
+  margin-block: 2em;
+}
+
+.social-media {
+  align-items: center;
+  font-family: FontAwesome;
+}
+
+.footer-nav__li,
+.social-media__li {
+  margin-right: 1em;
+}
+
+.footer-nav a {
+  display: inline-block;
+  color: rgb(var(--dark-accent-color));
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.footer-nav__li--current a {
+  color: rgb(var(--light-accent-color));
+}
+
+.footer-nav a:hover {
+  transform: scale(1.15);
+}
+
+.fa-facebook {
+  font-size: 1.5rem;
+  color: rgb(59, 89, 152);
+}
+
+.fa-instagram {
+  padding: 0.1em;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border-radius: 7px;
+  font-size: 1.25rem;
+  color: rgb(255, 255, 255);
+}
+
+.social-media__li > a:visited {
+  color: unset;
+}
+
+.copyright {
+  margin-top: 2em;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 375px) {
+  .btn {
+    padding: 1em 2.5em;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .logo {
+    grid-row: 1 / 4;
+    grid-column: 1 / 6;
+  }
+
+  .paws-search,
+  .hamburger {
+    grid-row: 1 / 2;
+  }
+
+  .hamburger {
+    position: unset;
+    top: unset;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .btn {
+    padding: 0.75em 1em;
+  }
+  .btn--donate,
+  .btn--volunteer {
+    grid-row: 2/3;
+    align-self: start;
+  }
+
+  .btn--donate {
+    grid-column: 6 / 9;
+  }
+
+  .btn--volunteer {
+    grid-column: 10 / 13;
+  }
+
+  .slideshow--2::after,
+  .slideshow--3::after {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .logo {
+    grid-row: 1 / 5;
+    grid-column: 1 / 4;
+  }
+
+  .paws-search {
+    grid-row: 1 / 2;
+    grid-column: 10 / 13;
+    justify-self: right;
+    margin-right: 0;
+  }
+
+  .navigation {
+    grid-row: 2 / 3;
+    grid-column: 4 / 13;
+    align-self: start;
+  }
+
+  .btn--donate,
+  .btn--volunteer {
+    grid-row: 3/4;
+    align-self: start;
+  }
+
+  /* 'Support PAWS' main menu text was wrapping */
+  .main-menu__text {
+    white-space: nowrap;
+  }
+
+  .quick-links {
+    grid-row: 3 / 4;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(12, 1fr);
+    column-gap: 1em;
+    justify-items: center;
+  }
+
+  .quick-link--adopt {
+    grid-row: 1 / 2;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--SWAP {
+    grid-row: 1 / 2;
+    grid-column: 7 / 13;
+  }
+
+  .quick-link--TNR {
+    grid-row: 2 / 3;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--take-action {
+    grid-row: 2 / 3;
+    grid-column: 7 / 13;
+  }
+
+  .quick-link--education {
+    grid-row: 3 / 4;
+    grid-column: 1 / 7;
+  }
+
+  .quick-link--estate-planning {
+    grid-row: 3 / 4;
+    grid-column: 7 / 13;
+  }
+
+  footer {
+    display: grid;
+    grid: 1fr 1fr / 1fr 1fr;
+  }
+
+  .footer-nav {
+    justify-content: left;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .social-media {
+    justify-content: right;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: right;
+  }
+
+  .copyright {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    justify-self: center;
+  }
+}

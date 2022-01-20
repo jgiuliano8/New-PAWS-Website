@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pioneers for Animal Welfare Society</title>
     <link rel="icon" href="images/favicon-32x32.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="navigation.css" />
-    <link rel="stylesheet" href="slideshow.css" />
-    <script defer src="navigation.js"></script>
-    <script defer src="slideshow.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/navigation.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/slideshow.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -25,6 +25,13 @@
       <a tabindex="0" aria-label="Open navigation" class="hamburger"
         ><div class="hamburger__bar"></div
       ></a>
+
+      <!-- Begin navigation: The navigation is responsive so
+      there are two different versions. One is for larger
+      than 675px with drop down menus. The other is for
+      675px and smaller with a "hamburger" to open the main
+      and sub-menus with a fade effect. See navigation.js.
+      -->
       <nav class="navigation">
         <ul class="main-menu">
           <li class="main-menu__li main-menu__li--title">
@@ -34,13 +41,13 @@
             <span class="main-menu__title-text">Main Menu</span>
           </li>
           <li class="main-menu__li main-menu__li--current">
-            <a class="effect main-menu__text" href="#">Home</a>
+            <a class="effect main-menu__text" href="index.html">Home</a>
           </li>
           <li class="main-menu__li">
-            <a class="effect main-menu__text" href="#">About</a>
+            <a class="effect main-menu__text" href="html/about.html">About</a>
           </li>
           <li class="js-announcements main-menu__li main-menu__li--adjst">
-            <a class="effect main-menu__text" href="#"
+            <a class="effect main-menu__text" href=""
               >Announcements<span class="main-menu__arrw"> &#8250;</span></a
             >
             <div class="sub-menu sub-menu-1">
@@ -55,20 +62,26 @@
                 </li>
 
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Announcements & Events</a>
+                  <a class="sub-menu__text" href="announcements.html"
+                    >Announcements & Events</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Acknowledgements</a>
+                  <a class="sub-menu__text" href="#acknowledgements.html"
+                    >Acknowledgements</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Take Action</a>
+                  <a class="sub-menu__text" href="html/action.html"
+                    >Take Action</a
+                  >
                 </li>
               </ul>
             </div>
           </li>
 
           <li class="js-education main-menu__li main-menu__li--adjst">
-            <a class="effect main-menu__text" href="#"
+            <a class="effect main-menu__text" href="html/education.html"
               >Education<span class="main-menu__arrw"> ›</span></a
             >
             <div class="sub-menu sub-menu-2">
@@ -82,20 +95,27 @@
                   ><span class="sub-menu__title-text">Education</span>
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#"
+                  <a class="sub-menu__text" href="html/animal-welfare-edu.html"
                     >Animal Welfare Education</a
                   >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#"
+                  <a
+                    class="sub-menu__text"
+                    href="html/legal-animal-welfare-edu.html"
                     >Legal Animal Welfare Education</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="html/estate.html"
+                    >Estate Planning</a
                   >
                 </li>
               </ul>
             </div>
           </li>
           <li class="js-services main-menu__li main-menu__li--adjst">
-            <a class="effect main-menu__text" href="#"
+            <a class="effect main-menu__text" href="html/services.html"
               >Services<span class="main-menu__arrw"> &#8250;</span></a
             >
             <div class="sub-menu sub-menu-3">
@@ -109,34 +129,48 @@
                   ><span class="sub-menu__title-text">Services</span>
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Animeals</a>
+                  <a class="sub-menu__text" href="html/animeals.html"
+                    >Animeals</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Financial Assistance</a>
+                  <a class="sub-menu__text" href="financial-assist.html"
+                    >Financial Assistance</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Humane Education</a>
+                  <a class="sub-menu__text" href="html/humane-edu.html"
+                    >Humane Education</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Low-cost Spay/Neuter</a>
+                  <a class="sub-menu__text" href="html/spay-neuter-assist.html"
+                    >Low-cost Spay/Neuter</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Pet Adoption</a>
+                  <a class="sub-menu__text" href="html/adopt.html"
+                    >Pet Adoption</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Pet Rehoming</a>
+                  <a class="sub-menu__text" href="html/pet-rehome.html"
+                    >Pet Rehoming</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">SWAP</a>
+                  <a class="sub-menu__text" href="html/swap.html">SWAP</a>
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">TNR Feral Cat Resource</a>
+                  <a class="sub-menu__text" href="html/tnr.html"
+                    >TNR Feral Cat Resource</a
+                  >
                 </li>
               </ul>
             </div>
           </li>
           <li class="js-support main-menu__li main-menu__li--adjst">
-            <a class="effect main-menu__text" href="#"
+            <a class="effect main-menu__text" href="html/support.html"
               >Support PAWS<span class="main-menu__arrw"> &#8250;</span></a
             >
             <div class="sub-menu sub-menu-4">
@@ -150,24 +184,31 @@
                   ><span class="sub-menu__title-text">Support Paws</span>
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Donate</a>
+                  <a class="sub-menu__text" href="html/donate.html">Donate</a>
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Newsletter Signup</a>
+                  <a class="sub-menu__text" href="html/newsletter-signup.html"
+                    >Newsletter Signup</a
+                  >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#"
+                  <a class="sub-menu__text" href="html/partners.html"
                     >PAWS Partners & Resources</a
                   >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="#">Volunteer</a>
+                  <a class="sub-menu__text" href="html/volunteer.html"
+                    >Volunteer</a
+                  >
                 </li>
               </ul>
             </div>
           </li>
         </ul>
       </nav>
+
+      <!-- End navigation -->
+
       <form action="" class="paws-search">
         <label for="paws-search" class="paws-search__lbl"></label>
         <input
@@ -220,7 +261,7 @@
 
       <section class="quick-links">
         <div class="quick-link quick-link--adopt">
-          <a href=""
+          <a href="html/adopt.html"
             ><img
               src="images/adopt-photo-1.jpg"
               alt="Kitten on its back in the grass"
@@ -228,7 +269,7 @@
           /></a>
         </div>
         <div class="quick-link quick-link--SWAP">
-          <a href=""
+          <a href="html/swap.html"
             ><img
               src="images/SWAP-photo-1.jpg"
               alt="Dog kissing elderly man"
@@ -236,7 +277,7 @@
           /></a>
         </div>
         <div class="quick-link quick-link--TNR">
-          <a href=""
+          <a href="html/tnr.html"
             ><img
               src="images/TNR-photo-1_1.jpg"
               alt="Feral cat staring, with unkempt fur"
@@ -244,7 +285,7 @@
           /></a>
         </div>
         <div class="quick-link quick-link--take-action">
-          <a href="#"
+          <a href="html/action.html"
             ><img
               src="images/take-action-photo-1.jpg"
               alt="Sad seal"
@@ -252,7 +293,7 @@
           /></a>
         </div>
         <div class="quick-link quick-link--education">
-          <a href=""
+          <a href="html/animal-welfare-edu.html"
             ><img
               src="images/animal-welfare-education-photo-1.jpg"
               alt="Brown cow with tagged ears"
@@ -260,7 +301,7 @@
           /></a>
         </div>
         <div class="quick-link quick-link--estate-planning">
-          <a href=""
+          <a href="html/estate-planning.html"
             ><img
               src="images/estate-planning-photo-1.jpg"
               alt="Hand signing a document"
@@ -272,10 +313,12 @@
     <footer>
       <ul class="footer-nav">
         <li class="footer-nav__li footer-nav__li--current">
-          <a href="#">Home</a>
+          <a href="html/index.html">Home</a>
         </li>
-        <li class="footer-nav__li"><a href="#">Privacy Policy</a></li>
-        <li class="footer-nav__li"><a href="#">Contact</a></li>
+        <li class="footer-nav__li">
+          <a href="html/privacy.html">Privacy Policy</a>
+        </li>
+        <li class="footer-nav__li"><a href="html/contact.html">Contact</a></li>
       </ul>
       <ul class="social-media">
         <li class="social-media__li">
