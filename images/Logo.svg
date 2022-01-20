@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.1719924"
+     inkscape:cx="-460.63698"
+     inkscape:cy="561.46606"
+     inkscape:window-width="958"
+     inkscape:window-height="1041"
+     inkscape:window-x="-8"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -145.39907,173.30742 c 5.2054,2.1828 19.38077,-2.4596 23.42924,-3.79002 4.04846,-1.33042 12.95142,2.57446 19.63921,3.79002 4.030664,0.73261 8.717931,-1.46889 11.025516,-6.5464 1.115519,-2.45454 0.282399,-8.40075 -3.445475,-11.71462 -9.761071,-8.67703 -10.990191,-10.01973 -20.156031,-21.53422 -2.32627,-2.92235 -10.53879,-4.2712 -13.95418,-0.17228 -6.04719,7.25743 -7.92479,11.88403 -17.91647,20.67286 -1.95292,1.71782 -5.57772,6.67142 -5.16822,9.99188 0.68631,5.56501 1.341,7.11998 6.54641,9.30278 z"
+       id="path42"
+       sodipodi:nodetypes="zzsssssssz" />
+    <ellipse
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path2937"
+       cx="-136.7384"
+       cy="135.45934"
+       rx="5.6644421"
+       ry="7.7962213" />
+  </g>
+</svg>
