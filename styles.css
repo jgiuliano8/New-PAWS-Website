@@ -161,6 +161,10 @@ main {
   justify-self: center;
 }
 
+.slideshow img {
+  max-width: fit-content(100%);
+}
+
 .intro {
   grid-row: 2 / 3;
   grid-column: 3 / 11;
