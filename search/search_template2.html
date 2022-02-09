@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=windows-1252">
+	<title>Wrensoft - Search this website</title>
+	<meta name="DESCRIPTION" content="Search the Wrensoft website here">
+	<link rel="stylesheet" href="wrensoft.css" type="text/css">
+	<link rel="stylesheet" href="zoom_autocomplete.css" type="text/css">
+	<style type="text/css">
+		.highlight { background: #FFFF40; }
+		.searchheading { font-size: 130%; font-weight: bold; margin-top: 30px; }
+		.summary { font-size: 100%; font-style: italic; margin-top: 10px; }
+		.suggestion { font-size: 100%; }
+		.results { font-size: 100%; line-height: 150%; }
+		.category { color: #999999; }
+		.sorting { text-align: right; margin-top: 10px; }
+
+		.result_title { font-size: 100%; }		
+		.description { font-size: 100%; color: #008000; }
+		.context { font-size: 100%; }
+		.infoline { font-size: 80%; font-style: normal; color: #808080;}
+
+		form.zoom_searchform { font-size: 100%; margin-bottom: 10px; }
+		.zoom_results_per_page { font-size: 80%; margin-left: 10px; }
+		.zoom_match { font-size: 80%; margin-left: 10px;}				
+		.zoom_categories { font-size: 80%; }
+		.zoom_categories ul { display: inline; margin: 0px; padding: 0px;}
+		.zoom_categories li { display: inline; margin-left: 15px; list-style-type: none; }
+		
+		input.zoom_button {  }
+		input.zoom_searchbox {  }		
+		
+		.result_image { float: left; display: block; }
+		.result_image img { margin: 10px; width: 80px; border: 0px; }
+
+		.result_block { margin-top: 15px; margin-bottom: 15px; clear: left; }
+		.result_altblock { margin-top: 15px; margin-bottom: 15px; clear: left; }
+		
+		.result_pages { font-size: 100%; }
+		.result_pagescount { font-size: 100%; }
+		
+		.searchtime { font-size: 80%; }
+		
+		.cat_summary ul { margin: 0px; padding: 0px; display: inline; }
+		.cat_summary li { display: inline; margin-left: 15px; list-style-type: none; }		
+		
+		.recommended 
+		{ 
+			background: #DFFFBF; 
+			border-top: 1px dotted #808080; 
+			border-bottom: 1px dotted #808080; 
+			margin-top: 15px; 
+			margin-bottom: 15px; 
+		}
+		.recommended_heading { float: right; font-weight: bold; }
+		.recommend_block { margin-top: 15px; margin-bottom: 15px; clear: left; }		
+		.recommend_title { font-size: 100%; }
+		.recommend_description { font-size: 100%; color: #008000; }
+		.recommend_infoline { font-size: 80%; font-style: normal; color: #808080;}
+	</style>									
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" rightmargin="0" topmargin="0" marginwidth="0" marginheight="0"><!--ZOOMSTOP-->
+<div id="header">
+	<div> </div>
+</div>
+<!--ZOOMRESTART--><form action="search.php" method="get">
+<div id="breadcrumbsbar">
+	<div id="breadcrumbs">
+		<div id="zoomsearch">
+			<span class="sbox_l"></span><span class="sbox"><input type="text" name="zoom_query" /></span><span class="sbox_go"><input type="image" src="images/searchrighticon.gif" alt="Go" /></span>
+		</div>
+		<div style="padding-top: 5px;">
+		<a href="index.html">Home</a> &#187; Search
+		</div>
+	</div>
+</div>
+</form>
+<div id="contentbox">	
+	<div id="content">
+		<div class="box" style="float: right; width:250px; z-index:2;">
+			<img src="images/lightbulb_on.png" width="32" height="32" align="left" style="margin-right: 10px;">
+	            <h2>About our search engine</h2>
+	            
+	            <p> The search function on our website uses our very own custom search engine 
+    	          package:<br><a href="zoom/index.html">Zoom Search Engine</a></p>
+				  <br>
+	            <p>You can download and install it on your own website! For more information, 
+	              click <a href="zoom/index.html">here</a>.</p>
+	            
+		</div>
+		<div style="z-index:1;">
+            <h1>Search the PAWS website</h1>            
+			<p>Enter a query to search our site. Note that you can use &quot;*&quot; 
+			  and &quot;?&quot; as wildcards. Enclosing more than one word in 
+			  double quotes (&quot;search engine&quot;) will search for the exact 
+			  phrase.</p>
+<form method="get" action="/search.php" class="zoom_searchform">
+<input type="hidden" name="zoom_sort" value="0" />
+<input type="hidden" name="zoom_xml" value="0" />
+<label for="zoom_searchbox">Search for:</label><input type="text" name="zoom_query" size="20" value="" id="zoom_searchbox" class="zoom_searchbox" />
+<input type="submit" value="Submit" class="zoom_button" />
+<span class="zoom_results_per_page"><label for="zoom_per_page">Results per page:</label>
+<select name="zoom_per_page" id="zoom_per_page">
+<option selected="selected">10</option>
+<option>20</option>
+<option>50</option>
+<option>100</option>
+</select><br /><br /></span>
+<span class="zoom_match"><label for="zoom_match">Match:</label>
+<label for="zoom_match_any"><input type="radio" id="zoom_match_any" name="zoom_and" value="0" />any search words</label>
+<label for="zoom_match_all"><input type="radio" id="zoom_match_all" name="zoom_and" value="1" checked="checked" />all search words</label>
+<br /><br /></span>
+<span class="zoom_categories"><label for="zoom_cat">Category:</label><select name="zoom_cat[]" id="zoom_cat"><option value="-1">All</option><option value="0">Support</option><option value="1">Forums</option></select>&nbsp;&nbsp;
+</span>
+</form>
+<!--Zoom Search Engine Version 7.0 (Debug build) ENT-->
+
+<center><p><small>Search powered by <a href="http://www.wrensoft.com/zoom/" target="_blank"><b>Zoom Search Engine</b></a></small></p></center>
+	
+<!-- blank template, see search.php --><script language="javascript" type="text/javascript">
+var ZoomAutoComplete_URL = "/cgi-bin/search.cgi?zoom_ac=1";
+// Autocomplete script for Zoom Search Engine
+// (c) Copyright 2014 Wrensoft
+
+var ZoomAutoComplete_xmlHttp = null; 
+var ZoomAutoComplete_Selected = 0;
+
+// Keycode mapping
+var ZOOM_AUTOCOMPLETE_TAB = 9;
+var ZOOM_AUTOCOMPLETE_ENTER = 13;
+var ZOOM_AUTOCOMPLETE_ESC = 27;
+var ZOOM_AUTOCOMPLETE_KEYUP = 38;
+var ZOOM_AUTOCOMPLETE_KEYDN = 40;
+
+function ZoomAutoComplete_UseSuggestion(p_searchString) 
+{
+	if (p_searchString != '' && p_searchString != undefined)		
+	{
+		var elem = document.getElementById("zoom_searchbox");			
+		elem.value = p_searchString;
+		var acElem = document.getElementById("zoom_ac_dropdown");
+		acElem.style.visibility = 'hidden';
+		return (true);
+	}	
+	else
+	{
+		var dd = document.getElementById('zoom_ac_dropdown');	
+		var items = dd.getElementsByTagName('a');	
+		var icount = 0;
+		for (i in items)
+		{
+			var li = items[i];	
+			if (icount == ZoomAutoComplete_Selected)
+			{
+				if (li.innerHTML != undefined)
+					ZoomAutoComplete_UseSuggestion(li.innerHTML);
+				break;
+			}
+			icount++;
+		}		
+	}	
+	return (false);
+}		
+
+function ZoomAutoComplete_GetKeyCode(ev)
+{
+	if (ev)	// mozilla
+		return ev.keyCode;
+	if (window.event) // IE
+		return window.event.keyCode;
+}
+
+function ZoomAutoComplete_Hide()
+{
+	var acElem = document.getElementById('zoom_ac_dropdown');				
+	acElem.style.visibility = 'hidden';	
+}
+
+function ZoomAutoComplete_Show()
+{
+	var acElem = document.getElementById('zoom_ac_dropdown');				
+	acElem.style.visibility = '';	
+}
+
+function ZoomAutoComplete_GetLeft(element)
+{
+	var curNode = element;
+    var left    = 0;
+    do
+    {
+        left += curNode.offsetLeft;
+        curNode = curNode.offsetParent;
+    } while(curNode.tagName.toLowerCase() != 'body' && curNode.style.position != 'fixed');
+    return left;
+}
+    
+function ZoomAutoComplete_GetTop(element)
+{
+    var curNode = element;
+    var top = 0;
+    do 
+    {
+        top += curNode.offsetTop;
+        curNode = curNode.offsetParent;
+    } while(curNode.tagName.toLowerCase() != 'body' && curNode.style.position != 'fixed');	
+    return top;
+}
+
+
+
+function ZoomAutoComplete_ChangeHighlight()
+{
+	var dd = document.getElementById('zoom_ac_dropdown');	
+	var items = dd.getElementsByTagName('div');	
+	var icount = 0;
+	var itotal = items.length;
+	if (ZoomAutoComplete_Selected < 0)
+		ZoomAutoComplete_Selected = 0;
+	else if (ZoomAutoComplete_Selected > itotal)
+		ZoomAutoComplete_Selected = ZoomAutoComplete_Selected - itotal;		
+
+	for (i in items)
+	{		
+		var li = items[i];		
+		if (icount == ZoomAutoComplete_Selected)
+		{			
+			li.className = 'zoom_ac_item_hl';			
+		}
+		else
+			li.className = 'zoom_ac_item';
+		icount++;
+	}
+}
+
+function ZoomAutoComplete_OnLoad(queryID) 
+{
+	var newDiv = document.createElement('div');
+   	newDiv.className = 'zoom_ac_dropdown'; // Don't use setAttribute()
+   	newDiv.id = 'zoom_ac_dropdown';   	         
+   	   	                   	
+	var inputBoxElem = document.getElementById(queryID);
+	inputBoxElem.setAttribute("autocomplete", "off");
+	if(inputBoxElem.type && inputBoxElem.type.toLowerCase() == "text")
+	{
+		var left  = ZoomAutoComplete_GetLeft(inputBoxElem);
+        var top   = ZoomAutoComplete_GetTop(inputBoxElem) + inputBoxElem.offsetHeight;
+        var width = inputBoxElem.offsetWidth;
+
+		inputBoxElem.parentNode.insertBefore(newDiv, inputBoxElem);		
+
+		newDiv.style.left       = left + 'px';
+        newDiv.style.top        = top + 'px';
+        newDiv.style.width      = width + 'px';                
+		newDiv.style.zIndex = '99';
+		newDiv.style.visibility = 'hidden';
+	}
+
+	inputBoxElem.onkeydown = function ZoomAutoComplete_KeyDown(ev)
+	{
+		switch (ZoomAutoComplete_GetKeyCode(ev))
+		{			
+			case ZOOM_AUTOCOMPLETE_TAB:
+				ZoomAutoComplete_UseSuggestion();
+				return true;
+		}
+	}
+	
+	inputBoxElem.onkeyup = function fetchHints(ev) 
+	{		
+		switch (ZoomAutoComplete_GetKeyCode(ev))
+		{			
+			case ZOOM_AUTOCOMPLETE_ESC:
+				ZoomAutoComplete_Hide();
+				return (true);
+			case ZOOM_AUTOCOMPLETE_KEYUP:
+				if (ZoomAutoComplete_Selected > 0)
+					ZoomAutoComplete_Selected--;					
+				ZoomAutoComplete_ChangeHighlight();
+				return (true);
+			case ZOOM_AUTOCOMPLETE_KEYDN:			
+				ZoomAutoComplete_Selected++;
+				ZoomAutoComplete_ChangeHighlight();
+				return (true);		
+			default:
+				break;			
+		}	
+				
+		if (!ev) 
+			ev = window.event;
+		
+		var input;
+		if (ev.srcElement)
+			input = ev.srcElement;
+		else
+			input = ev.target;
+												
+		if (input.value)
+		{
+			ZoomAutoComplete_Show();
+			ZoomAutoComplete_CallZoom(input.value);				
+		}
+		else			
+			ZoomAutoComplete_Hide();
+						
+		return (true);
+	}			
+}
+
+
+
+function ZoomAutoComplete_GetXMLHTTP()
+{
+    var A = null;
+    try
+    {
+    	A = new ActiveXObject("Msxml2.XMLHTTP");
+    }
+    catch(E)
+    {
+	    try
+	    {
+	    	A = new ActiveXObject("Microsoft.XMLHTTP");
+	    }
+	    catch(oc)
+	    {
+	    	A = null;
+	    }
+    }
+    if(!A && typeof XMLHttpRequest != "undefined") 
+    {
+    	A = new XMLHttpRequest();
+    }
+    return A;
+}
+
+	
+function ZoomAutoComplete_CallZoom(Rb)
+{	
+	//Clear previous search results and hide from the user
+	var acElem = document.getElementById('zoom_ac_dropdown');
+	acElem.innerHTML = "";
+	acElem.style.visibility = 'hidden';
+
+	var openURL = "";
+	if (typeof ZoomAutoComplete_URL == "undefined")
+		openURL = "search.php?zoom_ac=1";
+	else
+		openURL = ZoomAutoComplete_URL;
+	
+	if(ZoomAutoComplete_xmlHttp && ZoomAutoComplete_xmlHttp.readyState!=0)
+	{
+		ZoomAutoComplete_xmlHttp.abort();
+	}
+	ZoomAutoComplete_xmlHttp = ZoomAutoComplete_GetXMLHTTP();
+	if (ZoomAutoComplete_xmlHttp)
+	{
+		ZoomAutoComplete_xmlHttp.open("GET", openURL+"&zoom_query="+Rb, true);
+		ZoomAutoComplete_xmlHttp.onreadystatechange = function() {
+			if (ZoomAutoComplete_xmlHttp.readyState==4 && ZoomAutoComplete_xmlHttp.responseText) 
+			{
+				if (ZoomAutoComplete_xmlHttp.responseText != 0) 
+				{
+					var acElem = document.getElementById('zoom_ac_dropdown');
+					acElem.innerHTML = ZoomAutoComplete_xmlHttp.responseText;				
+					acElem.style.visibility = '';
+				}
+		  	}
+		};
+		ZoomAutoComplete_xmlHttp.send(null);
+	}
+}if (window.addEventListener) window.addEventListener('load', function() { ZoomAutoComplete_OnLoad('zoom_searchbox');}, false); else if (window.attachEvent) window.attachEvent('onload', function() { ZoomAutoComplete_OnLoad('zoom_searchbox');}); else window['onload'] = function() { ZoomAutoComplete_OnLoad('zoom_searchbox');}</script>
+<style>
+Error: Failed to include file: zoom_autocomplete.css
+<br \></style>
+		</div>		
+	</div>
+</div>
+	
+	<!--ZOOMSTOP-->
+<div id="footer">
+Copyright &copy; 2014 Wrensoft &reg;<br />
+All rights reserved | <a href="http://www.wrensoft.com/legal/disclaimer.html" class="noline">Legal disclaimer</a>
+</div>
+<!--ZOOMRESTART--></body>
+</html>
