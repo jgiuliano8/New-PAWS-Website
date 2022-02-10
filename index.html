@@ -209,17 +209,24 @@
 
       <!-- End navigation -->
 
-      <form action="" class="paws-search">
+      <!-- Begin Search Box -->
+
+      <form action="html/search-results.html" method="GET" class="paws-search">
         <label for="paws-search" class="paws-search__lbl"></label>
         <input
-          type="search"
-          name="paws-search"
+          type="text"
+          name="q"
           placeholder="search PAWS"
           size="10"
           class="paws-search__inpt"
         />
-        <i class="fas fa-search paws-search__icn"></i>
+        <button type="submit">
+          <i class="fas fa-search paws-search__icn"></i>
+        </button>
       </form>
+
+      <!-- End Search box -->
+
       <a href="html/donate.html" class="btn btn--donate">Donate</a>
       <a href="html/volunteer.html" class="btn btn--volunteer">Volunteer</a>
     </header>
