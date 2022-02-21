@@ -27,7 +27,7 @@ img {
 
 header {
   display: grid;
-  grid-template: repeat(4, auto) / repeat(12, 1fr);
+  grid-template: repeat(5, auto) / repeat(12, 1fr);
   row-gap: 1em;
   /* Relative position and z-index here so nav sub-menus
      display above the slideshow. */
@@ -57,7 +57,7 @@ header {
 }
 
 .paws-search {
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   grid-column: 7 / 12;
   justify-self: right;
   /* align-self: center -> removes the desire for the
@@ -110,7 +110,7 @@ form button {
 
 .hamburger {
   position: relative;
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   grid-column: 12 / 13;
   justify-self: right;
   align-self: center;
@@ -130,8 +130,16 @@ form button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.breadcrumbs {
+  grid-row: 3 / 4;
+  grid-column: 9 / 13;
+  justify-self: end;
+  margin: 0;
+  font-size: 10px;
+}
+
 .btn--donate {
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   grid-column: 1 / 7;
   justify-self: stretch;
   background-color: rgb(var(--dark-accent-color));
@@ -139,7 +147,7 @@ form button {
 }
 
 .btn--volunteer {
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   grid-column: 7 / 13;
   justify-self: stretch;
   background-color: rgb(var(--base-color));
@@ -291,8 +299,9 @@ footer {
   transition: transform 250ms;
 }
 
-.footer-nav__li--current a {
-  color: rgb(var(--light-accent-color));
+.footer-nav__li--current a,
+.breadcrumb--current {
+  color: rgb(var(--base-color));
 }
 
 .footer-nav a:hover {
@@ -338,13 +347,17 @@ footer {
 
 @media screen and (min-width: 420px) {
   .logo {
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
     grid-column: 1 / 6;
+  }
+
+  .breadcrumbs {
+    grid-row: 1 / 2;
   }
 
   .paws-search,
   .hamburger {
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
   }
 
   .hamburger {
@@ -359,7 +372,7 @@ footer {
   }
   .btn--donate,
   .btn--volunteer {
-    grid-row: 2/3;
+    grid-row: 3 / 4;
     align-self: start;
   }
 
@@ -379,26 +392,30 @@ footer {
 
 @media screen and (min-width: 675px) {
   .logo {
-    grid-row: 1 / 5;
+    grid-row: 1 / 6;
     grid-column: 1 / 4;
   }
 
-  .paws-search {
+  .breadcrumbs {
     grid-row: 1 / 2;
+  }
+
+  .paws-search {
+    grid-row: 2 / 3;
     grid-column: 10 / 13;
     justify-self: right;
     margin-right: 0;
   }
 
   .navigation {
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     grid-column: 4 / 13;
     align-self: start;
   }
 
   .btn--donate,
   .btn--volunteer {
-    grid-row: 3/4;
+    grid-row: 4 / 5;
     align-self: start;
   }
 
