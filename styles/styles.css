@@ -135,7 +135,7 @@ form button {
   grid-column: 9 / 13;
   justify-self: end;
   margin: 0;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 .btn--donate {
