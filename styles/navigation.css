@@ -244,6 +244,8 @@ a {
 
   .main-menu__li,
   .sub-menu__li {
+    display: inline-block;
+    position: relative;
     margin: 0 0.75em;
     padding: 0;
     border-bottom: none;
@@ -289,6 +291,10 @@ a {
 
   .sub-menu__li {
     margin: 0.5em 1em;
+  }
+
+  .main-menu__text {
+    margin: 0;
   }
 
   .main-menu__text:hover,
