@@ -6,7 +6,7 @@
 
 :root {
   font-size: 16px;
-  color: rgb(32, 32, 32);
+  color: rgb(15, 15, 15);
   --base-color: 55, 122, 167;
   --light-accent-color: 114, 154, 181;
   --dark-accent-color: 38, 84, 115;
@@ -21,6 +21,38 @@ body {
 
 img {
   max-width: 100%;
+}
+
+/* Global link styling */
+
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+main a {
+  text-decoration: underline;
+}
+
+main a:link,
+.breadcrumbs a:link {
+  color: rgb(var(--light-accent-color));
+}
+
+main a:visited,
+.breadcrumbs a:visited {
+  color: rgb(var(--dark-accent-color));
+}
+main a:focus,
+.breadcrumbs a:focus {
+  color: rgb(var(--base-color));
+}
+main a:hover,
+.breadcrumbs a:hover {
+  color: rgb(var(--base-color));
+}
+main a:active,
+.breadcrumbs a:active {
+  color: #f09433;
 }
 
 /* Layout - Mobile First*/
@@ -186,15 +218,20 @@ footer {
   max-width: fit-content(100%);
 }
 
-.intro {
-  grid-row: 2 / 3;
-  grid-column: 3 / 11;
+h1 {
+  margin: 0 auto 2em;
 }
 
-.intro__p {
-  text-align: center;
-  margin: 2em auto;
-  max-width: 300px;
+.content {
+  grid-row: 2 / 3;
+  grid-column: 3 / 11;
+  padding: 3em;
+}
+
+.content__p {
+  text-align: left;
+  margin-block: 1em;
+  max-width: 400px;
   line-height: 1.5;
 }
 
@@ -299,8 +336,7 @@ footer {
   transition: transform 250ms;
 }
 
-.footer-nav__li--current a,
-.breadcrumb--current {
+.footer-nav__li--current a {
   color: rgb(var(--base-color));
 }
 

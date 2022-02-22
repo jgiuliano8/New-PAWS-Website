@@ -68,7 +68,8 @@
 .close-sub-menu-1,
 .close-sub-menu-2,
 .close-sub-menu-3,
-.close-sub-menu-4 {
+.close-sub-menu-4,
+.main-menu__arrw {
   cursor: pointer;
 }
 
@@ -78,13 +79,19 @@
 .close-nav,
 .main-menu__arrw {
   position: relative;
-  top: -2px;
   font-size: 2rem;
-  vertical-align: middle;
+}
+
+.close-nav {
+  top: -2px;
 }
 
 .main-menu__arrw {
+  display: inline-block;
   top: -4px;
+  margin-left: auto;
+  padding-left: 0.75em;
+  border-left: 1px dotted rgba(32, 32, 32, 0.2);
 }
 
 .close-sub-menu-1,
@@ -154,8 +161,8 @@
 
 .main-menu__li,
 .sub-menu__li {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  align-items: center;
   padding: 1em;
   border-bottom: 1px dotted rgba(32, 32, 32, 0.2);
 }
@@ -176,6 +183,7 @@ a {
 .sub-menu__text {
   color: rgb(32, 32, 32);
   text-transform: uppercase;
+  margin-right: 1em;
 }
 
 .sub-menu__text:active {
@@ -259,22 +267,18 @@ a {
 
   /* On hover of the main menu list items, the sub-menus
      appear with display block, but position absolute helps them appear over
-     exisitng content, instead of affecting the layout. */
+     existing content, instead of affecting the layout. */
   .main-menu__li:hover .sub-menu-1,
   .main-menu__li:hover .sub-menu-2,
   .main-menu__li:hover .sub-menu-3,
   .main-menu__li:hover .sub-menu-4,
-  .main-menu__li:focus-within > .sub-menu-1,
+  .main-menu__li:focus-within .sub-menu-1,
   .main-menu__li:focus-within .sub-menu-2,
   .main-menu__li:focus-within .sub-menu-3,
   .main-menu__li:focus-within .sub-menu-4 {
     display: block;
     position: absolute;
     border: 2px solid rgb(var(--base-color));
-  }
-
-  .main-menu__li > a {
-    cursor: default;
   }
 
   .sub-menu__list {
@@ -287,9 +291,11 @@ a {
     margin: 0.5em 1em;
   }
 
+  .main-menu__text:hover,
+  .main-menu__text:focus,
   .sub-menu__text:hover,
   .sub-menu__text:focus {
-    opacity: 0.65;
+    color: rgb(130, 130, 130);
   }
 
   /* The effect class and it's hover state puts a
@@ -310,7 +316,6 @@ a {
 
   .effect:hover::after,
   .effect:focus::after {
-    z-index: 10;
     left: 0px;
     right: 0px;
     height: 4px;
