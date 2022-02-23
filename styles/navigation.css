@@ -175,10 +175,6 @@
   padding-block: 0.5em;
 }
 
-a {
-  text-decoration: none;
-}
-
 .main-menu__text,
 .sub-menu__text {
   color: rgb(32, 32, 32);

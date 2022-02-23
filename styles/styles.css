@@ -25,12 +25,9 @@ img {
 
 /* Global link styling */
 
-.breadcrumbs a {
+header a,
+footer a {
   text-decoration: none;
-}
-
-main a {
-  text-decoration: underline;
 }
 
 main a:link,
@@ -168,6 +165,10 @@ form button {
   justify-self: end;
   margin: 0;
   font-size: 0.625rem;
+}
+
+.breadcrumb--current {
+  font-weight: 600;
 }
 
 .btn--donate {
@@ -315,7 +316,7 @@ h1 {
 
 .footer-nav {
   font-size: 0.875rem;
-  margin-block: 2em;
+  margin-block: 1em;
 }
 
 .social-media {
@@ -330,17 +331,24 @@ h1 {
 
 .footer-nav a {
   display: inline-block;
-  color: rgb(var(--dark-accent-color));
-  transform: scale(1);
-  transition: transform 250ms;
 }
 
-.footer-nav__li--current a {
-  color: rgb(var(--base-color));
+.footer-nav a:link,
+.footer-nav a:visited {
+  color: rgb(32, 32, 32);
 }
 
+.footer-nav a:focus,
 .footer-nav a:hover {
-  transform: scale(1.15);
+  color: rgb(130, 130, 130);
+}
+
+.footer-nav a:active {
+  color: #f09433;
+}
+
+.footer-nav__li--current {
+  color: rgb(var(--base-color));
 }
 
 .fa-facebook {
