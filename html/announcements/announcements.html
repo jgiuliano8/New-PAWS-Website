@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pioneers for Animal Welfare Society, Inc.</title>
+    <title>PAWS Announcements</title>
     <link rel="icon" href="/images/favicon.ico" type="image/ico" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="stylesheet" href="/styles/navigation.css" />
-    <link rel="stylesheet" href="/styles/slideshow.css" />
     <script defer src="/scripts/navigation.js"></script>
-    <script defer src="/scripts/slideshow.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -18,10 +16,29 @@
   </head>
   <body>
     <header>
-      <a href="index.html" class="logo">
-        <img src="images/logo-PAWS-v2.jpg" alt="PAWS Logo" class="logo__img" />
+      <a href="/index.html" class="logo">
+        <img src="/images/logo-PAWS-v2.jpg" alt="PAWS Logo" class="logo__img" />
         <p class="logo__txt">Pioneers for Animal Welfare Society, Inc.</p>
       </a>
+
+      <!-- Begin Search Box -->
+
+      <form action="/html/search-results.html" method="GET" class="paws-search">
+        <label for="paws-search" class="paws-search__lbl"></label>
+        <input
+          type="text"
+          name="q"
+          placeholder="search PAWS"
+          size="10"
+          class="paws-search__inpt"
+        />
+        <button type="submit">
+          <i class="fas fa-search paws-search__icn"></i>
+        </button>
+      </form>
+
+      <!-- End Search box -->
+
       <a tabindex="0" aria-label="Open navigation" class="hamburger"
         ><div class="hamburger__bar"></div
       ></a>
@@ -40,18 +57,15 @@
             >
             <span class="main-menu__title-text">Main Menu</span>
           </li>
-          <li class="main-menu__li main-menu__li--current">
-            <a class="main-menu__text effect">Home</a>
+          <li class="main-menu__li">
+            <a class="effect main-menu__text" href="/index.html">Home</a>
           </li>
           <li class="main-menu__li">
             <a class="effect main-menu__text" href="/html/about.html">About</a>
           </li>
-          <li class="main-menu__li main-menu__li--adjst">
-            <a
-              class="effect main-menu__text"
-              href="/html/announcements/announcements.html"
-              >Announcements</a
-            ><a class="js-announcements main-menu__arrw"> &#8250;</a>
+          <li class="main-menu__li main-menu__li--adjst main-menu__li--current">
+            <a class="main-menu__text effect"> Announcements</a>
+            <a class="js-announcements main-menu__arrw"> &#8250;</a>
             <div class="sub-menu sub-menu-1">
               <ul class="sub-menu__list">
                 <li class="sub-menu__li sub-menu__li--title">
@@ -237,117 +251,29 @@
 
       <!-- End navigation -->
 
-      <!-- Begin Search Box -->
+      <!-- Breadcrumbs -->
+      <p class="breadcrumbs">
+        <a href="/index.html">PAWS LI</a> >
+        <span class="breadcrumb--current">Announcements</span>
+      </p>
 
-      <form action="/html/search-results.html" method="GET" class="paws-search">
-        <label for="paws-search" class="paws-search__lbl"></label>
-        <input
-          type="text"
-          name="q"
-          placeholder="search PAWS"
-          size="10"
-          class="paws-search__inpt"
-        />
-        <button type="submit">
-          <i class="fas fa-search paws-search__icn"></i>
-        </button>
-      </form>
-
-      <!-- End Search box -->
-
+      <!-- Donate & Volunteer buttons -->
       <a href="html/donate.html" class="btn btn--donate">Donate</a>
       <a href="html/volunteer.html" class="btn btn--volunteer">Volunteer</a>
     </header>
     <main>
-      <!-- Image slideshow/carousel start-->
-      <div class="slideshow slideshow--1">
-        <div class="dots">
-          <div class="dots__dot dots__dot--current" data-dot-number="1"></div>
-          <div class="dots__dot" data-dot-number="2"></div>
-          <div class="dots__dot" data-dot-number="3"></div>
-        </div>
-        <img
-          src="/images/carousel/i-am-loveable-2.jpg"
-          alt="Black and white image of sad and skinny cat"
-          class="slideshow__img slideshow__img--1 slideshow__img--current"
-        />
-        <img
-          src="/images/carousel/adopt-support-volunteer-2.jpg"
-          alt="Man facing away, volunteering and holding dog"
-          class="slideshow__img slideshow__img--2"
-        />
-        <img
-          src="/images/carousel/home-sweet-home-2.jpg"
-          alt="Man facing away, holding golden retriever. Mountains in background."
-          class="slideshow__img slideshow__img--3"
-        />
-        <img src="/images/carousel/placeholder.png" alt="" />
-      </div>
-      <!-- Image slideshow/carousel end-->
-
       <section class="content">
-        <p class="content__p">
-          PAWS is an all-volunteer, non-profit organization dedicated to
-          promoting respect for all living things, as well as attempting to
-          reduce the increasing companion animal population. PAWS is currently
-          celebrating its 50th year of helping animals.
-        </p>
+        <h1>PAWS Announcements</h1>
+        <p class="content__p"></p>
       </section>
 
-      <section class="quick-links">
-        <div class="quick-link quick-link--adopt">
-          <a href="/html/services/adopt.html"
-            ><img
-              src="/images/adopt-photo-1.jpg"
-              alt="Kitten on its back in the grass"
-              class="quick-link__img"
-          /></a>
-        </div>
-        <div class="quick-link quick-link--SWAP">
-          <a href="/html/services/swap.html"
-            ><img
-              src="/images/SWAP-photo-1.jpg"
-              alt="Dog kissing elderly man"
-              class="quick-link__img"
-          /></a>
-        </div>
-        <div class="quick-link quick-link--TNR">
-          <a href="/html/services/tnr.html"
-            ><img
-              src="/images/TNR-photo-1_1.jpg"
-              alt="Feral cat staring, with unkempt fur"
-              class="quick-link__img"
-          /></a>
-        </div>
-        <div class="quick-link quick-link--take-action">
-          <a href="/html/announcements/action.html"
-            ><img
-              src="/images/take-action-photo-1.jpg"
-              alt="Sad seal"
-              class="quick-link__img"
-          /></a>
-        </div>
-        <div class="quick-link quick-link--education">
-          <a href="/html/education/animal-welfare-edu.html"
-            ><img
-              src="/images/animal-welfare-education-photo-1.jpg"
-              alt="Brown cow with tagged ears"
-              class="quick-link__img"
-          /></a>
-        </div>
-        <div class="quick-link quick-link--estate-planning">
-          <a href="/html/education/estate-planning.html"
-            ><img
-              src="/images/estate-planning-photo-1.jpg"
-              alt="Hand signing a document"
-              class="quick-link__img quick-link__img--estate-planning"
-          /></a>
-        </div>
-      </section>
+      <section class="quick-links"></section>
     </main>
     <footer>
       <ul class="footer-nav">
-        <li class="footer-nav__li footer-nav__li--current">Home</li>
+        <li class="footer-nav__li footer-nav__li--current">
+          <a href="/index.html">Home</a>
+        </li>
         <li class="footer-nav__li">
           <a href="/html/privacy.html">Privacy Policy</a>
         </li>

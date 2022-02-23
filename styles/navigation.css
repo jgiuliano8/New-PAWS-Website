@@ -175,6 +175,14 @@
   padding-block: 0.5em;
 }
 
+/* The menu list item text color for the current page
+     is the base website color to set it apart from the
+     other menu item pages.  */
+.main-menu__li--current > a:first-child {
+  text-transform: uppercase;
+  color: rgb(var(--base-color));
+}
+
 .main-menu__text,
 .sub-menu__text {
   color: rgb(32, 32, 32);
@@ -190,6 +198,10 @@
 .sub-menu__title-text {
   padding-left: 1em;
   opacity: 0.65;
+}
+
+.main-menu__arrw {
+  color: rgb(32, 32, 32);
 }
 
 /* Media query for larger screens. The hamburger disappears
@@ -249,14 +261,6 @@
 
   .main-menu__li + .main-menu__li {
     margin: 0 0 0 1.25em;
-  }
-
-  /* The menu list item text color for the current page
-     is the base website color to set it apart from the
-     other menu item pages.  */
-  .main-menu__li--current {
-    text-transform: uppercase;
-    color: rgb(var(--base-color));
   }
 
   /* Sub-menus start out as display none which makes them invisible. */
