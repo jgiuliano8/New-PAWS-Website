@@ -70,7 +70,7 @@ ol.phpfmg_form li {
 .text_area,
 .text_select {
   padding: 0.25em;
-  width: 300px;
+  /* width: 300px; */
   border: solid 2px rgb(var(--base-color));
   border-radius: 4px;
 }
