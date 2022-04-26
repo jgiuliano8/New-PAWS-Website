@@ -165,10 +165,12 @@ form button {
   justify-self: end;
   margin: 0;
   font-size: 0.625rem;
+  text-transform: uppercase;
 }
 
 .breadcrumb--current {
   font-weight: 600;
+  text-transform: none;
 }
 
 .btn--donate {
