@@ -246,7 +246,8 @@ h2 {
   line-height: 1.5;
 }
 
-.quick-links {
+.quick-links,
+.volunteer {
   grid-row: 3 / 4;
   grid-column: 1 / 13;
   justify-self: center;
@@ -482,7 +483,8 @@ h2 {
     white-space: nowrap;
   }
 
-  .quick-links {
+  .quick-links,
+  .volunteer {
     grid-row: 3 / 4;
     grid-column: 1 / 13;
     display: grid;

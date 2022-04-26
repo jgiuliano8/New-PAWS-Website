@@ -1,0 +1,114 @@
+/* The Volunteer Page/Form Stylesheet */
+
+.volunteer {
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  padding-top: 140%;
+  margin: 0 auto;
+  /* margin-bottom: 2em; */
+}
+
+.volunteer__form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+fieldset {
+  padding: 1em;
+  border: solid 2px rgb(var(--light-accent-color));
+  border-radius: 4px;
+}
+
+legend {
+  font-size: 1.25rem;
+  padding: 0.5em;
+}
+
+select,
+option {
+  font-size: 13px;
+}
+
+ol.phpfmg_form {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ol.phpfmg_form li {
+  margin-bottom: 5px;
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.form_field,
+.form_required {
+  font-weight: bold;
+}
+
+.form_required {
+  color: red;
+  margin-right: 8px;
+}
+
+.field_block_over {
+}
+
+.form_submit_block {
+  padding-top: 3px;
+}
+
+.text_box,
+.text_area,
+.text_select {
+  padding: 0.25em;
+  width: 300px;
+  border: solid 2px rgb(var(--base-color));
+  border-radius: 4px;
+}
+
+.text_area {
+  height: 80px;
+}
+
+.form_error_title {
+  font-weight: bold;
+  color: red;
+}
+
+.form_error {
+  background-color: #f4f6e5;
+  border: 1px dashed #ff0000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form_error_highlight {
+  background-color: #f4f6e5;
+  border-bottom: 1px dashed #ff0000;
+}
+
+div.instruction_error {
+  color: red;
+  font-weight: bold;
+}
+
+hr.sectionbreak {
+  height: 1px;
+  color: #ccc;
+}
+
+#one_entry_msg {
+  background-color: #f4f6e5;
+  border: 1px dashed #ff0000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
