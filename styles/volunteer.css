@@ -3,7 +3,7 @@
 .volunteer {
   position: relative;
   overflow: hidden;
-  width: 70%;
+  width: 100%;
   padding-top: 140%;
   margin: 0 auto;
   /* margin-bottom: 2em; */
@@ -111,4 +111,11 @@ hr.sectionbreak {
   border: 1px dashed #ff0000;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 480px) {
+  .volunteer {
+    width: 70%;
+    padding-top: 140%;
+  }
 }
