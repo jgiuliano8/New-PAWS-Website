@@ -28,7 +28,7 @@ h1 {
 .volunteer__form {
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 3;
+  aspect-ratio: 1 / 3.1;
 }
 
 fieldset {
