@@ -21,14 +21,14 @@ h1 {
 }
 
 .volunteer {
-  margin: 2em auto;
+  margin: 2em auto 0;
   max-width: 400px;
 }
 
 .volunteer__form {
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 2.8;
+  aspect-ratio: 1 / 3;
 }
 
 fieldset {
