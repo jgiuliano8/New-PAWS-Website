@@ -1764,11 +1764,11 @@
             <div class="col_field">
               <a
                 href="http://www.formmail-maker.com/"
-                onclick="document.getElementById('phpfmg_captcha_image').src='admin5c1d.png?mod=captcha&amp;func=get&amp;tid='+Math.random();return false;"
+                onclick="document.getElementById('phpfmg_captcha_image').src='/images/admin5c1d.png?mod=captcha&amp;func=get&amp;tid='+Math.random();return false;"
                 title="Free Mail Form Tool"
                 ><img
                   id="phpfmg_captcha_image"
-                  src="admin8759.png?mod=captcha&amp;func=get&amp;tid=1625066387"
+                  src="/images/admin8759.png?mod=captcha&amp;func=get&amp;tid=1625066387"
                   border="0"
                   style="cursor: pointer"
                   alt="Click the image to reload. PHP FormMail Generator at http://phpfmg.sourceforge.net"
@@ -1797,7 +1797,7 @@
               <span id="phpfmg_processing" style="display: none">
                 <img
                   id="phpfmg_processing_gif"
-                  src="admin.php20130326-4cbb/index1500.html?mod=image&amp;func=processing"
+                  src="/scripts/admin.php20130326-4cbb/index1500.html?mod=image&amp;func=processing"
                   border="0"
                   alt="Processing..."
                 />
@@ -1901,13 +1901,13 @@
         lookup = lookup.join("&");
 
         var url =
-          "adminb54b.html?mod=dd&amp;func=lookup&amp;n=" +
+          "/scripts/adminb54b.html?mod=dd&amp;func=lookup&amp;n=" +
           next +
           "&field_name=" +
           prefix +
           "&" +
           lookup;
-        me.http.open("get.html", url);
+        me.http.open("/scripts/get.html", url);
         me.http.onreadystatechange = function () {
           if (me.http.readyState == 4) {
             // rebuild the next dropdown options
