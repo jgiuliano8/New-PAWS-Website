@@ -178,7 +178,8 @@
 /* The menu list item text color for the current page
      is the base website color to set it apart from the
      other menu item pages.  */
-.main-menu__li--current > a:first-child {
+.main-menu__li--current,
+.sub-menu__li--current {
   text-transform: uppercase;
   color: rgb(var(--base-color));
 }
