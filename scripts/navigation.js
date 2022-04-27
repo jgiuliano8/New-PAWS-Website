@@ -16,9 +16,16 @@ function openMainMenu() {
 function closeMainMenu() {
   const nav = document.querySelector(".navigation");
   const mainElement = document.querySelector("main");
+  const vlntrElement = document.querySelector(".volunteer");
   const ftrElement = document.querySelector("footer");
+  const iFrameElement = document.querySelector(".volunteer__form");
   nav.classList.remove("nav-open");
-  mainElement.style.display = "grid";
+
+  if (!iFrameElement) {
+    mainElement.style.display = "grid";
+  } else {
+    mainElement.style.display = "block";
+  }
   ftrElement.style.display = "grid";
 }
 
