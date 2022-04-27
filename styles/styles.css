@@ -203,7 +203,7 @@ footer {
 
 main {
   display: grid;
-  grid: auto auto 1fr / repeat(12, 1fr);
+  grid: repeat(3, auto) / repeat(12, 1fr);
 }
 
 footer {
@@ -246,8 +246,7 @@ h2 {
   line-height: 1.5;
 }
 
-.quick-links,
-.volunteer {
+.quick-links {
   grid-row: 3 / 4;
   grid-column: 1 / 13;
   justify-self: center;
@@ -483,8 +482,7 @@ h2 {
     white-space: nowrap;
   }
 
-  .quick-links,
-  .volunteer {
+  .quick-links {
     grid-row: 3 / 4;
     grid-column: 1 / 13;
     display: grid;

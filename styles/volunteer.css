@@ -1,26 +1,38 @@
 /* The Volunteer Page/Form Stylesheet */
 
-.volunteer {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 140%;
+/* Next three rules override styles.css
+for ease of layout. */
+
+main {
+  display: block;
+  padding-inline: 15%;
   margin: 0 auto;
-  /* margin-bottom: 2em; */
+}
+
+/* This keeps the Heading lined
+  up with the content paragraphs. */
+h1 {
+  text-align: left;
+  max-width: 400px;
+}
+
+.content__p {
+  margin: 1em auto;
+}
+
+.volunteer {
+  margin: 2em auto;
+  max-width: 400px;
 }
 
 .volunteer__form {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1 / 2.8;
 }
 
 fieldset {
-  padding: 1em;
+  padding-inline: 0.5em;
   border: solid 2px rgb(var(--light-accent-color));
   border-radius: 4px;
 }
@@ -70,7 +82,6 @@ ol.phpfmg_form li {
 .text_area,
 .text_select {
   padding: 0.25em;
-  /* width: 300px; */
   border: solid 2px rgb(var(--base-color));
   border-radius: 4px;
 }
@@ -113,9 +124,8 @@ hr.sectionbreak {
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 480px) {
-  .volunteer {
-    width: 70%;
-    padding-top: 140%;
+@media only screen and (min-width: 300px) {
+  fieldset {
+    padding-inline: 2em;
   }
 }
