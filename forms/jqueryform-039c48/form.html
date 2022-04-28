@@ -190,6 +190,15 @@ overwrite bootstrap default margin-left, because the <label> doesn't contain the
       }
     </style> -->
     <style type="text/css">
+      .checkbox input[type="checkbox"],
+      .checkbox-inline input[type="checkbox"],
+      .radio input[type="radio"],
+      .radio-inline input[type="radio"] {
+        position: absolute;
+        margin-top: 4px \9;
+        margin-left: 0px;
+      }
+
       .form-group.inline div.radio,
       .form-group.inline div.checkbox {
         display: inline-block;
