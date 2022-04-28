@@ -152,3 +152,9 @@ hr.sectionbreak {
     padding-inline: 2em;
   }
 }
+
+@media screen and (min-width: 575px) {
+  .volunteer__form {
+    aspect-ratio: 1 / 2.5;
+  }
+}
