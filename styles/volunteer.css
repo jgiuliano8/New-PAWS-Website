@@ -50,9 +50,9 @@ legend {
 
 .form-control,
 .input-group-addon {
-  border: solid 2px rgb(var(--base-color));
+  border: solid 1px rgb(var(--base-color));
   border-radius: 4px;
-  box-shadow: inset 1px 1px rgba(var(--light-accent-color), 0.3);
+  box-shadow: inset 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .form-control:focus {

@@ -103,7 +103,7 @@ header {
 .paws-search__inpt {
   min-width: 50px;
   max-width: 150px;
-  border: 2px solid rgb(var(--base-color));
+  border: 1px solid rgb(var(--base-color));
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   outline: none;
@@ -394,7 +394,7 @@ h2 {
 }
 
 input {
-  box-shadow: inset 1px 1px rgba(var(--light-accent-color), 0.3);
+  box-shadow: inset 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 input:focus {
