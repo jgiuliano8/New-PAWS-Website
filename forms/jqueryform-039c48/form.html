@@ -189,6 +189,37 @@ overwrite bootstrap default margin-left, because the <label> doesn't contain the
         clear: both;
       }
     </style> -->
+    <style type="text/css">
+      .form-group.inline div.radio,
+      .form-group.inline div.checkbox {
+        display: inline-block;
+      }
+
+      .form-group.col-1 div.radio,
+      .form-group.col-1 div.checkbox {
+        display: block;
+      }
+
+      .form-group.col-2 div.radio,
+      .form-group.col-2 div.checkbox {
+        display: inline-flex;
+        width: 48%;
+      }
+
+      .form-group.col-3 div.radio,
+      .form-group.col-3 div.checkbox {
+        display: inline-flex;
+        width: 30%;
+      }
+
+      .clearfix:after {
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
+    </style>
   </head>
 
   <body>
