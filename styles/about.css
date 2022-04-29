@@ -5,7 +5,7 @@
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  margin-bottom: 2em;
+  margin-block: 2em;
 }
 
 .about__video {
