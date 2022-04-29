@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pioneers for Animal Welfare Society, Inc.</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/navigation.css" />
+    <script defer src="/scripts/navigation.js"></script>
+    <script
+      src="https://kit.fontawesome.com/38f08b7a2b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html" class="logo">
+        <img src="/images/logo-PAWS-v2.jpg" alt="PAWS Logo" class="logo__img" />
+        <p class="logo__txt">Pioneers for Animal Welfare Society, Inc.</p>
+      </a>
+
+      <!-- Begin Search Box -->
+
+      <form action="/html/search-results.html" method="GET" class="paws-search">
+        <label for="paws-search" class="paws-search__lbl"></label>
+        <input
+          type="text"
+          name="q"
+          placeholder="search PAWS"
+          size="10"
+          class="paws-search__inpt"
+        />
+        <button type="submit">
+          <i class="fas fa-search paws-search__icn"></i>
+        </button>
+      </form>
+
+      <!-- End Search box -->
+
+      <a tabindex="0" aria-label="Open navigation" class="hamburger"
+        ><div class="hamburger__bar"></div
+      ></a>
+
+      <!-- Begin navigation: The navigation is responsive so
+      there are two different versions. One is for larger
+      than 675px with drop down menus. The other is for
+      675px and smaller with a "hamburger" to open the main
+      and sub-menus with a fade effect. See navigation.js.
+      -->
+      <nav class="navigation">
+        <ul class="main-menu">
+          <li class="main-menu__li main-menu__li--title">
+            <a tabindex="0" aria-label="Close navigation" class="close-nav"
+              >&times;</a
+            >
+            <span class="main-menu__title-text">Main Menu</span>
+          </li>
+          <li class="main-menu__li main-menu__li--current">
+            <a class="effect main-menu__text" href="/index.html">Home</a>
+          </li>
+          <li class="main-menu__li">
+            <a class="effect main-menu__text" href="/html/about.html">About</a>
+          </li>
+          <li class="main-menu__li main-menu__li--adjst">
+            <a class="effect main-menu__text" href="/html/announcements.html"
+              >Announcements</a
+            ><a class="js-announcements main-menu__arrw"> &#8250;</a>
+            <div class="sub-menu sub-menu-1">
+              <ul class="sub-menu__list">
+                <li class="sub-menu__li sub-menu__li--title">
+                  <a
+                    tabindex="0"
+                    aria-label="Close Sub-Menu"
+                    class="close-sub-menu-1"
+                    >❮</a
+                  ><span class="sub-menu__title-text">Announcements</span>
+                </li>
+
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/announcements/announcements+events.html"
+                    >Announcements & Events</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/announcements/acknowledgements.html"
+                    >Acknowledgements</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/announcements/fundraisers.html"
+                    >Fundraisers</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/announcements/action.html"
+                    >Take Action</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="main-menu__li main-menu__li--adjst">
+            <a class="effect main-menu__text" href="/html/education.html"
+              >Education</a
+            ><a class="js-education main-menu__arrw"> ›</a>
+            <div class="sub-menu sub-menu-2">
+              <ul class="sub-menu__list">
+                <li class="sub-menu__li sub-menu__li--title">
+                  <a
+                    tabindex="0"
+                    aria-label="Close Sub-Menu"
+                    class="close-sub-menu-2"
+                    >❮</a
+                  ><span class="sub-menu__title-text">Education</span>
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/education/animal-welfare-edu.html"
+                    >Animal Welfare Education</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/education/legal-animal-welfare-edu.html"
+                    >Legal Animal Welfare Education</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/education/estate.html"
+                    >Estate Planning</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="main-menu__li main-menu__li--adjst">
+            <a class="effect main-menu__text" href="/html/services.html"
+              >Services</a
+            ><a class="js-services main-menu__arrw"> &#8250;</a>
+            <div class="sub-menu sub-menu-3">
+              <ul class="sub-menu__list">
+                <li class="sub-menu__li sub-menu__li--title">
+                  <a
+                    tabindex="0"
+                    aria-label="Close Sub-Menu"
+                    class="close-sub-menu-3"
+                    >❮</a
+                  ><span class="sub-menu__title-text">Services</span>
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/services/animeals.html"
+                    >Animeals</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/services/financial-assist.html"
+                    >Financial Assistance</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/services/humane-edu.html"
+                    >Humane Education</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/services/spay-neuter-assist.html"
+                    >Low-cost Spay/Neuter</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/services/adopt.html"
+                    >Pet Adoption</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/services/pet-rehome.html"
+                    >Pet Rehoming</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/services/swap.html"
+                    >SWAP</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/services/tnr.html"
+                    >TNR Feral Cat Resource</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="main-menu__li main-menu__li--adjst">
+            <a class="effect main-menu__text" href="/html/support.html"
+              >Support PAWS</a
+            ><a class="js-support main-menu__arrw"> &#8250;</a>
+            <div class="sub-menu sub-menu-4">
+              <ul class="sub-menu__list">
+                <li class="sub-menu__li sub-menu__li--title">
+                  <a
+                    tabindex="0"
+                    aria-label="Close Sub-Menu"
+                    class="close-sub-menu-4"
+                    >❮</a
+                  ><span class="sub-menu__title-text">Support Paws</span>
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/support/donate.html"
+                    >Donate</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a
+                    class="sub-menu__text"
+                    href="/html/support/newsletter-signup.html"
+                    >Newsletter Signup</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/support/partners.html"
+                    >PAWS Partners & Resources</a
+                  >
+                </li>
+                <li class="sub-menu__li">
+                  <a class="sub-menu__text" href="/html/support/volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- End navigation -->
+
+      <!-- Breadcrumbs -->
+      <p class="breadcrumbs">
+        <a href="/index.html">PAWS LI</a> >
+        <span class="breadcrumb--current">Template Page</span>
+      </p>
+
+      <!-- Donate & Volunteer buttons -->
+      <a
+        href="https://www.paypal.com/us/fundraiser/charity/1324437"
+        class="btn btn--donate"
+        target="_blank"
+        >Donate</a
+      >
+      <a href="html/support/volunteer.html" class="btn btn--volunteer"
+        >Volunteer</a
+      >
+    </header>
+    <main>
+      <section class="content">
+        <h1>Privacy Statement</h1>
+        <p class="content__p">
+          Pioneers for Animal Welfare Society, Inc. (PAWS) is committed to
+          controlling the collection, use and disclosure of personal information
+          provided by its supporters.
+        </p>
+        <h2>What is personal information?</h2>
+        <p class="content__p">
+          Personal information is information such as your name, residential
+          address, phone number, e-mail address, donation history to PAWS,
+          credit card or banking information. Personal information is collected
+          by PAWS only when you specifically and knowingly choose to provide it
+          to us, such as when you make a donation to PAWS, or request
+          information about PAWS or our programs, or purchase merchandise. We
+          may also obtain personal information from third parties. This
+          information is used for one time mailing purposes and is not collected
+          or maintained by PAWS unless you choose to make a donation.
+        </p>
+        <p class="content__p">
+          Publicly available information, such as a public directory listing of
+          your name, address, telephone number and electronic address, is not
+          considered personal information.
+        </p>
+        <h2>Collection and Use of Personal Information</h2>
+        <p class="content__p">
+          PAWS collects and uses your personal information primarily for the
+          purpose of issuing a tax receipt, communicating to you information
+          about our programs or events, and soliciting donations.
+        </p>
+        <p class="content__p">
+          Your personal information may also be used to communicate with you
+          about donations we are unable to process, or problems with your
+          monthly donation account.
+        </p>
+        <p class="content__p">
+          Personal information will be shared with PAWS. Information shared with
+          PAWS will only be used for the purposes listed above.
+        </p>
+        <p class="content__p">
+          If you have not requested that we do not disclose your information to
+          other organizations, your name, address and telephone number (but no
+          other personal information) may be traded or sold to other charities
+          or not-for-profit organizations for the purpose of sending you a
+          direct mail appeal in the mail to support their organization. Some of
+          our donation coupons and other vehicles for making a donation to PAWS
+          contain a check off box to allow you to request that your name and
+          address not be given to other organizations. Individuals who do not
+          check the box are assumed to consent to the transfer of this
+          information (name and address only) to third parties. You have the
+          option at any time to tell us not to share your personal information
+          with other charities.
+        </p>
+        <p class="content__p">
+          Information collected by PAWS through surveys is used by PAWS for
+          marketing purposes and is not disclosed to third parties. The only
+          information we may share with third parties is aggregated demographic
+          information, which is not linked to any personal information that can
+          identify any individual person.
+        </p>
+        <p class="content__p">
+          From time to time, PAWS may ask individuals to sign protest cards or
+          petitions. PAWS does not record personal information from these
+          sources. Protest card or petitions are forwarded to the intended
+          recipient as outlined on the protest card or petition.
+        </p>
+        <h2>Disclosure</h2>
+        <p class="content__p">
+          To enable us to more efficiently send out tax receipts, record
+          donations or solicit donations, PAWS may share your personal
+          information with selected third parties who are acting on our behalf
+          as co-agents, suppliers or service providers. Such third party service
+          providers are provided only with such information as is necessary in
+          the circumstances. Information provided to third parties may be used
+          only for the purpose stipulated and is subject to strict terms of
+          confidentiality.
+        </p>
+        <h2>Accuracy</h2>
+        <p class="content__p">
+          PAWS will try to ensure that information about you is accurate,
+          complete and up-to-date. However, please inform PAWS of any change of
+          name, address or other information.
+        </p>
+        <h2>Security</h2>
+        <p class="content__p">
+          PAWS is committed to protecting your privacy. Security measures such
+          as locked cabinets, restricted access and the use of passwords and
+          encryption have been adopted to protect your personal information
+          against loss or theft, unauthorized access, disclosure, copying or
+          modification. Our employees are trained to respect your privacy at all
+          times and those employees with access to your personal information
+          shall use your personal information strictly in accordance with the
+          PAWS Privacy Policy and privacy laws.
+        </p>
+        <h2>Access</h2>
+        <p class="content__p">
+          If you have any questions about the collection, use or disclosure of
+          your personal information by PAWS, or if you simply want to know
+          whether we have your personal information on file, you may contact our
+          PAWS Privacy Compliance Officer. Except in limited circumstances, as
+          specifically provided by applicable privacy legislation, PAWS can tell
+          you whether we hold personal information about you.
+        </p>
+      </section>
+
+      <section class="quick-links"></section>
+    </main>
+    <footer>
+      <ul class="footer-nav">
+        <li class="footer-nav__li footer-nav__li--current">
+          <a href="/index.html">Home</a>
+        </li>
+        <li class="footer-nav__li">
+          <a href="/html/privacy.html">Privacy Policy</a>
+        </li>
+        <li class="footer-nav__li"><a href="/html/contact.html">Contact</a></li>
+      </ul>
+      <ul class="social-media">
+        <li class="social-media__li">
+          <a
+            href="https://www.facebook.com/PAWSLongIsland"
+            target="_blank"
+            aria-label="PAWS Facebook"
+            ><span class="fab fa-facebook"></span
+          ></a>
+        </li>
+        <li class="social-media__li">
+          <a
+            href="https://instagram.com/paws_li"
+            target="_blank"
+            aria-label="PAWS Instagram"
+          >
+            <span class="fab fa-instagram"></span
+          ></a>
+        </li>
+      </ul>
+      <p class="copyright">
+        <small>&copy;2022 Pioneers for Animal Welfare Society, Inc.</small>
+      </p>
+    </footer>
+  </body>
+</html>
