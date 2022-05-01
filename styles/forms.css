@@ -97,7 +97,8 @@ legend {
   transition: box-shadow 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
-.checkbox {
+.checkbox,
+.radio {
   display: flex;
 }
 
