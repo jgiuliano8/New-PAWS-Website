@@ -36,7 +36,7 @@ h1 {
 }
 
 .contact__form {
-  aspect-ratio: 1 / 3.5;
+  aspect-ratio: 1 / 4;
 }
 
 fieldset {
@@ -85,6 +85,6 @@ legend {
   }
 
   .contact__form {
-    aspect-ratio: 1 / 3.5;
+    aspect-ratio: 1 / 3;
   }
 }
