@@ -18,3 +18,14 @@
   font-weight: 500;
   font-style: normal;
 }
+
+.avalon-text {
+  font-family: serif;
+  font-size: 1.25rem;
+  align-self: center;
+}
+
+.avalon-text:link,
+.avalon-text:visited {
+  color: #c64d5b;
+}
