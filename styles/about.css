@@ -1,5 +1,6 @@
 /* Stylesheet for about.html at PAWS-LI.org */
 
+/*  The div container for the about video */
 .about {
   position: relative;
   overflow: hidden;
@@ -8,6 +9,7 @@
   margin-top: 2em;
 }
 
+/* The iframe container for the YouTube about video */
 .about__video {
   position: absolute;
   top: 0;
@@ -18,6 +20,7 @@
   height: 100%;
 }
 
+/* A little caption under the video */
 .vid-caption {
   text-align: center;
   margin: 0 auto 2em;
