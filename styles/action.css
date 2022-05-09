@@ -9,10 +9,6 @@
   background-color: rgba(var(--base-color), 0.25);
 }
 
-.action-container__btn:is(:link, :visited) {
-  color: white;
-}
-
 .action-container__a {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -57,6 +53,10 @@
   align-self: center;
   padding: 0.75em 2em;
   background-color: rgb(var(--dark-accent-color));
+  color: white;
+}
+
+.action-container__btn:is(:link, :visited) {
   color: white;
 }
 
