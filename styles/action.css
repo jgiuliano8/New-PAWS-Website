@@ -60,6 +60,11 @@
   color: white;
 }
 
+.action-container__btn:is(:hover, :focus, :active) {
+  background-color: rgb(var(--light-accent-color));
+  color: black;
+}
+
 @media screen and (min-width: 675px) {
   .action-container__btn {
     font-size: 1rem;
