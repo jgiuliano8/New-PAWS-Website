@@ -1,0 +1,68 @@
+/* Stylesheet for Take Action page */
+
+.action-container {
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 1fr 1fr;
+  gap: 1em;
+  margin-block: 1.5em;
+  padding: 1em;
+  background-color: rgba(var(--base-color), 0.25);
+}
+
+.action-container__btn:is(:link, :visited) {
+  color: white;
+}
+
+.action-container__a {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  padding: 0.3em 1em;
+  justify-self: stretch;
+  align-self: center;
+  text-align: center;
+}
+
+.action-container__a,
+.action-container__btn {
+  text-decoration: none;
+}
+
+.action-container__a--change-org:link,
+.action-container__a--change-org:visited,
+.action-container__a--change-org:hover,
+.action-container__a--change-org:focus {
+  background-color: white;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ec2c22;
+}
+
+.action-container__img {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.action-container__p {
+  align-self: start;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  margin: 0;
+}
+
+.action-container__btn {
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+  justify-self: center;
+  align-self: center;
+  padding: 0.75em 2em;
+  background-color: rgb(var(--dark-accent-color));
+  color: white;
+}
+
+@media screen and (min-width: 675px) {
+  .action-container__btn {
+    font-size: 1rem;
+    padding: 1em 2.5em;
+  }
+}
