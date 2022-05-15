@@ -85,6 +85,15 @@ header {
   text-align: center;
 }
 
+.logo__tagline {
+  margin: 0.25em 0 2em;
+  text-align: center;
+}
+
+.logo__tagline--bold {
+  font-weight: 700;
+}
+
 .paws-search {
   grid-row: 4 / 5;
   grid-column: 7 / 12;
