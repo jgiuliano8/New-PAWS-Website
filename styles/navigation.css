@@ -129,8 +129,8 @@
 
 .hamburger__bar {
   width: 28px;
-  height: 3px;
-  border-radius: 5px;
+  height: 4px;
+  border-radius: 3px;
   background-color: rgb(32, 32, 32);
 }
 
@@ -139,19 +139,19 @@
   content: "";
   position: absolute;
   width: 28px;
-  height: 3px;
-  border-radius: 5px;
+  height: 4px;
+  border-radius: 3px;
   background-color: rgb(32, 32, 32);
 }
 
 .hamburger__bar::before {
   left: 0;
-  top: 0px;
+  top: -1px;
 }
 
 .hamburger__bar::after {
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 }
 
 .main-menu,
