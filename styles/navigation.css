@@ -145,12 +145,10 @@
 }
 
 .hamburger__bar::before {
-  left: 0;
   top: -1px;
 }
 
 .hamburger__bar::after {
-  left: 0;
   bottom: -1px;
 }
 
