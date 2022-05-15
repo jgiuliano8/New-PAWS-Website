@@ -1,0 +1,19 @@
+/* Stylesheet for services.html */
+
+.services-list {
+  list-style: none;
+}
+
+.services-list__list-item {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.services-list__list-item::before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  left: -1em;
+  border: 0.2em solid transparent;
+  border-left: 0.5em solid rgb(var(--base-color));
+}
