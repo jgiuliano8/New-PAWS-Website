@@ -166,6 +166,7 @@ form button {
   text-transform: uppercase;
   letter-spacing: 1px;
   -webkit-tap-highlight-color: transparent;
+  transition: color 350ms, background-color 350ms;
 }
 
 .breadcrumbs {
