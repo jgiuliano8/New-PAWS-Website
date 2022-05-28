@@ -84,6 +84,7 @@ label {
   border-radius: 50%;
 }
 
+/* Custom styled radio selector */
 .form-input--radio:checked::after {
   content: "";
   position: absolute;
@@ -95,9 +96,18 @@ label {
   transform: translate(-50%, -50%);
 }
 
+/* Align the radio input/label pairs on top of each other */
 .input-group {
   display: flex;
   flex-direction: column;
+}
+
+/* Align and space input/label pairs */
+.input-label-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .btn--submit {
