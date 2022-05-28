@@ -310,7 +310,7 @@
       </section>
 
       <section class="main-form">
-        <form action="/forms/contact.php">
+        <form method="post" action="/forms/contact.php">
           <fieldset>
             <legend>Contact Us</legend>
             <label for="email" class="required">Email</label>
@@ -358,12 +358,12 @@
                 class="form-input form-input--text"
                 required
               />
-              <label for="zip-code" class="sr-only">Zip Code</label>
+              <label for="zip-code" class="sr-only">ZIP Code</label>
               <input
                 type="text"
                 name="zip-code"
                 id="zip-code"
-                placeholder="Zip Code"
+                placeholder="ZIP Code"
                 class="form-input form-input--text"
                 required
               />
@@ -374,6 +374,7 @@
               name="phone"
               id="phone"
               class="form-input form-input--text"
+              placeholder="###-###-####"
               required
             />
             <div class="input-group">
@@ -400,7 +401,7 @@
               </div>
             </div>
             <div class="input-group">
-              <label for="pet-type">Pet Gender</label>
+              <label for="pet-gender">Pet Gender</label>
               <div class="input-label-set">
                 <input
                   type="radio"
@@ -425,7 +426,7 @@
               </div>
             </div>
             <label for="pet-age">Pet Age</label>
-            <input type="text" id="pet-age" class="form-input form-input--text"> 
+            <input type="text" name="pet-age" id="pet-age" class="form-input form-input--text"> 
             <label for="reason" class="required">Reason for contact</label>
             <select
               name="reason"
