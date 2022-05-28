@@ -1,8 +1,15 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require "PHPMailer/PHPMailer.php";
+require "PHPMailer/Exception.php";
+require "PHPMailer/SMTP.php";
 
+// Initialize variables
 $name = $email = $street = $city = $zipcode = $phone = $pet_type = $pet_gender = $pet_age = $reason = $comments = '';
 
+// Scrub and validate input
 if (isset($_POST['name'])) $name = $_POST['name'];
 $name = parse_input($name);
 if(!letters_space_only($name)) {
@@ -116,6 +123,36 @@ function numbers_only($data) {
   return(TRUE);
 }
 
+// Send input in email
+//PHPMailer Object
+$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
+//From email address and name
+$mail->From = "jgiuliano8@gmail.com";
+$mail->FromName = "Jeff Giuliano";
 
+//To address and name
+$mail->addAddress("jgiuliano8@yahoo.com", "Jeff G.");
+// $mail->addAddress("recepient1@example.com"); //Recipient name is optional
+
+//Address to which recipient will reply
+$mail->addReplyTo("jgiuliano8@gmail.com", "Reply");
+
+//CC and BCC
+// $mail->addCC("cc@example.com");
+// $mail->addBCC("bcc@example.com");
+
+//Send HTML or Plain Text email
+$mail->isHTML(true);
+
+$mail->Subject = "New PAWS Contact!";
+$mail->Body = "<i>Mail body in HTML</i>";
+$mail->AltBody = "This is the plain text version of the email content";
+
+try {
+    $mail->send();
+    echo "Message has been sent successfully";
+} catch (Exception $e) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}
 ?>
