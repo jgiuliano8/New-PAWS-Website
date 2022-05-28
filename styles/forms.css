@@ -42,7 +42,7 @@ legend {
 }
 
 label {
-  display: block;
+  display: inline-block;
   margin: 0.75em 0 0.25em;
   font-weight: 700;
 }
@@ -63,7 +63,7 @@ label {
   appearance: none;
   width: 100%;
   margin: 0.25em 0;
-  padding: 0.25em;
+  padding: 0.5em;
   border: solid 1px rgb(var(--base-color));
   border-radius: 4px;
   box-shadow: inset 1px 1px rgba(0, 0, 0, 0.1);
@@ -77,9 +77,22 @@ label {
 }
 
 .form-input--radio {
-  padding: 0.375em;
+  position: relative;
+  appearance: none;
+  padding: 0.5em;
   border: solid 1px rgb(var(--base-color));
   border-radius: 50%;
+}
+
+.form-input--radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0.375em;
+  background-color: rgb(var(--base-color));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .input-group {
