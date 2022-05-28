@@ -301,15 +301,160 @@
           receive a response from us - please, either via phone call or email -
           contact us again!
         </p>
-        <iframe
+        <!-- <iframe
           src="/forms/jqueryform-ba1615/form.html"
           scrolling="no"
           frameborder="0"
           class="contact__form"
-        ></iframe>
+        ></iframe> -->
       </section>
 
-      <section class="quick-links"></section>
+      <section class="main-form">
+        <form action="/forms/contact.php">
+          <fieldset>
+            <legend>Contact Us</legend>
+            <label for="email" class="required">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="name" class="required">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group">
+              <label for="input-group" class="required">Address</label>
+              <label for="street" class="sr-only">Street</label>
+              <input
+                type="text"
+                name="street"
+                id="street"
+                placeholder="Street"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="city" class="sr-only">City</label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="state" class="sr-only">State</label>
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="State"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="zip-code" class="sr-only">Zip Code</label>
+              <input
+                type="text"
+                name="zip-code"
+                id="zip-code"
+                placeholder="Zip Code"
+                class="form-input form-input--text"
+                required
+              />
+            </div>
+            <label for="phone" class="required">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group">
+              <label for="pet-type">Pet Type</label>
+              <div>
+                <input
+                  type="radio"
+                  name="pet-type"
+                  id="cat"
+                  value="cat"
+                  class="form-input form-input--radio"
+                />
+                <label for="cat" class="input-group__sub-label">Cat</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="pet-type"
+                  id="Male"
+                  value="dog"
+                  class="form-input form-input--radio"
+                />
+                <label for="dog" class="input-group__sub-label">Dog</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="pet-type">Pet Gender</label>
+              <div>
+                <input
+                  type="radio"
+                  name="pet-gender"
+                  id="female"
+                  value="female"
+                  class="form-input form-input--radio"
+                />
+                <label for="female" class="input-group__sub-label"
+                  >Female</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="pet-gender"
+                  id="male"
+                  value="male"
+                  class="form-input form-input--radio"
+                />
+                <label for="male" class="input-group__sub-label">Male</label>
+              </div>
+            </div>
+            <label for="pet-age">Pet Age</label>
+            <input type="text" id="pet-age" class="form-input form-input--text"> 
+            <label for="reason" class="required">Reason for contact</label>
+            <select
+              name="reason"
+              id="reason"
+              class="form-input form-input--select"
+              required
+            >
+              <option value="">Please select a reason</option>
+              <option value="animeals">Animeals</option>
+              <option value="financial-assist">Financial assistance</option>
+              <option value="humane-education">Humane education</option>
+              <option value="lc-spay-neuter">Low-cost spay/neuter</option>
+              <option value="rehoming">Pet rehoming</option>
+              <option value="tnr">TNR request</option>
+              <option value="other">Other</option>
+            </select>
+              <label for="comments" class="required">Comments</label>
+              <textarea
+                name="comments"
+                id="comments"
+                cols="40"
+                rows="10"
+                class="form-input form-input--text"
+              ></textarea>
+              <button type="submit" class="btn btn--submit">Submit</button>
+            </select>
+          </fieldset>
+        </form>
+      </section>
     </main>
     <footer>
       <ul class="footer-nav">
