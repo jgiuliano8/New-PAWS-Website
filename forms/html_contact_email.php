@@ -11,7 +11,8 @@
         border-radius: 4px;
       }
       .table-row {
-        padding: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
       }
 
       .table-header-row {

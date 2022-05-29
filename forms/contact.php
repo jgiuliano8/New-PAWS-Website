@@ -6,6 +6,16 @@ require "PHPMailer/PHPMailer.php";
 require "PHPMailer/Exception.php";
 require "PHPMailer/SMTP.php";
 
+// Error handling
+set_error_handler("ErrorHandler");
+
+function ErrorHandler($no, $str, $file, $line) {
+  echo
+  "<div style='border:2px dotted; padding:5px 10px;background-color:tan'>" .
+  "Line $line: <span style='color:red'>$str</span> " .
+  "in <span style='color:blue'>$file</span></div>";
+}
+
 // Initialize variables
 $name = $email = $street = $city = $state = $zipcode = $phone = $pet_type = $pet_gender = $pet_age = $reason = $comments = '';
 
@@ -166,11 +176,12 @@ $mail->AltBody = "This is the plain text version of the email content";
 
 try {
     $mail->send();
+    header('Refresh: 5; URL=http://development.paws-li.org/html/contact.html');
     echo "Form has been sent successfully! Someone from PAWS will contact you soon....redirecting in 5 seconds.";
 } catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+    header('Refresh: 5; URL=http://development.paws-li.org/html/contact.html');
+    echo "Mailer Error: " . $mail->ErrorInfo . "redirecting in 5 seconds.";
 }
 
-header('Refresh: 5; URL=/html/contact.html');
 // header("Location: /html/contact.html");
 ?>
