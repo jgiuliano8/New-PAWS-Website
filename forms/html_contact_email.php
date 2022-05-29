@@ -10,16 +10,17 @@
         border: 1px solid #858585;
       }
       .table-row {
-        padding: 0.5em;
+        padding: 8px;
       }
 
       .table-header-row {
-        padding: 1em;
+        padding: 16px;
         background-color: lightblue;
+        text-align: center;
       }
 
       .table-header-col {
-        padding-right: 1em;
+        padding-inline: 16px;
         background-color: lightgray;
       }
     </style>
@@ -28,7 +29,7 @@
     <table>
       <thead>
         <tr class="table-row">
-          <th style="background-color: lightblue;" scope="row" colspan="2">New PAWS Contact Form</th>
+          <th scope="row" colspan="2">New PAWS Contact Form</th>
         </tr>
       </thead>
       <tbody>

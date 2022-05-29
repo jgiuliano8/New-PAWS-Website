@@ -163,7 +163,5 @@ try {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
 
-sleep(7);
-
-header("Location: contact.html");
+header("Location: /html/contact.html");
 ?>
