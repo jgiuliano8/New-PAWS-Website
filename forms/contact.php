@@ -162,4 +162,8 @@ try {
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
+
+sleep(7);
+
+header("Location: contact.html");
 ?>
