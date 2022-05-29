@@ -7,7 +7,7 @@ require "PHPMailer/Exception.php";
 require "PHPMailer/SMTP.php";
 
 // Initialize variables
-$name = $email = $street = $city = $zipcode = $phone = $pet_type = $pet_gender = $pet_age = $reason = $comments = '';
+$name = $email = $street = $city = $state = $zipcode = $phone = $pet_type = $pet_gender = $pet_age = $reason = $comments = '';
 
 // Scrub and validate input
 if (isset($_POST['name'])) $name = $_POST['name'];
@@ -38,6 +38,12 @@ if(!letters_space_only($city)) {
   exit;
 }
 
+if (isset($_POST['city'])) $state = $_POST['state'];
+$state = parse_input($state);
+if(!letters_space_only($state)) {
+  echo("Only letters and white space allowed in the state field. Please go back and input correctly. <br/> <br />");
+  exit;
+}
 
 if (isset($_POST['zip-code'])) $zipcode = $_POST['zip-code'];
 $zipcode = parse_input($zipcode);
@@ -139,6 +145,8 @@ $mail->FromName = "$name";
 
 //To address and name
 $mail->addAddress("jgiuliano8@yahoo.com", "Jeff Giuliano");
+$mail->addAddress("jgiuliano8@gmail.com", "Jeff Giuliano");
+
 
 //Address to which recipient will reply
 $mail->addReplyTo("$email", "$name");
@@ -163,5 +171,5 @@ try {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
 
-header("Location: /html/contact.html");
+// header("Location: /html/contact.html");
 ?>

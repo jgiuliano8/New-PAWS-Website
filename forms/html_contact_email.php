@@ -23,6 +23,7 @@
       .table-header-col {
         padding-right: 16px;
         background-color: lightgray;
+        text-align: right;
       }
     </style>
   </head>
@@ -44,7 +45,7 @@
         </tr>
         <tr class="table-row">
           <th class="table-header-col" scope="col">Address</th>
-          <td><?php echo("$street<br />$city<br />$state<br />$zip_code") ?></td>
+          <td><?php echo("$street<br />$city<br />$state<br />$zipcode") ?></td>
         </tr>
           <tr class="table-row">
           <th class="table-header-col" scope="col">Phone</th>
