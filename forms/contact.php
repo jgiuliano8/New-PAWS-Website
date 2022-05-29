@@ -127,16 +127,21 @@ function numbers_only($data) {
 //PHPMailer Object
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
+ob_start();
+include 'html_contact_email.php';
+$body = ob_get_clean();
+
+// $body = file_get_contents('html_contact_email.php');
+
 //From email address and name
-$mail->From = "jgiuliano8@gmail.com";
-$mail->FromName = "Jeff Giuliano";
+$mail->From = "$email";
+$mail->FromName = "$name";
 
 //To address and name
-$mail->addAddress("jgiuliano8@yahoo.com", "Jeff G.");
-// $mail->addAddress("recepient1@example.com"); //Recipient name is optional
+$mail->addAddress("jgiuliano8@yahoo.com", "Jeff Giuliano");
 
 //Address to which recipient will reply
-$mail->addReplyTo("jgiuliano8@gmail.com", "Reply");
+$mail->addReplyTo("$email", "$name");
 
 //CC and BCC
 // $mail->addCC("cc@example.com");
@@ -146,12 +151,14 @@ $mail->addReplyTo("jgiuliano8@gmail.com", "Reply");
 $mail->isHTML(true);
 
 $mail->Subject = "New PAWS Contact!";
-$mail->Body = "<i>Mail body in HTML</i>";
+// $mail->Body = "<i>Mail body in HTML</i>";
+$mail->MsgHTML($body);
+
 $mail->AltBody = "This is the plain text version of the email content";
 
 try {
     $mail->send();
-    echo "Message has been sent successfully";
+    echo "Form has been sent successfully! Someone from PAWS will contact you soon.";
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
