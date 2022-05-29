@@ -166,10 +166,11 @@ $mail->AltBody = "This is the plain text version of the email content";
 
 try {
     $mail->send();
-    echo "Form has been sent successfully! Someone from PAWS will contact you soon.";
+    echo "Form has been sent successfully! Someone from PAWS will contact you soon....redirecting in 5 seconds.";
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
 
+header('Refresh: 5; URL=/html/contact.html');
 // header("Location: /html/contact.html");
 ?>
