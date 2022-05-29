@@ -7,10 +7,11 @@
     <title>New PAWS Contact</title>
     <style>
       table {
-        border: 1px solid #858585;
+        border: 2px solid #858585;
+        border-radius: 4px;
       }
       .table-row {
-        padding: 8px;
+        padding: 16px;
       }
 
       .table-header-row {
@@ -20,7 +21,7 @@
       }
 
       .table-header-col {
-        padding-inline: 16px;
+        padding-right: 16px;
         background-color: lightgray;
       }
     </style>
@@ -28,7 +29,7 @@
   <body>
     <table>
       <thead>
-        <tr class="table-row">
+        <tr class="table-row table-header-row">
           <th scope="row" colspan="2">New PAWS Contact Form</th>
         </tr>
       </thead>
@@ -58,7 +59,7 @@
           <td><?php echo("$pet_gender") ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col">Pet Age</th>
+          <th class="table-header-col" scope="col">Pet Age(years)</th>
           <td><?php echo("$pet_age") ?></td>
         </tr>
         <tr class="table-row">
