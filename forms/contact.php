@@ -143,11 +143,10 @@ function numbers_only($data) {
 //PHPMailer Object
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
+// Use 'include' to pull in email template for email message body.
 ob_start();
 include 'html_contact_email.php';
 $body = ob_get_clean();
-
-// $body = file_get_contents('html_contact_email.php');
 
 //From email address and name
 $mail->From = "$email";
@@ -183,5 +182,4 @@ try {
     echo "Mailer Error: " . $mail->ErrorInfo . "redirecting in 5 seconds.";
 }
 
-// header("Location: /html/contact.html");
 ?>
