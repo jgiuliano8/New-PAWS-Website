@@ -189,7 +189,7 @@ $success_message = <<<_EOT
   </head>
   <body>
     <p>
-    <strong>Form has been sent successfully! Someone from PAWS will contact you soon.</strong> <br /> <br /> ....redirecting in 5 seconds.";
+    <strong>Form has been sent successfully! Someone from PAWS will contact you soon.</strong> <br /> <br /> ....redirecting in 5 seconds.
     </p>
   </body>
 </html>
@@ -197,7 +197,7 @@ _EOT;
 echo ("$success_message");
 
 } catch (Exception $e) {
-    header('Refresh: 5; URL=http://development.paws-li.org/html/contact.html');
+    header('Refresh: 5; URL=/html/contact.html');
     echo "Mailer Error: " . $mail->ErrorInfo . "redirecting in 5 seconds.";
 }
 
