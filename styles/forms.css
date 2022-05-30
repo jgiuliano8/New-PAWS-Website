@@ -96,6 +96,14 @@ label {
   transform: translate(-50%, -50%);
 }
 
+.form-input--select {
+  background-color: #fff;
+}
+
+.form-input--text {
+  font-family: sans-serif;
+}
+
 /* Align the radio input/label pairs on top of each other */
 .input-group {
   display: flex;
