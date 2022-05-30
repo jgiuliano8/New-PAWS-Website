@@ -19,6 +19,14 @@ address {
   text-align: left;
 }
 
+h2 {
+  font-size: 1.25em;
+}
+
+h2 ~ h2 {
+  margin-top: 2.5em;
+}
+
 .content__p {
   margin: 1em auto;
 }

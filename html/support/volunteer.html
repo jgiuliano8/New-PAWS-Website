@@ -295,13 +295,120 @@
         </p>
       </section>
 
-      <section class="volunteer">
-        <iframe
-          src="/forms/jqueryform-039c48/form.html"
-          frameborder="0"
-          scrolling="no"
-          class="volunteer__form"
-        ></iframe>
+      <section class="main-form">
+        <form action="/forms/volunteer-1.php" method="post">
+          <fieldset>
+            <legend>Volunteer for PAWS</legend>
+            <h2>Contact Information</h2>
+            <label for="name" class="required">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group">
+              <label for="input-group" class="required">Address</label>
+              <label for="street" class="sr-only">Street</label>
+              <input
+                type="text"
+                name="street"
+                id="street"
+                placeholder="Street"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="city" class="sr-only">City</label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="state" class="sr-only">State</label>
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="State"
+                class="form-input form-input--text"
+                required
+              />
+              <label for="zip-code" class="sr-only">ZIP Code</label>
+              <input
+                type="text"
+                name="zip-code"
+                id="zip-code"
+                placeholder="ZIP Code"
+                class="form-input form-input--text"
+                required
+              />
+            </div>
+            <label for="birth-year" class="required">Birth Year</label>
+            <input
+              type="text"
+              name="birth-year"
+              id="birth-year"
+              placeholder="yyyy"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="email" class="required">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="phone" class="required">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              class="form-input form-input--text"
+              placeholder="###-###-####"
+              required
+            />
+            <h2>Emergency Contact Information</h2>
+            <label for="ec-name" class="required">Name</label>
+            <input
+              type="text"
+              name="ec-name"
+              id="ec-name"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="ec-relationship" class="required">Relationship</label>
+            <input
+              type="text"
+              name="ec-relationship"
+              id="ec-relationship"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="ec-phone" class="required">Phone</label>
+            <input
+              type="text"
+              name="ec-phone"
+              id="ec-phone"
+              class="form-input form-input--text"
+              placeholder="###-###-####"
+              required
+            />
+            <label for="ec-email">Email</label>
+            <input
+              type="text"
+              name="ec-email"
+              id="ec-email"
+              class="form-input form-input--text"
+            />
+            <button type="submit" class="btn btn--submit">Next</button>
+          </fieldset>
+        </form>
       </section>
     </main>
     <footer>
