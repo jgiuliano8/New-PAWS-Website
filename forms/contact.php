@@ -176,7 +176,26 @@ $mail->AltBody = "This is the plain text version of the email content";
 try {
     $mail->send();
     header('Refresh: 5; URL=http://development.paws-li.org/html/contact.html');
-    echo "<strong>Form has been sent successfully! Someone from PAWS will contact you soon</strong> <br /> <br /> ....redirecting in 5 seconds.";
+$success_message = <<<_EOT
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New PAWS Contact</title>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <p>
+    <strong>Form has been sent successfully! Someone from PAWS will contact you soon.</strong> <br /> <br /> ....redirecting in 5 seconds.";
+    </p>
+  </body>
+</html>
+_EOT;
+echo ("$success_message");
+
 } catch (Exception $e) {
     header('Refresh: 5; URL=http://development.paws-li.org/html/contact.html');
     echo "Mailer Error: " . $mail->ErrorInfo . "redirecting in 5 seconds.";
