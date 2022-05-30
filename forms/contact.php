@@ -198,7 +198,7 @@ echo ("$success_message");
 
 } catch (Exception $e) {
     header('Refresh: 5; URL=/html/contact.html');
-    echo "Mailer Error: " . $mail->ErrorInfo . "redirecting in 5 seconds.";
+    echo "Mailer Error: " . $mail->ErrorInfo . " redirecting in 5 seconds.";
 }
 
 ?>
