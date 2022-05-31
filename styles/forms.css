@@ -55,6 +55,10 @@ label {
   font-weight: 700;
 }
 
+.input-group--employment {
+  margin-left: 0.5em;
+}
+
 .input-group__sub-label {
   display: inline-block;
   margin: 0;
@@ -125,6 +129,10 @@ label {
   flex-direction: row;
   align-items: center;
   gap: 0.5em;
+}
+
+label[for="certifications"] {
+  margin-top: 2.5em;
 }
 
 .btn--submit {
