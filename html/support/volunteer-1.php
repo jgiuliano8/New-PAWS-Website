@@ -300,7 +300,7 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/forms/volunteer-1.php" method="post">
+        <form action="/html/support/volunteer-2.php" method="post">
           <fieldset>
             <legend>Volunteer for PAWS</legend>
             <h2>Contact Information</h2>

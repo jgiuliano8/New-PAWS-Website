@@ -13,94 +13,94 @@ function ErrorHandler($no, $str, $file, $line) {
 }
 
 // Initialize SESSION variables
-$_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zipcode'] = $_SESSION['phone'] = $_SESSION['birth-year'] = $_SESSION['ec-name'] = $_SESSION['ec-relationship'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
+$_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['birth-year'] = $_SESSION['ec-name'] = $_SESSION['ec-relationship'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
 // to other pages
 // Then scrub and validate SESSION variables
-if (isset($_POST['name'])) $_SESSION['name'] = $_POST['name'];
-$_SESSION['name'] = parse_input($_SESSION['name']);
-if(!letters_space_only($_SESSION['name'])) {
-  echo("Only letters and white space allowed in the name field. Please go back and input correctly. <br/> <br />");
-  exit;
-}
 
-if (isset($_POST['email'])) $_SESSION['email'] = $_POST['email'];
-$_SESSION['email'] = parse_input($_SESSION['email']);
-if (!filter_var($_SESSION['email'], FILTER_VALIDATE_EMAIL)) {
-  echo("Invalid email format. Please go back and input a valid email. <br/> <br />");
-  exit;
-}
+foreach($_POST as $key => $value) {
+  if (isset($_POST[$key])) {
+    $_SESSION[$key] = $value;
+    $_SESSION[$key] = parse_input($_SESSION[$key]);
+    switch($key)
+    {
+      case 'name':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the name field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
 
-if (isset($_POST['street'])) $_SESSION['street'] = $_POST['street'];
-$_SESSION['street'] = parse_input($_SESSION['street']);
-if (!letters_numbers_space_only($_SESSION['street'])) {
-  echo("Only letters, numbers and white space allowed in the street field. Please go back and input correctly. <br/> <br />");
-  exit;  
-};
+      case 'email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                      echo("Invalid email format. Please go back and input a valid email. <br/> <br />");
+                      exit;
+                    }
+                    break;
 
-if (isset($_POST['city'])) $_SESSION['city'] = $_POST['city'];
-$_SESSION['city'] = parse_input($_SESSION['city']);
-if(!letters_space_only($_SESSION['city'])) {
-  echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br/> <br />");
-  exit;
-}
+      case 'street':  if (!letters_numbers_space_only($_SESSION[$key])) {
+                        echo("Only letters, numbers and white space allowed in the street field. Please go back and input correctly. <br/> <br />");
+                        exit;  
+                      };
+                      break;
 
-if (isset($_POST['state'])) $_SESSION['state'] = $_POST['state'];
-$_SESSION['state'] = parse_input($_SESSION['state']);
-if(!letters_space_only($_SESSION['state'])) {
-  echo("Only letters and white space allowed in the state field. Please go back and input correctly. <br/> <br />");
-  exit;
-}
+      case 'city':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }
+                    break;
 
-if (isset($_POST['zipcode'])) $_SESSION['zipcode'] = $_POST['zipcode'];
-$_SESSION['zipcode'] = parse_input($_SESSION['zipcode']);
-if(!zipcode_only($_SESSION['zipcode'])) {
-  echo("Please go back and input a valid ZIP Code, 5 digits or optionally ZIP+4. <br />");
-  exit;
-}
+      case 'state': if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }
+                    break;
 
-if (isset($_POST['phone'])) $_SESSION['phone'] = $_POST['phone'];
-$_SESSION['phone'] = parse_input($_SESSION['phone']);
-if(!phone_number_only($_SESSION['phone'])) {
-  echo("Please go back and input a valid phone number in the form ###-###-####.");
-  exit;
-}
+      case 'zip-code': if(!zipcode_only($_SESSION[$key])) {
+                        echo("Please go back and input a valid ZIP Code, 5 digits or optionally ZIP+4. <br />");
+                        exit;
+                      }
+                      break;
 
-if (isset($_POST['birth-year'])) $_SESSION['birth-year'] = $_POST['birth-year'];
-$_SESSION['birth-year'] = parse_input($_SESSION['birth-year']);
-if(!numbers_only($_SESSION['birth-year'])) {
-  echo("Please go back and input a valid birth year in the form ####.");
-  exit;
-}
+      case 'phone': if(!phone_number_only($_SESSION[$key])) {
+                      echo("Please go back and input a valid phone number in the form ###-###-####.");
+                      exit;
+                    }
+                    break;
 
-if (isset($_POST['ec-name'])) $_SESSION['ec-name'] = $_POST['ec-name'];
-$_SESSION['ec-name'] = parse_input($_SESSION['ec-name']);
-if(!letters_space_only($_SESSION['ec-name'])) {
-  echo("Only letters and white space allowed in the emergency contact name field. Please go back and input correctly. <br/> <br />");
-  exit;
-}
+      case 'birth-year':  if(!numbers_only($_SESSION[$key])) {
+                            echo("Please go back and input a valid birth year in the form ####.");
+                            exit;
+                          }
+                          break;
 
-if (isset($_POST['ec-relationship'])) $_SESSION['ec-relationship'] = $_POST['ec-relationship'];
-$_SESSION['ec-relationship'] = parse_input($_SESSION['ec-relationship']);
-if(!letters_space_only($_SESSION['ec-relationship'])) {
-  echo("Only letters and white space allowed in the emergency contact relationship field. Please go back and input correctly. <br/> <br />");
-  exit;
-}
+      case 'ec-name': if(!letters_space_only($_SESSION[$key])) {
+                        echo("Only letters and white space allowed in the emergency contact name field. Please go back and input correctly. <br/> $_SESSION[$key]<br />");
+                        exit;
+                      }
+                      break;
 
-if (isset($_POST['ec-phone'])) $_SESSION['ec-phone'] = $_POST['ec-phone'];
-$_SESSION['ec-phone'] = parse_input($_SESSION['ec-phone']);
-if(!phone_number_only($_SESSION['ec-phone'])) {
-  echo("Please go back and input a valid phone number in the emergency contact phone number field, of the form ###-###-####.");
-  exit;
-}
+      case 'ec-relationship': if(!letters_space_only($_SESSION[$key])) {
+                                echo("Only letters and white space allowed in the emergency contact relationship field. Please go back and input correctly. <br/> <br />");
+                                exit;
+                              }
+                              break;
 
-if (isset($_POST['ec-email'])) $_SESSION['ec-email'] = $_POST['ec-email'];
-$_SESSION['ec-email'] = parse_input($_SESSION['ec-email']);
-if (!filter_var($_SESSION['ec-email'], FILTER_VALIDATE_EMAIL)) {
-  echo("Invalid email format in the emergency contact email field. Please go back and input a valid email. <br/> <br />");
-  exit;
+      case 'ec-phone':  if(!phone_number_only($_SESSION[$key])) {
+                          echo("Please go back and input a valid phone number in the emergency contact phone number field, of the form ###-###-####.");
+                          exit;
+                        }
+                        break;
+
+      case 'ec-email':  if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                          echo("Invalid email format in the emergency contact email field. Please go back and input a valid email. <br/> <br />");
+                          exit;
+                        }
+                        break;
+      default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
+                exit;
+    }
+  }
 }
 
 // Scrubbing and validation functions
@@ -146,7 +146,7 @@ function numbers_only($data) {
   return(TRUE);
 }
 
-
+// HTML Document
 echo <<< _EOT
 <!DOCTYPE html>
 <html lang="en">
@@ -431,7 +431,7 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/forms/volunteer-2.php" method="post">
+        <form action="/html/support/volunteer-3.php" method="post">
           <fieldset>
             <legend>Volunteer for PAWS</legend>
             <h2>About You</h2>

@@ -23,6 +23,11 @@ h2 {
   font-size: 1.25em;
 }
 
+h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25em;
+}
+
 h2 ~ h2 {
   margin-top: 2.5em;
 }
@@ -44,6 +49,7 @@ fieldset {
 
 legend {
   font-size: 1.25rem;
+
   width: auto;
   padding: 0.5em;
   border: none;
@@ -55,8 +61,20 @@ label {
   font-weight: 700;
 }
 
-.input-group--employment {
-  margin-left: 0.5em;
+/* Align the radio input/label pairs on top of each other */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group--employment,
+.input-group--interests,
+.input-group--reference {
+  margin-left: 0.75em;
+}
+
+.form-input--checkbox {
+  display: inline-block;
 }
 
 .input-group__sub-label {
@@ -117,12 +135,6 @@ label {
   font-family: sans-serif;
 }
 
-/* Align the radio input/label pairs on top of each other */
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
-
 /* Align and space input/label pairs */
 .input-label-set {
   display: flex;
@@ -131,8 +143,36 @@ label {
   gap: 0.5em;
 }
 
+.input-label-set--checkbox {
+  align-items: start;
+  margin-top: 1em;
+}
+
+.input-label-set--checkbox label {
+  margin: 0;
+  font-weight: 400;
+}
+
 label[for="certifications"] {
   margin-top: 2.5em;
+}
+
+#other-info,
+label[for="other-info"] {
+  margin-left: 0.75em;
+}
+
+.availability th[scope="row"] {
+  text-align: left;
+}
+
+.availability tbody tr td {
+  min-width: 1.75em;
+}
+
+.highlight {
+  display: inline-block;
+  background-color: yellow;
 }
 
 .btn--submit {
