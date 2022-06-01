@@ -183,6 +183,17 @@ label[for="other-info"] {
   background-color: yellow;
 }
 
+.guidelines {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.background-check-clause {
+  list-style: circle;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
 .btn--submit {
   display: block;
   margin: 0.75em 0;
@@ -200,5 +211,9 @@ label[for="other-info"] {
 @media only screen and (min-width: 300px) {
   fieldset {
     padding-inline: 2em;
+  }
+
+  .swap-disclaimer {
+    padding-inline: 0.75em;
   }
 }
