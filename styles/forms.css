@@ -153,9 +153,13 @@ label {
   font-weight: 400;
 }
 
+/* Styles for volunteer-2.php */
+
 label[for="certifications"] {
   margin-top: 2.5em;
 }
+
+/* Styles for volunteer-3.php */
 
 #other-info,
 label[for="other-info"] {
@@ -183,6 +187,8 @@ label[for="other-info"] {
   background-color: yellow;
 }
 
+/* Styles for volunteer-4.php */
+
 .guidelines {
   text-decoration: underline;
   text-align: center;
@@ -193,6 +199,8 @@ label[for="other-info"] {
   margin-top: 1em;
   margin-left: 1em;
 }
+
+/* Next/submit button styling */
 
 .btn--submit {
   display: block;
