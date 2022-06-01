@@ -443,7 +443,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="SWAP-housecall"
-                name="interests
+                name="interests[]"
                 id="SWAP-housecall"
                 class="form-input form-input--checkbox"
                 />
@@ -453,7 +453,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="SWAP-oncall"
-                name="interests"
+                name="interests[]"
                 id="SWAP-oncall"
                 class="form-input form-input--checkbox"
                 />
@@ -463,7 +463,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="SWAP-pet-pantry"
-                name="interests"
+                name="interests[]"
                 id="SWAP-pet-pantry"
                 class="form-input form-input--checkbox"
                 />
@@ -473,7 +473,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="foster"
-                name="interests"
+                name="interests[]"
                 id="foster"
                 class="form-input form-input--checkbox"
                 
@@ -484,7 +484,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="events"
-                name="interests"
+                name="interests[]"
                 id="events"
                 class="form-input form-input--checkbox"
                 />
@@ -494,7 +494,7 @@ echo <<< _EOT
                 <input
                 type="checkbox"
                 value="admin-assist"
-                name="interests"
+                name="interests[]"
                 id="admin-assist"
                 class="form-input form-input--checkbox"
                 />
@@ -505,7 +505,7 @@ echo <<< _EOT
                   <input
                   type="checkbox"
                   value="other"
-                  name="interests"
+                  name="interests[]"
                   id="other"
                   class="form-input form-input--checkbox"
                   />
@@ -530,33 +530,33 @@ echo <<< _EOT
               </tr>
               <tr>
                 <th scope="row">Morning</th>
-                <td><input type="checkbox" name="availability" value="Monday morning"></td>
-                <td><input type="checkbox" name="availability" value="Tuesday morning"></td>
-                <td><input type="checkbox" name="availability" value="Wednesday morning"></td>
-                <td><input type="checkbox" name="availability" value="Thursday morning"></td>
-                <td><input type="checkbox" name="availability" value="Friday morning"></td>
-                <td><input type="checkbox" name="availability" value="Saturday morning"></td>
-                <td><input type="checkbox" name="availability" value="Sunday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Monday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Tuesday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Wednesday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Thursday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Friday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Saturday morning"></td>
+                <td><input type="checkbox" name="availability[]" value="Sunday morning"></td>
               </tr>
               <tr>
                 <th scope="row">Afternoon</th>
-                <td><input type="checkbox" name="availability" value="Monday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Tuesday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Wednesday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Thursday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Friday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Saturday afternoon"></td>
-                <td><input type="checkbox" name="availability" value="Sunday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Monday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Tuesday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Wednesday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Thursday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Friday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Saturday afternoon"></td>
+                <td><input type="checkbox" name="availability[]" value="Sunday afternoon"></td>
               </tr>
               <tr>
                 <th scope="row">Evening</th>
-                <td><input type="checkbox" name="availability" value="Monday evening"></td>
-                <td><input type="checkbox" name="availability" value="Tuesday evening"></td>
-                <td><input type="checkbox" name="availability" value="Wednesday evening"></td>
-                <td><input type="checkbox" name="availability" value="Thursday evening"></td>
-                <td><input type="checkbox" name="availability" value="Friday evening"></td>
-                <td><input type="checkbox" name="availability" value="Saturday evening"></td>
-                <td><input type="checkbox" name="availability" value="Sunday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Monday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Tuesday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Wednesday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Thursday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Friday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Saturday evening"></td>
+                <td><input type="checkbox" name="availability[]" value="Sunday evening"></td>
               </tr>
             </table>
 
@@ -678,22 +678,20 @@ echo <<< _EOT
             <div class="input-group">
               <label>Please provide a Veterinary Reference if you are a current or previous pet guardian:</label>
               <div class="input-group input-group--reference">
-                <label for="ref3-name">Name</label>
+                <label for="vet-name">Name</label>
                 <input
                   type="text"
-                  name="ref3-name"
-                  id="ref3-name"
+                  name="vet-name"
+                  id="vet-name"
                   class="form-input form-input--text"
-                  required
                 />
-                <label for="ref3-phone">Phone</label>
+                <label for="vet-phone">Phone</label>
                 <input
                   type="text"
-                  name="ref3-phone"
-                  id="ref3-phone"
+                  name="vet-phone"
+                  id="vet-phone"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
-                  required
                 />
               </div>
             </div>
