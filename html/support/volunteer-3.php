@@ -442,7 +442,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP-housecall"
+                value="SWAP House Calls"
                 name="interests[]"
                 id="SWAP-housecall"
                 class="form-input form-input--checkbox"
@@ -452,7 +452,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP-oncall"
+                value="SWAP On-call"
                 name="interests[]"
                 id="SWAP-oncall"
                 class="form-input form-input--checkbox"
@@ -462,7 +462,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP-pet-pantry"
+                value="SWAP Pet Pantry"
                 name="interests[]"
                 id="SWAP-pet-pantry"
                 class="form-input form-input--checkbox"
@@ -472,7 +472,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="foster"
+                value="Fostering"
                 name="interests[]"
                 id="foster"
                 class="form-input form-input--checkbox"
@@ -483,7 +483,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="events"
+                value="Events"
                 name="interests[]"
                 id="events"
                 class="form-input form-input--checkbox"
@@ -493,7 +493,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="admin-assist"
+                value="Administrative Assistance"
                 name="interests[]"
                 id="admin-assist"
                 class="form-input form-input--checkbox"
@@ -504,7 +504,7 @@ echo <<< _EOT
                 <div class="input-label-set input-label-set--checkbox">
                   <input
                   type="checkbox"
-                  value="other"
+                  value="Other"
                   name="interests[]"
                   id="other"
                   class="form-input form-input--checkbox"
