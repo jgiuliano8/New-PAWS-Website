@@ -598,6 +598,43 @@ echo <<< _EOT
                   name="ref1-email"
                   id="ref1-email"
                   class="form-input form-input--text"
+                />  
+              </div>
+            </div>
+            <div class="input-group">
+              <h3>Reference 2</h3>
+              <div class="input-group input-group--reference">
+                <label for="ref2-name" class="required">Name</label>
+                <input
+                  type="text"
+                  name="ref2-name"
+                  id="ref2-name"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref2-relationship" class="required">Relationship</label>
+                <input
+                  type="text"
+                  name="ref2-relationship"
+                  id="ref2-relationship"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref2-phone" class="required">Phone</label>
+                <input
+                  type="text"
+                  name="ref2-phone"
+                  id="ref2-phone"
+                  class="form-input form-input--text"
+                  placeholder="###-###-####"
+                  required
+                />
+                <label for="ref2-email">Email</label>
+                <input
+                  type="text"
+                  name="ref2-email"
+                  id="ref2-email"
+                  class="form-input form-input--text"
                 />
               </div>
             </div>
@@ -639,9 +676,9 @@ echo <<< _EOT
               </div>
             </div>
             <div class="input-group">
-              <h3>Reference 3</h3>
+              <label>Please provide a Veterinary Reference if you are a current or previous pet guardian:</label>
               <div class="input-group input-group--reference">
-                <label for="ref3-name" class="required">Name</label>
+                <label for="ref3-name">Name</label>
                 <input
                   type="text"
                   name="ref3-name"
@@ -649,15 +686,7 @@ echo <<< _EOT
                   class="form-input form-input--text"
                   required
                 />
-                <label for="ref3-relationship" class="required">Relationship</label>
-                <input
-                  type="text"
-                  name="ref3-relationship"
-                  id="ref3-relationship"
-                  class="form-input form-input--text"
-                  required
-                />
-                <label for="ref3-phone" class="required">Phone</label>
+                <label for="ref3-phone">Phone</label>
                 <input
                   type="text"
                   name="ref3-phone"
@@ -665,13 +694,6 @@ echo <<< _EOT
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
-                />
-                <label for="ref3-email">Email</label>
-                <input
-                  type="text"
-                  name="ref3-email"
-                  id="ref3-email"
-                  class="form-input form-input--text"
                 />
               </div>
             </div>
