@@ -2,13 +2,6 @@
 session_start() != FALSE
   or die('Could not start session');
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require "PHPMailer/PHPMailer.php";
-require "PHPMailer/Exception.php";
-require "PHPMailer/SMTP.php";
-
 // Error handling
 set_error_handler("ErrorHandler");
 
@@ -20,9 +13,11 @@ function ErrorHandler($no, $str, $file, $line) {
 }
 
 // Initialize SESSION variables
-$_SESSION['occupation'] = $_SESSION['employer'] = $_SESSION['time'] = $_SESSION['certifications'] = $_SESSION['languages'] = $_SESSION['animal-orgs'] = $_SESSION['volunteer-work'] = $_SESSION['conviction'] = $_SESSION['about-paws'] = $_SESSION['volunteer-reason'] = $_SESSION['about-yourself'] = $_SESSION['animal-experience'] = '';
+$_SESSION['interests[]'] = $_SESSION['other-info'] = $_SESSION['availability[]'] = $_SESSION['ref1-name'] = $_SESSION['ref1-relationship'] = $_SESSION['ref1-phone'] = $_SESSION['ref1-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = $_SESSION['ref3-name'] = $_SESSION['ref3-relationship'] = $_SESSION['ref3-phone'] = $_SESSION['ref3-email'] = $_SESSION['vet-name'] = $_SESSION['vet-phone'] = '';
 
-
+foreach($_POST['interests'] as $key => $value) {
+print("Key $key - Value $value <br />");
+}
 // Set SESSION variables to POST variables so they carry over
 // to other pages
 // Then scrub and validate SESSION variables
@@ -30,80 +25,123 @@ $_SESSION['occupation'] = $_SESSION['employer'] = $_SESSION['time'] = $_SESSION[
 foreach($_POST as $key => $value) {
   if (isset($_POST[$key])) {
     $_SESSION[$key] = $value;
-    $_SESSION[$key] = parse_input($_SESSION[$key]);
+    if(gettype($_SESSION[$key]) == 'array') {
+      foreach($_SESSION[$key] as $subkey => $subvalue) {
+            $_SESSION[$key][$subkey] = parse_input($subvalue);
+      }
+    } else {
+      $_SESSION[$key] = parse_input($_SESSION[$key]);
+    }
     switch($key)
     {
-      case 'occupation':  if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the 'occupation' field. Please go back and input correctly. <br/> <br />");
-                    exit;
-                    }
-                    break;
-
-      case 'employer': if (!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the 'employer' field. Please go back and input correctly. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'time':  if (!letters_numbers_space_only($_SESSION[$key])) {
-                        echo("Only letters, numbers and white space allowed in the 'time on the job' field. Please go back and input correctly. <br/> <br />");
-                        exit;  
-                      };
-                      break;
-
-      case 'certifications':  if(!letters_numbers_space_only($_SESSION[$key])) {
-                      echo("Only letters, numbers  and white space allowed in the 'certifications' field. Please go back and input correctly. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'languages': if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the 'languages' field. Please go back and input correctly. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'animal-orgs': if(!letters_numbers_space_only($_SESSION[$key])) {
-                        echo("Only letters, numbers and white space allowed in the 'animal organizations' field. Please go back and input correctly.<br />");
-                        exit;
-                      }
-                      break;
-
-      case 'volunteer-work': if(!letters_numbers_space_only($_SESSION[$key])) {
-                      echo("Only letters, numbers and white space allowed in the 'volunteer work' field. Please go back and input correctly.");
-                      exit;
-                    }
-                    break;
-
-      case 'conviction':  if(!letters_numbers_space_only($_SESSION[$key])) {
-                            echo("Only letters, numbers and white space allowed in the 'convictions' field. Please go back and input correctly.");
-                            exit;
+      case 'interests': foreach($_SESSION[$key] as $subkey => $subvalue) {
+                          if(!letters_space_only($_SESSION[$key][$subkey])) {
+                            echo("Only letters and white space allowed in the 'interests' field. Please go back and input correctly. <br/> <br />");
+                          exit;
                           }
-                          break;
-                          
-      case 'about-paws': if(!letters_numbers_space_only($_SESSION[$key])) {
-                        echo("Only letters, numbers and white space allowed in the 'why you want to volunteer for PAWS' field. Please go back and input correctly. <br/> $_SESSION[$key]<br />");
-                        exit;
-                      }
-                      break;
+                        }
+                        break;
 
-      case 'volunteer-reason': if(!letters_numbers_space_only($_SESSION[$key])) {
-                                echo("Only letters, numbers and white space allowed in the 'volunteer reason' field. Please go back and input correctly. <br/> <br />");
+      case 'other-info':  if (!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'time on the job' field. Please go back and input correctly. <br/> <br />");
+                            exit;  
+                          };
+                          break;
+
+      case 'availability':  foreach($_SESSION[$key] as $subkey => $subvalue) {
+                              if(!letters_space_only($_SESSION[$key][$subkey])) {
+                                echo("Only letters and white space allowed in the 'availability' field. Please go back and input correctly. <br/> <br />");
+                              exit;
+                              }
+                            }
+                            break;
+
+      case 'ref1-name': if (!letters_space_only($_SESSION[$key])) {            
+                      echo("Only letters and white space allowed in the 'Reference 1 name' field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }  
+                    break;
+
+      case 'ref1-relationship': if(!letters_space_only($_SESSION[$key])) {
+                                echo("Only letters and white space allowed in the 'Reference 1 relationship field'. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
                               break;
 
-      case 'about-yourself':  if(!letters_numbers_space_only($_SESSION[$key])) {
-                          echo("Only letters, numbers and white space allowed in the 'tell us about yourself' field. Please go back and input correctly.");
-                          exit;
+      case 'ref1-phone': if(!phone_number_only($_SESSION[$key])) {
+                      echo("Please go back and input a valid phone number in the 'Reference 1 phone number' field, if the format ###-###-####.");
+                      exit;
+                    }
+                    break;
+
+      case 'ref1-email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                      echo("Invalid email format. Please go back and input a valid email in the 'Reference 1 email' field. <br/> <br />");
+                      exit;
+                    }
+                    break;
+
+      case 'ref2-name': if (!letters_space_only($_SESSION[$key])) {            
+                      echo("Only letters and white space allowed in the 'Reference 1 name' field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }  
+                    break;
+
+      case 'ref2-relationship': if(!letters_space_only($_SESSION[$key])) {
+                                echo("Only letters and white space allowed in the 'Reference 1 relationship field'. Please go back and input correctly. <br/> <br />");
+                                exit;
+                              }
+                              break;
+
+      case 'ref2-phone': if(!phone_number_only($_SESSION[$key])) {
+                      echo("Please go back and input a valid phone number in the 'Reference 1 phone number' field, if the format ###-###-####.");
+                      exit;
+                    }
+                    break;
+
+      case 'ref2-email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                      echo("Invalid email format. Please go back and input a valid email in the 'Reference 1 email' field. <br/> <br />");
+                      exit;
+                    }
+                    break;
+
+      case 'ref3-name': if (!letters_space_only($_SESSION[$key])) {            
+                      echo("Only letters and white space allowed in the 'Reference 1 name' field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }  
+                    break;
+
+      case 'ref3-relationship': if(!letters_space_only($_SESSION[$key])) {
+                                echo("Only letters and white space allowed in the 'Reference 1 relationship field'. Please go back and input correctly. <br/> <br />");
+                                exit;
+                              }
+                              break;
+
+      case 'ref3-phone': if(!phone_number_only($_SESSION[$key])) {
+                      echo("Please go back and input a valid phone number in the 'Reference 1 phone number' field, if the format ###-###-####.");
+                      exit;
+                    }
+                    break;
+
+      case 'ref3-email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                      echo("Invalid email format. Please go back and input a valid email in the 'Reference 1 email' field. <br/> <br />");
+                      exit;
+                    }
+                    break;
+
+      case 'vet-name': if (!letters_space_only($_SESSION[$key])) {            
+                      echo("Only letters and white space allowed in the 'Veterinary name' field. Please go back and input correctly. <br/> <br />");
+                      exit;
+                    }  
+                    break;
+
+      case 'vet-phone': if($_SESSION[$key] != '') {
+                          if(!phone_number_only($_SESSION[$key])) {
+                            echo("Please go back and input a valid phone number in the 'Veterinary phone number' field, of the format ###-###-####.");
+                            exit;
+                          }
                         }
                         break;
 
-      case 'animal-experience':  if (!letters_numbers_space_only($_SESSION[$key])) {
-                          echo("Only letters, numbers and white space allowed in the 'tell us about your animal experience'  field. Please go back and input correctly. <br/> <br />");
-                          exit;
-                        }
-                        break;
       default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
                 exit;
     }
@@ -153,65 +191,6 @@ function numbers_only($data) {
   return(TRUE);
 }
 
-// Send input in email
-//PHPMailer Object
-$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
-// Use 'include' to pull in email template for email message body.
-ob_start();
-include 'html_volunteer_email.php';
-$body = ob_get_clean();
-
-//From email address and name
-$mail->From = "$email";
-$mail->FromName = "$name";
-
-//To address and name
-$mail->addAddress("jgiuliano8@yahoo.com", "Jeff Giuliano");
-$mail->addAddress("jgiuliano8@gmail.com", "Jeff Giuliano");
-
-
-//Address to which recipient will reply
-$mail->addReplyTo("$email", "$name");
-
-//CC and BCC
-// $mail->addCC("cc@example.com");
-// $mail->addBCC("bcc@example.com");
-
-//Send HTML or Plain Text email
-$mail->isHTML(true);
-
-$mail->Subject = "New PAWS Volunteer!!";
-// $mail->Body = "<i>Mail body in HTML</i>";
-$mail->MsgHTML($body);
-
-$mail->AltBody = "This is the plain text version of the email content";
-
-try {
-    $mail->send();
-    header('Refresh: 5; URL=http://development.paws-li.org/html/support/volunteer-1.php');
-    $success_message = <<<_EOT
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New PAWS Volunteer</title>
-    <style type="text/css">
-    </style>
-  </head>
-  <body>
-    <p>
-    <strong>Form has been sent successfully! Someone from PAWS will contact you soon.</strong> <br /> <br /> ....redirecting in 5 seconds.
-    </p>
-  </body>
-</html>
-_EOT;
-echo ("$success_message");
-
-} catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo . " <br /> Please hit back button and try to resubmit.";
-}
 
 ?>
