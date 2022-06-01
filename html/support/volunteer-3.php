@@ -12,6 +12,9 @@ function ErrorHandler($no, $str, $file, $line) {
   "in <span style='color:blue'>$file</span></div>";
 }
 
+// Parsing and scrubbing functions library
+require "../../forms/parse_lib.php";
+
 // Initialize SESSION variables
 $_SESSION['occupation'] = $_SESSION['employer'] = $_SESSION['time'] = $_SESSION['certifications'] = $_SESSION['languages'] = $_SESSION['animal-orgs'] = $_SESSION['volunteer-work'] = $_SESSION['conviction'] = $_SESSION['about-paws'] = $_SESSION['volunteer-reason'] = $_SESSION['about-yourself'] = $_SESSION['animal-experience'] = '';
 
@@ -68,7 +71,7 @@ foreach($_POST as $key => $value) {
                     }
                     break;
 
-      case 'conviction':  if(!letters_numbers_space_only($_SESSION[$key])) {
+      case 'conviction':  if(!textarea_only($_SESSION[$key])) {
                             echo("Only letters, numbers and white space allowed in the 'convictions' field. Please go back and input correctly.");
                             exit;
                           }
@@ -80,19 +83,19 @@ foreach($_POST as $key => $value) {
                       }
                       break;
 
-      case 'volunteer-reason': if(!letters_numbers_space_only($_SESSION[$key])) {
+      case 'volunteer-reason': if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the 'volunteer reason' field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
                               break;
 
-      case 'about-yourself':  if(!letters_numbers_space_only($_SESSION[$key])) {
+      case 'about-yourself':  if(!textarea_only($_SESSION[$key])) {
                           echo("Only letters, numbers and white space allowed in the 'tell us about yourself' field. Please go back and input correctly.");
                           exit;
                         }
                         break;
 
-      case 'animal-experience':  if (!letters_numbers_space_only($_SESSION[$key])) {
+      case 'animal-experience':  if (!textarea_only($_SESSION[$key])) {
                           echo("Only letters, numbers and white space allowed in the 'tell us about your animal experience'  field. Please go back and input correctly. <br/> <br />");
                           exit;
                         }
@@ -101,49 +104,6 @@ foreach($_POST as $key => $value) {
                 exit;
     }
   }
-}
-
-// Scrubbing and validation functions
-function parse_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-function letters_space_only($data) {
-  if (!preg_match("/^[a-zA-Z-' ]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function letters_numbers_space_only($data) {
-  if (!preg_match("/^[a-zA-Z0-9-' \.]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function zipcode_only($data) {
-  if (!preg_match("/^[0-9]{5}-{0,1}[0-9]{0,4}$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function phone_number_only($data) {
-  if (!preg_match("/^[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function numbers_only($data) {
-  if (!preg_match("/^[0-9.]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
 }
 
 

@@ -12,6 +12,9 @@ function ErrorHandler($no, $str, $file, $line) {
   "in <span style='color:blue'>$file</span></div>";
 }
 
+// Parsing and scrubbing functions library
+require "../../forms/parse_lib.php";
+
 // Initialize SESSION variables
 $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['birth-year'] = $_SESSION['ec-name'] = $_SESSION['ec-relationship'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
 
@@ -101,49 +104,6 @@ foreach($_POST as $key => $value) {
                 exit;
     }
   }
-}
-
-// Scrubbing and validation functions
-function parse_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-function letters_space_only($data) {
-  if (!preg_match("/^[a-zA-Z-' ]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function letters_numbers_space_only($data) {
-  if (!preg_match("/^[a-zA-Z0-9-' \.]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function zipcode_only($data) {
-  if (!preg_match("/^[0-9]{5}-{0,1}[0-9]{0,4}$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function phone_number_only($data) {
-  if (!preg_match("/^[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
-}
-
-function numbers_only($data) {
-  if (!preg_match("/^[0-9.]*$/",$data)) {
-    return(FALSE);
-  }
-  return(TRUE);
 }
 
 // HTML Document
