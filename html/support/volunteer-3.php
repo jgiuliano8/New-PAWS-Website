@@ -432,7 +432,7 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/forms/volunteer-4.php" method="post">
+        <form action="/html/support/volunteer-4.php" method="post">
           <fieldset>
             <legend>Volunteer for PAWS</legend>
             <h2>Volunteer Interests</h2>
@@ -500,21 +500,21 @@ echo <<< _EOT
                 />
                 <label for="admin-assist">Administrative assistance</label>
               </div>
-            <div class="input-group">
-              <div class="input-label-set input-label-set--checkbox">
-                <input
-                type="checkbox"
-                value="other"
-                name="interests"
-                id="other"
-                class="form-input form-input--checkbox"
-                />
-                <label for="other">Other</label>
+              <div class="input-group">
+                <div class="input-label-set input-label-set--checkbox">
+                  <input
+                  type="checkbox"
+                  value="other"
+                  name="interests"
+                  id="other"
+                  class="form-input form-input--checkbox"
+                  />
+                  <label for="other">Other</label>
+                </div>
+                <label for="other-info">Please specify:</label>
+                <textarea cols="30" rows="5"  name="other-info" id="other-info" class="form-input form-input--text"></textarea>
               </div>
-              <label for="other-info">Please specify:</label>
-              <textarea name="other-info" id="other-info" cols="40" rows="5" class="form-input--text"></textarea>
             </div>
-          </div>
 
           <h2>Availability</h2>
             <table class="availability">
