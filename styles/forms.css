@@ -257,6 +257,11 @@ label[for="other-info"] {
   cursor: pointer;
 }
 
+.email-notice {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
 @media only screen and (min-width: 300px) {
   fieldset {
     padding-inline: 2em;

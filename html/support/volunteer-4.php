@@ -487,6 +487,7 @@ echo <<< _EOT
             <input type="text" name="signature" id="signature" class="form-input form-input--text" required>
 
             <button type="submit" class="btn btn--submit">Submit</button>
+            <p class="email-notice">You will receive a copy of this form at the email you provided, once you submit it.</p>
           </fieldset>
         </form>
       </section>
