@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Pull in PHPMailer code
-require "PHPMailer/PHPMailer.php";
-require "PHPMailer/Exception.php";
-require "PHPMailer/SMTP.php";
+require "../../forms/PHPMailer/PHPMailer.php";
+require "../../forms/PHPMailer/Exception.php";
+require "../../forms/PHPMailer/SMTP.php";
 
 // Pull in my parsing funcitons
 require "../../forms/parse_lib.php";
@@ -43,7 +43,7 @@ $_SESSION['fullname'] = '';
 // Set SESSION variable to POST variable so they carry over
 // to other pages
 // Then scrub and validate SESSION variable
-if (isset($_POST[fullname])) {
+if (isset($_POST['fullname'])) {
   if(!letters_space_only($_SESSION[$key])) {
     echo("Only letters and white space allowed in the 'fullname' field. Please go back and input correctly. <br/> <br />");
     exit;
@@ -60,8 +60,8 @@ include '../../forms/html_volunteer_email.php';
 $body = ob_get_clean();
 
 //From email address and name
-$mail->From = "$email";
-$mail->FromName = "$name";
+$mail->From = $_SESSION['email'];
+$mail->FromName = $_SESSION['name'];
 
 //To address and name
 $mail->addAddress("jgiuliano8@yahoo.com", "Jeff Giuliano");
@@ -69,7 +69,7 @@ $mail->addAddress("jgiuliano8@yahoo.com", "Jeff Giuliano");
 
 
 //Address to which recipient will reply
-$mail->addReplyTo("$email", "$name");
+$mail->addReplyTo($_SESSION['email'], $_SESSION['name']);
 
 //CC and BCC
 // $mail->addCC("cc@example.com");
