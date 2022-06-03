@@ -120,6 +120,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/navigation.css" />
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
+    <script defer src="/scripts/progress.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -392,6 +393,13 @@ echo <<< _EOT
 
       <section class="main-form">
         <form action="/html/support/volunteer-3.php" method="post">
+          <p>Form Progress:</p>
+          <div id="form-progress" data-max-step="4" data-current-step="2">
+            <div id="step-1">1</div>
+            <div id="step-2">2</div>
+            <div id="step-3">3</div>
+            <div id="step-4">4</div>
+          </div>
           <fieldset>
             <legend>Volunteer for PAWS</legend>
             <h2>About You</h2>

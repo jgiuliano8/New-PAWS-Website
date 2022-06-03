@@ -171,6 +171,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/navigation.css" />
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
+    <script defer src="/scripts/progress.js""></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -442,7 +443,14 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/html/support/volunteer-4.php" method="post">
+        <form action="/html/support/volunteer-5.php" method="post">
+          <p>Form Progress:</p>
+          <div id="form-progress" data-max-step="4" data-current-step="4">
+            <div id="step-1">1</div>
+            <div id="step-2">2</div>
+            <div id="step-3">3</div>
+            <div id="step-4">4</div>
+          </div>
           <fieldset>
             <legend>Volunteer for PAWS</legend>
             
@@ -474,6 +482,9 @@ echo <<< _EOT
 
             <p class="content__p">I affirm that the information supplied is true to the best of my knowledge and agree to adhere to the above Volunteer Guidelines. I understand that failure to follow the guidelines or any PAWS rule can result in the termination of my volunteer status. I understand that I am responsible for myself and agree that PAWS and PAWS agents are not liable in the event of accident, injury, death, or other incident.
             </p>
+
+            <label for="signature" class="required">Full Name</label>
+            <input type="text" name="signature" id="signature" class="form-input form-input--text" required>
 
             <button type="submit" class="btn btn--submit">Submit</button>
           </fieldset>
