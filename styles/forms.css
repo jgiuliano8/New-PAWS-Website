@@ -262,6 +262,25 @@ label[for="other-info"] {
   font-style: italic;
 }
 
+/* Validation and required styling */
+
+input:focus:required:invalid,
+input:focus:invalid {
+  background-image: url("/images/alert-triangle-new.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  outline: 2px solid #ff5555;
+  outline-offset: 3px;
+}
+
+input:focus:valid {
+  background-image: url("/images/circle-check.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  outline: 2px solid #44aa00;
+  outline-offset: 3px;
+}
+
 @media only screen and (min-width: 300px) {
   fieldset {
     padding-inline: 2em;

@@ -354,6 +354,9 @@ echo <<< _EOT
                 type="text"
                 name="zip-code"
                 id="zip-code"
+                minlength="5"
+                maxlength="10"
+                pattern="[0-9]{5}(-[0-9]{4}){0,1}"
                 placeholder="ZIP Code"
                 class="form-input form-input--text"
                 required
@@ -364,13 +367,16 @@ echo <<< _EOT
               type="text"
               name="birth-year"
               id="birth-year"
+              minlength="4"
+              maxlength="4"
+              pattern="[0-9]{4}"
               placeholder="yyyy"
               class="form-input form-input--text"
               required
             />
             <label for="email" class="required">Email</label>
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
               class="form-input form-input--text"
@@ -378,9 +384,12 @@ echo <<< _EOT
             />
             <label for="phone" class="required">Phone</label>
             <input
-              type="text"
+              type="tel"
               name="phone"
               id="phone"
+              minlength="12"
+              maxlength="12"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               class="form-input form-input--text"
               placeholder="###-###-####"
               required
@@ -407,13 +416,14 @@ echo <<< _EOT
               type="text"
               name="ec-phone"
               id="ec-phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               class="form-input form-input--text"
               placeholder="###-###-####"
               required
             />
             <label for="ec-email">Email</label>
             <input
-              type="text"
+              type="email"
               name="ec-email"
               id="ec-email"
               class="form-input form-input--text"

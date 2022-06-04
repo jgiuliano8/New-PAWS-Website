@@ -553,16 +553,19 @@ echo <<< _EOT
                 />
                 <label for="ref1-phone" class="required">Phone</label>
                 <input
-                  type="text"
+                  type="tel"
                   name="ref1-phone"
                   id="ref1-phone"
+                  minlength="12"
+                  maxlength="12"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
                 />
                 <label for="ref1-email">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="ref1-email"
                   id="ref1-email"
                   class="form-input form-input--text"
@@ -590,16 +593,19 @@ echo <<< _EOT
                 />
                 <label for="ref2-phone" class="required">Phone</label>
                 <input
-                  type="text"
+                  type="tel"
                   name="ref2-phone"
                   id="ref2-phone"
+                  minlength="12"
+                  maxlength="12"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
                 />
                 <label for="ref2-email">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="ref2-email"
                   id="ref2-email"
                   class="form-input form-input--text"
@@ -627,16 +633,19 @@ echo <<< _EOT
                 />
                 <label for="ref2-phone" class="required">Phone</label>
                 <input
-                  type="text"
+                  type="tel"
                   name="ref2-phone"
                   id="ref2-phone"
+                  minlength="12"
+                  maxlength="12"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
                 />
                 <label for="ref2-email">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="ref2-email"
                   id="ref2-email"
                   class="form-input form-input--text"
@@ -655,9 +664,12 @@ echo <<< _EOT
                 />
                 <label for="vet-phone">Phone</label>
                 <input
-                  type="text"
+                  type="tel"
                   name="vet-phone"
                   id="vet-phone"
+                  minlength="12"
+                  maxlength="12"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                 />
