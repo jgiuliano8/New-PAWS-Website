@@ -475,6 +475,7 @@ echo <<< _EOT
                   value="Other"
                   name="interests[]"
                   id="other"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--checkbox"
                   />
                   <label for="other">Other</label>
@@ -540,6 +541,7 @@ echo <<< _EOT
                   type="text"
                   name="ref1-name"
                   id="ref1-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -548,6 +550,7 @@ echo <<< _EOT
                   type="text"
                   name="ref1-relationship"
                   id="ref1-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -556,9 +559,9 @@ echo <<< _EOT
                   type="tel"
                   name="ref1-phone"
                   id="ref1-phone"
-                  minlength="12"
+                  minlength="10"
                   maxlength="12"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
@@ -580,6 +583,7 @@ echo <<< _EOT
                   type="text"
                   name="ref2-name"
                   id="ref2-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -588,6 +592,7 @@ echo <<< _EOT
                   type="text"
                   name="ref2-relationship"
                   id="ref2-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -596,9 +601,9 @@ echo <<< _EOT
                   type="tel"
                   name="ref2-phone"
                   id="ref2-phone"
-                  minlength="12"
+                  minlength="10"
                   maxlength="12"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
@@ -620,6 +625,7 @@ echo <<< _EOT
                   type="text"
                   name="ref2-name"
                   id="ref2-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -628,6 +634,7 @@ echo <<< _EOT
                   type="text"
                   name="ref2-relationship"
                   id="ref2-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
@@ -636,9 +643,9 @@ echo <<< _EOT
                   type="tel"
                   name="ref2-phone"
                   id="ref2-phone"
-                  minlength="12"
+                  minlength="10"
                   maxlength="12"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                   required
@@ -660,6 +667,7 @@ echo <<< _EOT
                   type="text"
                   name="vet-name"
                   id="vet-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                 />
                 <label for="vet-phone">Phone</label>
@@ -667,9 +675,9 @@ echo <<< _EOT
                   type="tel"
                   name="vet-phone"
                   id="vet-phone"
-                  minlength="12"
+                  minlength="10"
                   maxlength="12"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
                 />

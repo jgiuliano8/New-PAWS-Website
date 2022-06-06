@@ -95,9 +95,11 @@ foreach($_POST as $key => $value) {
                         }
                         break;
 
-      case 'ec-email':  if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
-                          echo("Invalid email format in the emergency contact email field. Please go back and input a valid email. <br/> <br />");
-                          exit;
+      case 'ec-email':  if($_SESSION[$key] != '') {
+                          if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
+                            echo("Invalid email format in the emergency contact email field. Please go back and input a valid email. <br/> <br />");
+                            exit;
+                          }
                         }
                         break;
       default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
@@ -410,6 +412,7 @@ echo <<< _EOT
                 type="text"
                 name="occupation"
                 id="occupation"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
                 required
               />
@@ -418,6 +421,7 @@ echo <<< _EOT
                 type="text"
                 name="employer"
                 id="employer"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
               />
               <label for="time">Length of time on job</label>
@@ -425,6 +429,7 @@ echo <<< _EOT
                 type="text"
                 name="time"
                 id="time"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
               />
             </div>
@@ -436,6 +441,7 @@ echo <<< _EOT
               type="text"
               name="certifications"
               id="certifications"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -447,6 +453,7 @@ echo <<< _EOT
               type="text"
               name="languages"
               id="languages"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -458,6 +465,7 @@ echo <<< _EOT
               type="text"
               name="animal-orgs"
               id="animal-orgs"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -469,6 +477,7 @@ echo <<< _EOT
               type="text"
               name="volunteer-work"
               id="volunteer-work"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -483,6 +492,7 @@ echo <<< _EOT
               rows="5"
               name="conviction"
               id="conviction"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             ></textarea>
@@ -493,6 +503,7 @@ echo <<< _EOT
               type="text"
               name="about-paws"
               id="about-paws"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -504,6 +515,7 @@ echo <<< _EOT
               rows="5"
               name="volunteer-reason"
               id="volunteer-reason"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             ></textarea>
@@ -516,6 +528,7 @@ echo <<< _EOT
               rows="5"
               name="about-yourself"
               id="about-yourself"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             ></textarea>
@@ -527,6 +540,7 @@ echo <<< _EOT
               rows="5"
               name="animal-experience"
               id="animal-experience"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             ></textarea>

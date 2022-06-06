@@ -9,14 +9,14 @@ function parse_input($data) {
 }
 
 function letters_space_only($data) {
-  if (!preg_match("/^[a-zA-Z-' ]*$/",$data)) {
+  if (!preg_match("/^[a-zA-Z-',\. ]*$/",$data)) {
     return(FALSE);
   }
   return(TRUE);
 }
 
 function letters_numbers_space_only($data) {
-  if (!preg_match("/^[a-zA-Z0-9-' \.]*$/",$data)) {
+  if (!preg_match("/^[a-zA-Z0-9-', \.]*$/",$data)) {
     return(FALSE);
   }
   return(TRUE);

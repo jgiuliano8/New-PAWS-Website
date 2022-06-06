@@ -317,7 +317,8 @@ echo <<< _EOT
               type="text"
               name="name"
               id="name"
-              class="form-input form-input--text"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                class="form-input form-input--text"
               required
             />
             <div class="input-group">
@@ -328,6 +329,7 @@ echo <<< _EOT
                 name="street"
                 id="street"
                 placeholder="Street"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
                 required
               />
@@ -337,6 +339,7 @@ echo <<< _EOT
                 name="city"
                 id="city"
                 placeholder="City"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
                 required
               />
@@ -346,6 +349,7 @@ echo <<< _EOT
                 name="state"
                 id="state"
                 placeholder="State"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                 class="form-input form-input--text"
                 required
               />
@@ -387,9 +391,9 @@ echo <<< _EOT
               type="tel"
               name="phone"
               id="phone"
-              minlength="12"
+              minlength="10"
               maxlength="12"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
               class="form-input form-input--text"
               placeholder="###-###-####"
               required
@@ -400,6 +404,7 @@ echo <<< _EOT
               type="text"
               name="ec-name"
               id="ec-name"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
@@ -408,6 +413,7 @@ echo <<< _EOT
               type="text"
               name="ec-relationship"
               id="ec-relationship"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
               class="form-input form-input--text"
               required
             />
