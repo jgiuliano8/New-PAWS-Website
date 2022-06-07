@@ -14,7 +14,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/navigation.css" />
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
-    <script defer src="/scripts/progress.js"></script>    
+    <script defer src="/scripts/progress.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -298,6 +298,11 @@ echo <<< _EOT
           ideas! Your involvement is the key to our ongoing success. We can't
           wait to get you started!!
         </p>
+        <p class="content__p content__p--info">
+          To fill out the form we require three references. They must not be
+          family references and you will need a contact phone number for them.
+          Employer references are preferred.
+        </p>
       </section>
 
       <section class="main-form">
@@ -318,7 +323,7 @@ echo <<< _EOT
               name="name"
               id="name"
               pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
+              class="form-input form-input--text"
               required
             />
             <div class="input-group">
