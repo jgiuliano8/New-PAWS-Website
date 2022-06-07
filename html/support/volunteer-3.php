@@ -481,7 +481,7 @@ echo <<< _EOT
                   <label for="other">Other</label>
                 </div>
                 <label for="other-info">Please specify:</label>
-                <textarea cols="30" rows="5"  name="other-info" id="other-info" class="form-input form-input--text"></textarea>
+                <textarea rows="5" name="other-info" id="other-info" class="form-input form-input--text"></textarea>
               </div>
             </div>
 

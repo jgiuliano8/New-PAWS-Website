@@ -1,11 +1,8 @@
 /* The Volunteer Page/Form Stylesheet */
 
-/* Next three rules override styles.css
-for ease of layout. */
-
 main {
   display: block;
-  padding-inline: 15%;
+  padding-inline: 4%;
   margin: 0 auto;
 }
 
@@ -43,9 +40,9 @@ h2 ~ h2 {
 
 #form-progress {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 6px;
-  margin: 2em 0;
+  margin: 2em auto;
   border: 1px solid rgb(var(--base-color));
   border-radius: 6px;
 }
@@ -83,17 +80,17 @@ h2 ~ h2 {
 }
 
 fieldset {
+  max-width: 100%;
   padding-inline: 0.5em;
   border: solid 2px rgb(var(--light-accent-color));
   border-radius: 4px;
 }
 
 legend {
-  font-size: 1.25rem;
-
   width: auto;
   padding: 0.5em;
   border: none;
+  font-size: 1.25rem;
 }
 
 label {
@@ -214,12 +211,21 @@ label[for="other-info"] {
   margin-top: 0.25em;
 }
 
+th {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.availability {
+  margin: 0 auto;
+}
+
 .availability th[scope="row"] {
   text-align: left;
 }
 
 .availability tbody tr td {
-  min-width: 2em;
+  /* min-width: 1.5em; */
   text-align: center;
 }
 
@@ -283,10 +289,16 @@ input:focus:valid {
 
 @media only screen and (min-width: 300px) {
   fieldset {
-    padding-inline: 2em;
+    padding-inline: 1em;
   }
 
   .swap-disclaimer {
     padding-inline: 0.75em;
+  }
+}
+
+@media only screen and (min-width: 470px) {
+  main {
+    padding-inline: 10%;
   }
 }
