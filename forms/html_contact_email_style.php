@@ -47,7 +47,7 @@
         </tr>
         <tr class="table-row">
           <th class="table-header-col" scope="col">Address</th>
-          <td><?php echo("$street<br />$city, $state $zipcode") ?></td>
+          <td><?php echo("$street<br />$city, $state $zip_code") ?></td>
         </tr>
           <tr class="table-row">
           <th class="table-header-col" scope="col">Phone</th>

@@ -27,7 +27,7 @@
         <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Address</th>
           <td style="padding-top: 8px; padding-bottom: 8px;">
-<?php echo("$street<br />$city, $state $zipcode"); ?></td>
+<?php echo("$street<br />$city, $state $zip_code"); ?></td>
         </tr>
           <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Phone</th>
