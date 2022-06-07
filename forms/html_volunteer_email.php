@@ -43,19 +43,19 @@
           <th scope="row" colspan="2" style="padding-top: 8px; padding-bottom: 8px;">Emergency Contact Information</th>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">EC Name</th>
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Emergency contact name</th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['ec-name']) ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">EC Relationship</th>
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Emergency contact relationship</th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['ec-relationship']) ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">EC Phone</th>
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Emergency contact phone</th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['ec-phone']) ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">EC Email</th>
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Emergency contact email</th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['ec-email']) ?></td>
         </tr>
         <tr class="table-row table-header-row" style="padding: 16px;" align="center" bgcolor="lightblue">
@@ -84,7 +84,7 @@
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['languages']) ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px; min-width: fit-content;" align="right" bgcolor="lightgray">
             Previously volunteered with animal organizations
           </th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['animal-orgs']) ?></td>
@@ -219,13 +219,13 @@
         <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray"></th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo <<<_EOT
-              <h3>If you are volunteering for Seniors with Animals Project (“SWAP”): </h3>
+              <h3>If you are volunteering for Seniors with Animals Project ("SWAP"): </h3>
 
               <h3>Volunteer Guidelines</h3>
               <p>As a PAWS SWAP Volunteer, I agree to:</p>
               <ul>
                 <li>Never discuss client details/information with people outside of PAWS.</li>
-                <li>Make a minimum 6 month commitment if I sign up to be a ‘House call’ volunteer.</li>
+                <li>Make a minimum 6 month commitment if I sign up to be a 'House call' volunteer.</li>
                 <li>Show up and be on time for every appointment, rain or shine; dangerous, ice/heavy snow isexception.</li>
                 <li>Set boundaries with clients and know my own personal boundaries.</li>
                 <li>Notify PAWS and client promptly if I must cancel for any reason.</li>
