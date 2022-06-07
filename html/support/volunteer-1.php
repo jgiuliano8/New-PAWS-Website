@@ -481,4 +481,5 @@ echo <<< _EOT
     </footer>
   </body>
 </html>
-_EOT; ?>
+_EOT;
+?>

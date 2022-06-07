@@ -33,6 +33,10 @@ h2 ~ h2 {
   margin: 1em auto;
 }
 
+.content__p--info {
+  font-style: italic;
+}
+
 .main-form {
   margin: 2em auto 0;
   max-width: 500px;

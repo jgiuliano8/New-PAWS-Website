@@ -315,7 +315,7 @@
             <legend>Contact Us</legend>
             <label for="email" class="required">Email</label>
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
               class="form-input form-input--text"
@@ -325,6 +325,7 @@
             <input
               type="text"
               name="name"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+"
               id="name"
               class="form-input form-input--text"
               required
@@ -335,6 +336,7 @@
               <input
                 type="text"
                 name="street"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+"
                 id="street"
                 placeholder="Street"
                 class="form-input form-input--text"
@@ -344,6 +346,7 @@
               <input
                 type="text"
                 name="city"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+"
                 id="city"
                 placeholder="City"
                 class="form-input form-input--text"
@@ -353,16 +356,18 @@
               <input
                 type="text"
                 name="state"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+"
                 id="state"
                 placeholder="State"
                 class="form-input form-input--text"
                 required
               />
-              <label for="zip-code" class="sr-only">ZIP Code</label>
+              <label for="zip_code" class="sr-only">ZIP Code</label>
               <input
                 type="text"
                 name="zip-code"
-                id="zip-code"
+                id="zip_code"
+                pattern="[0-9]{5}(-[0-9]{4}){0,1}"
                 placeholder="ZIP Code"
                 class="form-input form-input--text"
                 required
@@ -370,19 +375,20 @@
             </div>
             <label for="phone" class="required">Phone</label>
             <input
-              type="text"
+              type="tel"
               name="phone"
               id="phone"
+              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
               class="form-input form-input--text"
               placeholder="###-###-####"
               required
             />
             <div class="input-group">
-              <label for="pet-type">Pet Type</label>
+              <label for="pet_type">Pet Type</label>
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-type"
+                  name="pet_type"
                   id="cat"
                   value="cat"
                   class="form-input form-input--radio"
@@ -392,7 +398,7 @@
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-type"
+                  name="pet_type"
                   id="Male"
                   value="dog"
                   class="form-input form-input--radio"
@@ -401,11 +407,11 @@
               </div>
             </div>
             <div class="input-group">
-              <label for="pet-gender">Pet Gender</label>
+              <label for="pet_gender">Pet Gender</label>
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-gender"
+                  name="pet_gender"
                   id="female"
                   value="female"
                   class="form-input form-input--radio"
@@ -417,7 +423,7 @@
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-gender"
+                  name="pet_gender"
                   id="male"
                   value="male"
                   class="form-input form-input--radio"
@@ -425,8 +431,8 @@
                 <label for="male" class="input-group__sub-label">Male</label>
               </div>
             </div>
-            <label for="pet-age">Pet Age (in years)</label>
-            <input type="text" name="pet-age" id="pet-age" class="form-input form-input--text"> 
+            <label for="pet_age">Pet Age (in years)</label>
+            <input type="text" name="pet_age" id="pet-age" pattern="[0-9]*" class="form-input form-input--text"> 
             <label for="reason" class="required">Reason for contact</label>
             <select
               name="reason"
