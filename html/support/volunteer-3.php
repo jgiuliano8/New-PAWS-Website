@@ -618,31 +618,31 @@ echo <<< _EOT
               </div>
             </div>
             <div class="input-group">
-              <h3>Reference 2</h3>
+              <h3>Reference 3</h3>
               <div class="input-group input-group--reference">
-                <label for="ref2-name" class="required">Name</label>
+                <label for="ref3-name" class="required">Name</label>
                 <input
                   type="text"
-                  name="ref2-name"
-                  id="ref2-name"
+                  name="ref3-name"
+                  id="ref3-name"
                   pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
-                <label for="ref2-relationship" class="required">Relationship</label>
+                <label for="ref3-relationship" class="required">Relationship</label>
                 <input
                   type="text"
-                  name="ref2-relationship"
-                  id="ref2-relationship"
+                  name="ref3-relationship"
+                  id="ref3-relationship"
                   pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
                   required
                 />
-                <label for="ref2-phone" class="required">Phone</label>
+                <label for="ref3-phone" class="required">Phone</label>
                 <input
                   type="tel"
-                  name="ref2-phone"
-                  id="ref2-phone"
+                  name="ref3-phone"
+                  id="ref3-phone"
                   minlength="10"
                   maxlength="12"
                   pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
@@ -650,11 +650,11 @@ echo <<< _EOT
                   placeholder="###-###-####"
                   required
                 />
-                <label for="ref2-email">Email</label>
+                <label for="ref3-email">Email</label>
                 <input
                   type="email"
-                  name="ref2-email"
-                  id="ref2-email"
+                  name="ref3-email"
+                  id="ref3-email"
                   class="form-input form-input--text"
                 />
               </div>
