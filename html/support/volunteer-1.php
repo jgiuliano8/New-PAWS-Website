@@ -427,7 +427,7 @@ echo <<< _EOT
               type="text"
               name="ec-phone"
               id="ec-phone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
               class="form-input form-input--text"
               placeholder="###-###-####"
               required

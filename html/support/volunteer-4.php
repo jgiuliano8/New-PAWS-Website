@@ -483,7 +483,7 @@ echo <<< _EOT
             <p class="content__p">I affirm that the information supplied is true to the best of my knowledge and agree to adhere to the above Volunteer Guidelines. I understand that failure to follow the guidelines or any PAWS rule can result in the termination of my volunteer status. I understand that I am responsible for myself and agree that PAWS and PAWS agents are not liable in the event of accident, injury, death, or other incident.
             </p>
 
-            <label for="signature" class="required">Full Name</label>
+            <label for="signature" class="required">Full Legal Name</label>
             <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" class="form-input form-input--text" required>
 
             <button type="submit" class="btn btn--submit">Submit</button>
