@@ -44,7 +44,7 @@ $_SESSION['signature'] = '';
 // to other pages
 // Then scrub and validate SESSION variable
 if (isset($_POST['signature'])) {
-  $_SESSION['signature'] = $_POST['signature']
+  $_SESSION['signature'] = $_POST['signature'];
   if(!letters_space_only($_SESSION['signature'])) {
     echo("Only letters and white space allowed in the 'fullname' field. Please go back and input correctly. <br/> <br />");
     exit;
