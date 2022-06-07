@@ -484,7 +484,7 @@ echo <<< _EOT
             </p>
 
             <label for="signature" class="required">Full Legal Name</label>
-            <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" class="form-input form-input--text" required>
+            <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+" class="form-input form-input--text" required>
 
             <button type="submit" class="btn btn--submit">Submit</button>
             <p class="email-notice">You will receive a copy of this form at the email you provided, once you submit it.</p>

@@ -28,7 +28,7 @@
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Address</th>
           <td style="padding-top: 8px; padding-bottom: 8px;">
             <?php echo($_SESSION['street'] . "<br />" . $_SESSION['city'] . ", " . $_SESSION['state'] .
-            " " . $_SESSION['zip_code']); ?>
+            " " . $_SESSION['zip-code']); ?>
           </td>
         </tr>
         <tr class="table-row">
