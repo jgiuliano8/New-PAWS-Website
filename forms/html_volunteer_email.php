@@ -226,7 +226,7 @@
               <ul>
                 <li>Never discuss client details/information with people outside of PAWS.</li>
                 <li>Make a minimum 6 month commitment if I sign up to be a 'House call' volunteer.</li>
-                <li>Show up and be on time for every appointment, rain or shine; dangerous, ice/heavy snow isexception.</li>
+                <li>Show up and be on time for every appointment, rain or shine; dangerous, ice/heavy snow is exception.</li>
                 <li>Set boundaries with clients and know my own personal boundaries.</li>
                 <li>Notify PAWS and client promptly if I must cancel for any reason.</li>
                 <li>Introduce myself to clients when they are present.</li>
@@ -234,9 +234,9 @@
                 <li>Notify client and PAWS if unable to make appointment regardless of reason.</li>
                 <li>Always pick up after dogs and properly dispose of waste when cleaning litter.</li>
                 <li>Do my best to avoid other dogs and people (esp. children) when walking a dog.</li>
-                <li>Never bring other pets or children with me on my visits; unless discussed and approved byPAWS.</li>
+                <li>Never bring other pets or children with me on my visits; unless discussed and approved by PAWS.</li>
                 <li>Never take dogs off leash for any reason, even if client asks me to do so.</li>
-                <li>Limit assistance to pre-approved services, and I will refer client to PAWS if they requestadditional services.</li>
+                <li>Limit assistance to pre-approved services, and I will refer client to PAWS if they request additional services.</li>
                 <li>Never accept compensation from a client, and never loan or give a client personal items or money.</li>
                 <li>Contact PAWS if I believe a client or pet is at risk for any reason.</li>
                 <li class="background-check-clause">Due to the specific nature of this volunteer assignment, I understand that PAWS must do a background check, including criminal, and expressly grant my permission for them to do the same.</li>
