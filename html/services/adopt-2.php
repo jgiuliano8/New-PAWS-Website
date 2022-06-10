@@ -16,7 +16,7 @@ function ErrorHandler($no, $str, $file, $line) {
 require "../../forms/parse_lib.php";
 
 // Initialize SESSION variables
-$_SESSION['pet'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
+$_SESSION['pet'] = $_SESSION['pet-type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -31,6 +31,12 @@ foreach($_POST as $key => $value) {
     {
       case 'pet':  if(!letters_space_only($_SESSION[$key])) {
                       echo("Only letters and white space allowed in the pet field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'pet-type':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the pet type field. Please go back and input correctly. <br/> <br />");
                     exit;
                     }
                     break;
@@ -387,7 +393,8 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/html/support/volunteer-3.php" method="post">
+        <form action="/html/services/adopt-3.php" method="post">
+          <input type="hidden" name="pet-type" id="pet-type-hidden" value=<?php echo($_SESSION['pet-type']); ?> />
           <p>Form Progress:</p>
           <div id="form-progress" data-max-step="4" data-current-step="2">
             <div id="step-1">1</div>
@@ -415,7 +422,7 @@ echo <<< _EOT
               <label for="other-housing" class="hidden-display">Please describe your housing situation</label>
               <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text hidden-display"></textarea>
               <div class="input-group">
-                <label for="pet_gender">Do you own or rent?</label>
+                <label for="own-rent">Do you own or rent?</label>
                 <div class="input-label-set">
                   <input
                     type="radio"
@@ -438,7 +445,7 @@ echo <<< _EOT
                     >Rent</label>
                 </div>
               </div>
-              <div class="input-group hidden-display">
+              <div class="input-group input-group--landlord hidden-display">
                 <label for="pets-allowed">Does your landlord allow pets?</label>
                 <div class="input-label-set">
                   <input
@@ -560,7 +567,7 @@ echo <<< _EOT
                     >No</label>
                 </div>
               </div>
-              <div class="input-group hidden-display">
+              <div class="input-group input-group--children hidden-display">
                 <label for="number-children" class="required">How many children are there in the household? (number only please)</label>
                   <input
                     type="text"
@@ -571,10 +578,10 @@ echo <<< _EOT
                     required
                   />
                   <label for="age-children" class="required">List children's age</label>
-                  <textarea name="age-children id="age-children" rows="5"></textarea>
+                  <textarea name="age-children" id="age-children" rows="5"></textarea>
               </div>
               <div class="input-group">
-                <label for="other-children" class="required">Will the pet be in contact with other children?</label>
+                <label for="other-children" class="required">Will the pet be in contact with other children? (neighbors, family, etc.)</label>
                 <div class="input-label-set">
                   <input
                     type="radio"
@@ -658,7 +665,7 @@ echo <<< _EOT
                     >No</label>
                 </div>
               </div>
-              <div class="input-group hidden-display">
+              <div class="input-group input-group--allergies hidden-display">
                 <label for="type-allergies" class="required">What types of allergies?</label>
                 <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text"></textarea>
               </div>
@@ -686,7 +693,7 @@ echo <<< _EOT
                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                required
               >
-              <div class="input-group hidden-display">
+              <div class="input-group input-group--yard hidden-display">
                 <label for="yard-size" class="required">What is the size of your yard?</label>
                 <input
                   type="text"
@@ -720,13 +727,13 @@ echo <<< _EOT
                       >No</label>
                   </div>
                 </div>
-                <div class="input-group hidden-display">
+                <div class="input-group input-group--fence hidden-display">
                   <label for="fence" class="required">What height and type of fence is it?</label>
                   <textarea name="fence" id="fence"
                     pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                     rows="5" required></textarea>
                 </div>
-                <div class="input-group hidden-display">
+                <div class="input-group input-group--restraint hidden-display">
                   <label for="outside-restraint" class="required">How will the dog be restrained outside?</label>
                   <select name="outside-restraint" id="outside-restraint" required>
                     <option value="">Please choose one</option>

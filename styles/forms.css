@@ -132,6 +132,7 @@ label {
 
 .form-input--text,
 .form-input--select {
+  -webkit-appearance: none;
   appearance: none;
   width: 100%;
   margin: 0.25em 0;
@@ -274,21 +275,52 @@ th {
 
 /* Validation and required styling */
 
-input:focus:required:invalid,
-input:focus:invalid {
-  background-image: url("/images/alert-triangle-new.svg");
-  background-repeat: no-repeat;
-  background-position: right center;
+.form-input--text:-webkit-autofill {
+  background-image: unset !important;
+  background-color: unset !important;
+}
+
+.form-input--text:focus:required:invalid,
+.form-input--text:focus:invalid {
+  background-image: url("/images/alert-triangle-new.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-color: transparent !important;
   outline: 2px solid #ff5555;
   outline-offset: 3px;
 }
 
-input:focus:valid {
-  background-image: url("/images/circle-check.svg");
-  background-repeat: no-repeat;
-  background-position: right center;
+.form-input--text:focus:valid {
+  background-image: url("/images/circle-check.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-color: #fff !important;
+  -webkit-appearance: none;
   outline: 2px solid #44aa00;
   outline-offset: 3px;
+}
+
+input[type="text"]:-webkit-autofill:focus:valid {
+  background-image: url("/images/circle-check.svg") !important;
+  background-repeat: no-repeat;
+  background-position: right center;
+  -webkit-appearance: none;
+  outline: 2px solid #44aa00;
+  outline-offset: 3px;
+}
+
+input[type="text"]:-internal-autofill-selected:focus:valid {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("/images/circle-check.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-color: #fff !important;
+  outline: 2px solid #44aa00;
+  outline-offset: 3px;
+}
+*/ .hidden-display {
+  display: none;
 }
 
 @media only screen and (min-width: 300px) {

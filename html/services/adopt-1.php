@@ -293,7 +293,7 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/html/support/adopt-2.php" method="post">
+        <form action="/html/services/adopt-2.php" method="post">
           <p>Form Progress:</p>
           <div id="form-progress" data-max-step="4" data-current-step="1">
             <div id="step-1">1</div>
@@ -314,6 +314,45 @@ echo <<< _EOT
               class="form-input form-input--text"
               required
             />
+            <div class="input-group">
+              <label for="pet-type" class="required"
+                >What type of animal is this?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="pet-type"
+                  id="dog"
+                  value="dog"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="dog" class="input-group__sub-label">Dog</label>
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="pet-type"
+                  id="cat"
+                  value="cat"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="cat" class="input-group__sub-label">Cat</label>
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="pet-type"
+                  id="other"
+                  value="other"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="other" class="input-group__sub-label">Other</label>
+              </div>
+            </div>
+
             <h2>Contact Information</h2>
             <label for="name" class="required">Name(First and last)</label>
             <input
