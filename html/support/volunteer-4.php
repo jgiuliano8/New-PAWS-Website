@@ -35,7 +35,9 @@ foreach($_POST as $key => $value) {
     switch($key)
     {
       case 'interests': foreach($_SESSION[$key] as $subkey => $subvalue) {
-                          if(!letters_space_only($_SESSION[$key][$subkey])) {
+              echo($_SESSION[$key][$subkey] . "<br />");
+
+                          if(!textarea_only($_SESSION[$key][$subkey])) {
                             echo("Only letters and white space allowed in the 'interests' field. Please go back and input correctly. <br/> <br />");
                           exit;
                           }
@@ -484,7 +486,7 @@ echo <<< _EOT
             </p>
 
             <label for="signature" class="required">Full Legal Name</label>
-            <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\~`]+" class="form-input form-input--text" required>
+            <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/~`]+" class="form-input form-input--text" required>
 
             <button type="submit" class="btn btn--submit">Submit</button>
             <p class="email-notice">You will receive a copy of this form at the email you provided, once you submit it.</p>
