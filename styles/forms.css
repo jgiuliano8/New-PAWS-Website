@@ -111,7 +111,11 @@ label {
 
 .input-group--employment,
 .input-group--interests,
-.input-group--reference {
+.input-group--reference,
+.input-group--other-housing,
+.input-group--landlord,
+.input-group--children-yes,
+.input-group--allergies-yes {
   margin-left: 0.75em;
 }
 
@@ -207,8 +211,11 @@ label[for="certifications"] {
 #other-info,
 label[for="other-info"] {
   margin-left: 2em;
+}
+
+textarea {
   /* Need width auto, for some reason textarea
-     was ignoring the fieldset padding */
+   was ignoring the fieldset padding */
   width: auto;
 }
 
@@ -275,51 +282,27 @@ th {
 
 /* Validation and required styling */
 
-.form-input--text:-webkit-autofill {
-  background-image: unset !important;
-  background-color: unset !important;
-}
-
 .form-input--text:focus:required:invalid,
 .form-input--text:focus:invalid {
-  background-image: url("/images/alert-triangle-new.svg") !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-color: transparent !important;
+  background-image: url("/images/alert-triangle-new.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: transparent;
   outline: 2px solid #ff5555;
   outline-offset: 3px;
 }
 
 .form-input--text:focus:valid {
-  background-image: url("/images/circle-check.svg") !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-color: #fff !important;
-  -webkit-appearance: none;
-  outline: 2px solid #44aa00;
-  outline-offset: 3px;
-}
-
-input[type="text"]:-webkit-autofill:focus:valid {
-  background-image: url("/images/circle-check.svg") !important;
+  background-image: url("/images/circle-check.svg");
   background-repeat: no-repeat;
   background-position: right center;
+  background-color: #fff;
   -webkit-appearance: none;
   outline: 2px solid #44aa00;
   outline-offset: 3px;
 }
 
-input[type="text"]:-internal-autofill-selected:focus:valid {
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url("/images/circle-check.svg") !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-  background-color: #fff !important;
-  outline: 2px solid #44aa00;
-  outline-offset: 3px;
-}
-*/ .hidden-display {
+.hidden-display {
   display: none;
 }
 

@@ -15,6 +15,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
     <script defer src="/scripts/progress.js"></script>
+    <!-- <script defer src="/scripts/forms.js"></script> -->
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -293,7 +294,7 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/html/services/adopt-2.php" method="post">
+        <form id="form" action="/html/services/adopt-2.php" method="post">
           <p>Form Progress:</p>
           <div id="form-progress" data-max-step="4" data-current-step="1">
             <div id="step-1">1</div>
@@ -315,13 +316,13 @@ echo <<< _EOT
               required
             />
             <div class="input-group">
-              <label for="pet-type" class="required"
+              <label for="pet_type" class="required"
                 >What type of animal is this?</label
               >
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-type"
+                  name="pet_type"
                   id="dog"
                   value="dog"
                   class="form-input form-input--radio"
@@ -332,7 +333,7 @@ echo <<< _EOT
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-type"
+                  name="pet_type"
                   id="cat"
                   value="cat"
                   class="form-input form-input--radio"
@@ -343,7 +344,7 @@ echo <<< _EOT
               <div class="input-label-set">
                 <input
                   type="radio"
-                  name="pet-type"
+                  name="pet_type"
                   id="other"
                   value="other"
                   class="form-input form-input--radio"

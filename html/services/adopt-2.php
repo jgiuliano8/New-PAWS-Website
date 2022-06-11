@@ -16,7 +16,7 @@ function ErrorHandler($no, $str, $file, $line) {
 require "../../forms/parse_lib.php";
 
 // Initialize SESSION variables
-$_SESSION['pet'] = $_SESSION['pet-type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
+$_SESSION['pet'] = $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -35,7 +35,7 @@ foreach($_POST as $key => $value) {
                     }
                     break;
 
-      case 'pet-type':  if(!letters_space_only($_SESSION[$key])) {
+      case 'pet_type':  if(!letters_space_only($_SESSION[$key])) {
                       echo("Only letters and white space allowed in the pet type field. Please go back and input correctly. <br/> <br />");
                     exit;
                     }
@@ -122,6 +122,8 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
     <script defer src="/scripts/progress.js"></script>
+    <script defer src="/scripts/adopt.js">
+    </script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -393,8 +395,8 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form action="/html/services/adopt-3.php" method="post">
-          <input type="hidden" name="pet-type" id="pet-type-hidden" value=<?php echo($_SESSION['pet-type']); ?> />
+        <form id="form" action="/html/services/adopt-3.php" method="post">
+          <input type="hidden" name="pet_type" id="pet-type-hidden" value="$_SESSION[pet_type]" />
           <p>Form Progress:</p>
           <div id="form-progress" data-max-step="4" data-current-step="2">
             <div id="step-1">1</div>
@@ -419,10 +421,12 @@ echo <<< _EOT
               <option value="Duplex/Townhouse/Condo">Duplex/Townhouse/Condo</option>
               <option value="Other">Other</option>
               </select>
-              <label for="other-housing" class="hidden-display">Please describe your housing situation</label>
-              <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text hidden-display"></textarea>
-              <div class="input-group">
-                <label for="own-rent">Do you own or rent?</label>
+              <div class="input-group input-group--other-housing hidden-display">
+                <label for="other-housing" class="required">Please describe your housing situation</label>
+                <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text" required></textarea>
+              </div>
+              <div class="input-group input-group--own-rent">
+                <label for="own-rent" class="required">Do you own or rent?</label>
                 <div class="input-label-set">
                   <input
                     type="radio"
@@ -430,6 +434,7 @@ echo <<< _EOT
                     id="own"
                     value="own"
                     class="form-input form-input--radio"
+                    required
                   />
                   <label for="own" class="input-group__sub-label">Own</label>
                 </div>
@@ -440,13 +445,14 @@ echo <<< _EOT
                     id="rent"
                     value="rent"
                     class="form-input form-input--radio"
+                    required
                   />
                   <label for="rent" class="input-group__sub-label"
                     >Rent</label>
                 </div>
               </div>
               <div class="input-group input-group--landlord hidden-display">
-                <label for="pets-allowed">Does your landlord allow pets?</label>
+                <label for="pets-allowed" class="required">Does your landlord allow pets?</label>
                 <div class="input-label-set">
                   <input
                     type="radio"
@@ -454,6 +460,7 @@ echo <<< _EOT
                     id="allowed-yes"
                     value="yes"
                     class="form-input form-input--radio"
+                    required
                   />
                   <label for="allowed-yes" class="input-group__sub-label">Yes</label>
                 </div>
@@ -464,18 +471,21 @@ echo <<< _EOT
                     id="allowed-no"
                     value="no"
                     class="form-input form-input--radio"
+                    required
                   />
                   <label for="allowed-no" class="input-group__sub-label"
                     >No</label>
                 </div>
-                <label for="landlord-name">Landlord's name</label>
+                <label for="landlord-name" class="required">Landlord's name</label>
                 <input
                  type="text"
                  name="landlord-name"
                  id="landlord-name"
                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                 class="form-input form-input--text" />
-                <label for="landlord-phone">Landlord's phone</label>
+                 class="form-input form-input--text"
+                 required
+                 />
+                <label for="landlord-phone" class="required">Landlord's phone</label>
                 <input
                  type="tel"
                  name="landlord-phone"
@@ -541,7 +551,7 @@ echo <<< _EOT
                 class="form-input form-input--text"
                 required
               />
-              <div class="input-group">
+              <div class="input-group input-group--children">
                 <label for="children" class="required">Are there children in the household?</label>
                 <div class="input-label-set">
                   <input
@@ -567,7 +577,7 @@ echo <<< _EOT
                     >No</label>
                 </div>
               </div>
-              <div class="input-group input-group--children hidden-display">
+              <div class="input-group input-group--children-yes hidden-display">
                 <label for="number-children" class="required">How many children are there in the household? (number only please)</label>
                   <input
                     type="text"
@@ -638,8 +648,9 @@ echo <<< _EOT
                name="caretaker"
                id="caretaker"
                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+               class="form-input form-input--text"
                required>
-              <div class="input-group">
+              <div class="input-group input-group--allergies">
                 <label for="allergies" class="required">Are there people with allergies in the household?</label>
                 <div class="input-label-set">
                   <input
@@ -665,12 +676,12 @@ echo <<< _EOT
                     >No</label>
                 </div>
               </div>
-              <div class="input-group input-group--allergies hidden-display">
+              <div class="input-group input-group--allergies-yes hidden-display">
                 <label for="type-allergies" class="required">What types of allergies?</label>
-                <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text"></textarea>
+                <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text" required></textarea>
               </div>
               <label for="adopt-reason" class="required">Reason for wanting to adopt this pet</label>
-              <select name="adopt-reason" id="adopt-reason">
+              <select name="adopt-reason" id="adopt-reason"  class="form-input form-input--select">
                 <option value="">Please choose one</option>
                 <option value="Family companion">Family companion</option>
                 <option value="Gift">Gift</option>
@@ -678,19 +689,22 @@ echo <<< _EOT
                 <option value="Hunting">Hunting</option>
                 <option value="For children">For children</option>
               </select>
-              <label for="pet-kept" class="required">Where will the pet be kept?</label>
-              <select name="pet-kept" id="pet-kept">
-                <option value="">Please choose one</option>
-                <option value="Indoors">Indoors</option>
-                <option value="Outdoors">Outdoors</option>
-                <option value="Indoors and outdoors">Indoors and outdoors</option>
-              </select>
+              <div class="input-group input-group--where">
+                <label for="pet-kept" class="required">Where will the pet be kept?</label>
+                <select name="pet-kept" id="pet-kept" class="form-input form-input--select">
+                  <option value="">Please choose one</option>
+                  <option value="Indoors">Indoors</option>
+                  <option value="Outdoors">Outdoors</option>
+                  <option value="Indoors and outdoors">Indoors and outdoors</option>
+                </select>
+              </div>
               <label for="hours-alone" class="required">How many hours a day will the pet be alone?</label>
               <input
                type="text"
                name="hours-alone"
                id="hours-alone"
                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+               class="form-input form-input--text"
                required
               >
               <div class="input-group input-group--yard hidden-display">
@@ -700,9 +714,10 @@ echo <<< _EOT
                   name="yard-size"
                   id="yard-size"
                   pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
                 />
-                <div class="input-group ">
-                  <label for="fully-fenced">Is the yard fully fenced</label>
+                <div class="input-group input-group--fully-fenced">
+                  <label for="fully-fenced" class="required">Is the yard fully fenced</label>
                   <div class="input-label-set">
                     <input
                       type="radio"
@@ -733,27 +748,27 @@ echo <<< _EOT
                     pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                     rows="5" required></textarea>
                 </div>
-                <div class="input-group input-group--restraint hidden-display">
-                  <label for="outside-restraint" class="required">How will the dog be restrained outside?</label>
-                  <select name="outside-restraint" id="outside-restraint" required>
-                    <option value="">Please choose one</option>
-                    <option value="Chain">Chain</option>
-                    <option value="Kennel">Kennel</option>
-                    <option value="Runner line">Runner line</option>
-                    <option value="Electric fence">Electric fence</option>
-                    <option value="Leashed walks only">Leashed walks only</option>
-                    <option value="No restraint">No restraint</option>
-                  </select>
-                </div>
+              </div>
+              <div class="input-group input-group--restraint hidden-display">
+                <label for="outside-restraint" class="required">How will the dog be restrained outside?</label>
+                <select name="outside-restraint" id="outside-restraint" class="form-input form-input--select" required>
+                  <option value="">Please choose one</option>
+                  <option value="Chain">Chain</option>
+                  <option value="Kennel">Kennel</option>
+                  <option value="Runner line">Runner line</option>
+                  <option value="Electric fence">Electric fence</option>
+                  <option value="Leashed walks only">Leashed walks only</option>
+                  <option value="No restraint">No restraint</option>
+                </select>
               </div>
               <label for="unacceptable-behavior" class="required">What types of behaviors do you consider unacceptable?</label>
               <textarea name="unacceptable-behavior" id="unacceptable-behavior"   
                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                rows="5" required></textarea>
+                rows="5" class="form-input form-input--text" required></textarea>
               <label for="rehoming-reasons" class="required">What reasons justify rehoming your pet?</label>
               <textarea name="rehoming-reasons" id="rehoming-reasons"   
                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                rows="5" required></textarea>
+                rows="5" class="form-input form-input--text" required></textarea>
 
             <button type="submit" class="btn btn--submit">Next</button>
           </fieldset>
