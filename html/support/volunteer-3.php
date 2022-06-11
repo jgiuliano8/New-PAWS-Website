@@ -416,7 +416,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="Seniors with Animals Program("SWAP")- House Calls"
+                value='Seniors with Animals Program(SWAP)- House Calls'
                 name="interests[]"
                 id="SWAP-housecall"
                 class="form-input form-input--checkbox"
@@ -426,7 +426,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="Seniors with Animals Program("SWAP")- On-call"
+                value='Seniors with Animals Program(SWAP)- On-call'
                 name="interests[]"
                 id="SWAP-oncall"
                 class="form-input form-input--checkbox"
@@ -436,7 +436,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="Seniors with Animals Program("SWAP")- Pet Pantry"
+                value="Seniors with Animals Program(SWAP)- Pet Pantry"
                 name="interests[]"
                 id="SWAP-pet-pantry"
                 class="form-input form-input--checkbox"

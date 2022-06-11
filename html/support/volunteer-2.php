@@ -426,7 +426,7 @@ echo <<< _EOT
                     value="Part-time"
                     class="form-input form-input--radio"
                   />
-                  <label for="pt" class="input-group__sub-label">part-time</label>
+                  <label for="pt" class="input-group__sub-label">Part-time</label>
                 </div>
                 <div class="input-label-set">
                   <input

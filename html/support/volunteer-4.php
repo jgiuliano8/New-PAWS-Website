@@ -35,8 +35,6 @@ foreach($_POST as $key => $value) {
     switch($key)
     {
       case 'interests': foreach($_SESSION[$key] as $subkey => $subvalue) {
-              echo($_SESSION[$key][$subkey] . "<br />");
-
                           if(!textarea_only($_SESSION[$key][$subkey])) {
                             echo("Only letters and white space allowed in the 'interests' field. Please go back and input correctly. <br/> <br />");
                           exit;
