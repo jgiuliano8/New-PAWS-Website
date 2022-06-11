@@ -16,7 +16,7 @@ function ErrorHandler($no, $str, $file, $line) {
 require "../../forms/parse_lib.php";
 
 // Initialize SESSION variables
-$_SESSION['occupation'] = $_SESSION['employer'] = $_SESSION['time'] = $_SESSION['certifications'] = $_SESSION['languages'] = $_SESSION['animal-orgs'] = $_SESSION['volunteer-work'] = $_SESSION['conviction'] = $_SESSION['about-paws'] = $_SESSION['volunteer-reason'] = $_SESSION['about-yourself'] = $_SESSION['animal-experience'] = '';
+$_SESSION['occupation'] = $_SESSION['pt-ft'] = $_SESSION['employer'] = $_SESSION['time'] = $_SESSION['certifications'] = $_SESSION['languages'] = $_SESSION['animal-orgs'] = $_SESSION['volunteer-work'] = $_SESSION['conviction'] = $_SESSION['about-paws'] = $_SESSION['volunteer-reason'] = $_SESSION['drive'] = $_SESSION['animal-experience'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -31,6 +31,12 @@ foreach($_POST as $key => $value) {
     {
       case 'occupation':  if(!letters_space_only($_SESSION[$key])) {
                       echo("Only letters and white space allowed in the 'occupation' field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'pt-ft':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the 'part-time/full-time' field. Please go back and input correctly. <br/> <br />");
                     exit;
                     }
                     break;
@@ -89,8 +95,8 @@ foreach($_POST as $key => $value) {
                               }
                               break;
 
-      case 'about-yourself':  if(!textarea_only($_SESSION[$key])) {
-                          echo("Only letters, numbers and white space allowed in the 'tell us about yourself' field. Please go back and input correctly.");
+      case 'drive':  if(!letters_space_only($_SESSION[$key])) {
+                          echo("Only letters and white space allowed in the 'driving' field. Please go back and input correctly.");
                           exit;
                         }
                         break;
@@ -410,7 +416,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP House Calls"
+                value="Seniors with Animals Program("SWAP")- House Calls"
                 name="interests[]"
                 id="SWAP-housecall"
                 class="form-input form-input--checkbox"
@@ -420,7 +426,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP On-call"
+                value="Seniors with Animals Program("SWAP")- On-call"
                 name="interests[]"
                 id="SWAP-oncall"
                 class="form-input form-input--checkbox"
@@ -430,7 +436,7 @@ echo <<< _EOT
               <div class="input-label-set input-label-set--checkbox">
                 <input
                 type="checkbox"
-                value="SWAP Pet Pantry"
+                value="Seniors with Animals Program("SWAP")- Pet Pantry"
                 name="interests[]"
                 id="SWAP-pet-pantry"
                 class="form-input form-input--checkbox"
@@ -467,6 +473,26 @@ echo <<< _EOT
                 class="form-input form-input--checkbox"
                 />
                 <label for="admin-assist">Administrative assistance</label>
+              </div>
+              <div class="input-label-set input-label-set--checkbox">
+                <input
+                type="checkbox"
+                value="Adoption team"
+                name="interests[]"
+                id="adoption"
+                class="form-input form-input--checkbox"
+                />
+                <label for="adoption">Adoption team: assist in all aspects of animal adoption.</label>
+              </div>
+              <div class="input-label-set input-label-set--checkbox">
+                <input
+                type="checkbox"
+                value="Transport(animals, supplies, etc.)"
+                name="interests[]"
+                id="transport"
+                class="form-input form-input--checkbox"
+                />
+                <label for="transport">Transport: Help transport animals and supplies for various PAWS processes and functions.</label>
               </div>
               <div class="input-group">
                 <div class="input-label-set input-label-set--checkbox">

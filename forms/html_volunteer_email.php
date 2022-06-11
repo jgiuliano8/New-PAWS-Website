@@ -66,6 +66,10 @@
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['occupation']) ?></td>
         </tr>
         <tr class="table-row">
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Part-time or full-time</th>
+          <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['pt-ft']) ?></td>
+        </tr>
+        <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Employer/School</th>
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['employer']) ?></td>
         </tr>
@@ -112,8 +116,8 @@
           <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['volunteer-reason']) ?></td>
         </tr>
         <tr class="table-row">
-          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">About themselves</th>
-          <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['about-yourself']) ?></td>
+          <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Do they drive?</th>
+          <td style="padding-top: 8px; padding-bottom: 8px;"><?php echo($_SESSION['drive']) ?></td>
         </tr>
         <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Experience with animals</th>
@@ -155,7 +159,7 @@
           </td>
         </tr>
         <tr class="table-row table-header-row" style="padding: 16px;" align="center" bgcolor="lightblue">
-          <th scope="row" colspan="2" style="padding-top: 8px; padding-bottom: 8px;">References</th>
+          <th scope="row" colspan="2" style="padding-top: 8px; padding-bottom: 8px;">References (No family references, prior volunteer organizations and employment references preferred.) </th>
         </tr>
         <tr class="table-row">
           <th class="table-header-col" scope="col" style="padding-top: 8px; padding-bottom: 8px; padding-right: 16px;" align="right" bgcolor="lightgray">Reference #1 name</th>

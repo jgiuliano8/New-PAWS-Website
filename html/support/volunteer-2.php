@@ -416,6 +416,31 @@ echo <<< _EOT
                 class="form-input form-input--text"
                 required
               />
+              <div class="input-group input-group--pt-ft">
+                <label for="pt-ft">Part-time or full-time?</label>
+                <div class="input-label-set">
+                  <input
+                    type="radio"
+                    name="pt-ft"
+                    id="pt"
+                    value="Part-time"
+                    class="form-input form-input--radio"
+                  />
+                  <label for="pt" class="input-group__sub-label">part-time</label>
+                </div>
+                <div class="input-label-set">
+                  <input
+                    type="radio"
+                    name="pt-ft"
+                    id="ft"
+                    value="Full-time"
+                    class="form-input form-input--radio"
+                  />
+                  <label for="pt-ft" class="input-group__sub-label"
+                    >Full-time</label>
+                </div>
+              </div>
+
               <label for="employer">Employer/School</label>
               <input
                 type="text"
@@ -519,19 +544,33 @@ echo <<< _EOT
               class="form-input form-input--text"
               required
             ></textarea>
-            <label for="about-yourself" class="required"
-              >Tell us a little bit more about you, including (but not limited
-              to) your education and past volunteer experience:</label
-            >
-            <textarea
-              cols="40"
-              rows="5"
-              name="about-yourself"
-              id="about-yourself"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-              class="form-input form-input--text"
-              required
-            ></textarea>
+            <div class="input-group input-group--drive">
+              <label for="drive" class="required">Do you drive?</label>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="drive"
+                  id="drive-yes"
+                  value="Yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="drive-yes" class="input-group__sub-label">Yes</label>
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="drive"
+                  id="drive-no"
+                  value="No"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="drive-no" class="input-group__sub-label"
+                  >No</label>
+              </div>
+            </div>
+
             <label for="animal-experience" class="required"
               >Tell us about your experience with animals:</label
             >
