@@ -423,7 +423,7 @@ echo <<< _EOT
               </select>
               <div class="input-group input-group--other-housing hidden-display">
                 <label for="other-housing" class="required">Please describe your housing situation</label>
-                <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text" required></textarea>
+                <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text"></textarea>
               </div>
               <div class="input-group input-group--own-rent">
                 <label for="own-rent" class="required">Do you own or rent?</label>
@@ -460,7 +460,6 @@ echo <<< _EOT
                     id="allowed-yes"
                     value="yes"
                     class="form-input form-input--radio"
-                    required
                   />
                   <label for="allowed-yes" class="input-group__sub-label">Yes</label>
                 </div>
@@ -471,7 +470,6 @@ echo <<< _EOT
                     id="allowed-no"
                     value="no"
                     class="form-input form-input--radio"
-                    required
                   />
                   <label for="allowed-no" class="input-group__sub-label"
                     >No</label>
@@ -483,7 +481,6 @@ echo <<< _EOT
                  id="landlord-name"
                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                  class="form-input form-input--text"
-                 required
                  />
                 <label for="landlord-phone" class="required">Landlord's phone</label>
                 <input
@@ -495,7 +492,7 @@ echo <<< _EOT
                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                  class="form-input form-input--text"
                  placeholder="###-###-####"
-                 required />
+                />
               </div>
               
               <label for="length-residence" class="required">How long have you been living at your current residence?</label>
@@ -585,10 +582,9 @@ echo <<< _EOT
                     id="number-children"
                     pattern="[0-9]+"
                     class="form-input form-input--text"
-                    required
                   />
-                  <label for="age-children" class="required">List children's age</label>
-                  <textarea name="age-children" id="age-children" rows="5"></textarea>
+                  <label for="age-children" class="required">List children's age:</label>
+                  <textarea name="age-children" id="age-children" rows="5" class="form-input form-input--text"></textarea>
               </div>
               <div class="input-group">
                 <label for="other-children" class="required">Will the pet be in contact with other children? (neighbors, family, etc.)</label>
@@ -678,7 +674,7 @@ echo <<< _EOT
               </div>
               <div class="input-group input-group--allergies-yes hidden-display">
                 <label for="type-allergies" class="required">What types of allergies?</label>
-                <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text" required></textarea>
+                <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text"></textarea>
               </div>
               <label for="adopt-reason" class="required">Reason for wanting to adopt this pet</label>
               <select name="adopt-reason" id="adopt-reason"  class="form-input form-input--select">
@@ -725,7 +721,6 @@ echo <<< _EOT
                       id="fully-fenced-yes"
                       value="yes"
                       class="form-input form-input--radio"
-                      required
                     />
                     <label for="fully-fenced-yes" class="input-group__sub-label">Yes</label>
                   </div>
@@ -736,7 +731,6 @@ echo <<< _EOT
                       id="fully-fenced-no"
                       value="no"
                       class="form-input form-input--radio"
-                      required
                     />
                     <label for="fully-fenced-no" class="input-group__sub-label"
                       >No</label>
@@ -746,12 +740,12 @@ echo <<< _EOT
                   <label for="fence" class="required">What height and type of fence is it?</label>
                   <textarea name="fence" id="fence"
                     pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                    rows="5" required></textarea>
+                    rows="5"></textarea>
                 </div>
               </div>
               <div class="input-group input-group--restraint hidden-display">
                 <label for="outside-restraint" class="required">How will the dog be restrained outside?</label>
-                <select name="outside-restraint" id="outside-restraint" class="form-input form-input--select" required>
+                <select name="outside-restraint" id="outside-restraint" class="form-input form-input--select">
                   <option value="">Please choose one</option>
                   <option value="Chain">Chain</option>
                   <option value="Kennel">Kennel</option>
