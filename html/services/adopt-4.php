@@ -1,6 +1,77 @@
 <?php
 session_start() != FALSE
   or die('Could not start session');
+
+// Error handling
+set_error_handler("ErrorHandler");
+
+function ErrorHandler($no, $str, $file, $line) {
+  echo
+  "<div style='border:2px dotted; padding:5px 10px;background-color:tan'>" .
+  "Line $line: <span style='color:red'>$str</span> " .
+  "in <span style='color:blue'>$file</span></div>";
+}
+
+// Parsing and scrubbing functions library
+require "../../forms/parse_lib.php";
+
+// Initialize SESSION variables
+$_SESSION['past-pets'] = $_SESSION['present-pets'] = $_SESSION['pets-what-happened'] = $_SESSION['age-deceased'] = $_SESSION['afford-medical'] = $_SESSION['afford-unexpected'] = $_SESSION['length-residence'] = $_SESSION['moving'] = $_SESSION['adults'] = $_SESSION['adults-relation'] = $_SESSION['children'] = $_SESSION['number-children'] = $_SESSION['age-chilren'] = $_SESSION['other-children'] = $_SESSION['all-willing'] = $_SESSION['caretaker'] = $_SESSION['allergies'] = $_SESSION['type-allergies'] = $_SESSION['adopt-reason'] = $_SESSION['pet-kept'] = $_SESSION['hours-alone'] = $_SESSION['yard-size'] = $_SESSION['fully-fenced'] = $_SESSION['fence'] = $_SESSION['outside-restraint'] = $_SESSION['unacceptable-behavior'] = $_SESSION['rehoming-reasons'] = '';
+
+
+// Set SESSION variables to POST variables so they carry over
+// to other pages
+// Then scrub and validate SESSION variables
+
+foreach($_POST as $key => $value) {
+  if (isset($_POST[$key])) {
+    $_SESSION[$key] = $value;
+    $_SESSION[$key] = parse_input($_SESSION[$key]);
+    switch($key)
+    {
+      case 'past-pets':  if(!textarea_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the past pets field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'present-pets':  if(!textarea_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the present pets field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'pets-what-happened':  if(!textarea_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the 'what happened to your pets' field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'age-deceased':  if(!textarea_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the age deceased field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'afford-medical':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the 'can you afford care' field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      case 'afford-unexpected':  if(!letters_space_only($_SESSION[$key])) {
+                      echo("Only letters and white space allowed in the 'can you afford the unexpected' info field. Please go back and input correctly. <br/> <br />");
+                    exit;
+                    }
+                    break;
+
+      default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
+                exit;
+    }
+  }
+}
+
+// HTML Document
 echo <<< _EOT
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +86,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
     <script defer src="/scripts/progress.js"></script>
-    <!-- <script defer src="/scripts/forms.js"></script> -->
+    </script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -284,19 +355,12 @@ echo <<< _EOT
     <main>
       <section class="content">
         <h1>Pet Adoption</h1>
-
-        <p class="content__p"></p>
-        <p class="content__p content__p--info">
-          To fill out the pet adoption form we require three references. They
-          must not be family references and you will need a contact phone number
-          for them. Employer references are preferred.
-        </p>
       </section>
 
       <section class="main-form">
-        <form id="form" action="/html/services/adopt-2.php" method="post">
+        <form id="form" action="/html/services/adopt-4.php" method="post">
           <p>Form Progress:</p>
-          <div id="form-progress" data-max-step="4" data-current-step="1">
+          <div id="form-progress" data-max-step="4" data-current-step="3">
             <div id="step-1">1</div>
             <div id="step-2">2</div>
             <div id="step-3">3</div>
@@ -304,161 +368,173 @@ echo <<< _EOT
           </div>
           <fieldset>
             <legend>Adopt a Pet</legend>
-            <label for="pet" class="required"
-              >Which animal(s) do you want to adopt?</label
+            <h2>References</h2>
+          <h2>References</h2>
+            <label for="volunteer-work" class="required"
+              >Please list three references: (Please note, employer and volunteer references are preferable to friend references. <span class="highlight">No family references</span>.)</label
             >
-            <input
-              type="text"
-              name="pet"
-              id="pet"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-              class="form-input form-input--text"
-              required
-            />
             <div class="input-group">
-              <label for="pet_type" class="required"
-                >What type of animal is this?</label
-              >
-              <div class="input-label-set">
+              <h3>Reference 1</h3>
+              <div class="input-group input-group--reference">
+                <label for="ref1-name" class="required">Name</label>
                 <input
-                  type="radio"
-                  name="pet_type"
-                  id="dog"
-                  value="dog"
-                  class="form-input form-input--radio"
+                  type="text"
+                  name="ref1-name"
+                  id="ref1-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
                   required
                 />
-                <label for="dog" class="input-group__sub-label">Dog</label>
-              </div>
-              <div class="input-label-set">
+                <label for="ref1-relationship" class="required">Relationship</label>
                 <input
-                  type="radio"
-                  name="pet_type"
-                  id="cat"
-                  value="cat"
-                  class="form-input form-input--radio"
+                  type="text"
+                  name="ref1-relationship"
+                  id="ref1-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
                   required
                 />
-                <label for="cat" class="input-group__sub-label">Cat</label>
-              </div>
-              <div class="input-label-set">
+                <label for="ref1-phone" class="required">Phone</label>
                 <input
-                  type="radio"
-                  name="pet_type"
-                  id="other"
-                  value="other"
-                  class="form-input form-input--radio"
+                  type="tel"
+                  name="ref1-phone"
+                  id="ref1-phone"
+                  minlength="10"
+                  maxlength="12"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  class="form-input form-input--text"
+                  placeholder="###-###-####"
                   required
                 />
-                <label for="other" class="input-group__sub-label">Other</label>
+                <label for="ref1-email">Email</label>
+                <input
+                  type="email"
+                  name="ref1-email"
+                  id="ref1-email"
+                  class="form-input form-input--text"
+                />  
               </div>
             </div>
+            <div class="input-group">
+              <h3>Reference 2</h3>
+              <div class="input-group input-group--reference">
+                <label for="ref2-name" class="required">Name</label>
+                <input
+                  type="text"
+                  name="ref2-name"
+                  id="ref2-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref2-relationship" class="required">Relationship</label>
+                <input
+                  type="text"
+                  name="ref2-relationship"
+                  id="ref2-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref2-phone" class="required">Phone</label>
+                <input
+                  type="tel"
+                  name="ref2-phone"
+                  id="ref2-phone"
+                  minlength="10"
+                  maxlength="12"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  class="form-input form-input--text"
+                  placeholder="###-###-####"
+                  required
+                />
+                <label for="ref2-email">Email</label>
+                <input
+                  type="email"
+                  name="ref2-email"
+                  id="ref2-email"
+                  class="form-input form-input--text"
+                />
+              </div>
+            </div>
+            <div class="input-group">
+              <h3>Reference 3</h3>
+              <div class="input-group input-group--reference">
+                <label for="ref3-name" class="required">Name</label>
+                <input
+                  type="text"
+                  name="ref3-name"
+                  id="ref3-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref3-relationship" class="required">Relationship</label>
+                <input
+                  type="text"
+                  name="ref3-relationship"
+                  id="ref3-relationship"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
+                  required
+                />
+                <label for="ref3-phone" class="required">Phone</label>
+                <input
+                  type="tel"
+                  name="ref3-phone"
+                  id="ref3-phone"
+                  minlength="10"
+                  maxlength="12"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  class="form-input form-input--text"
+                  placeholder="###-###-####"
+                  required
+                />
+                <label for="ref3-email">Email</label>
+                <input
+                  type="email"
+                  name="ref3-email"
+                  id="ref3-email"
+                  class="form-input form-input--text"
+                />
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Please provide a Veterinary Reference if you are a current or previous pet guardian:</label>
+              <div class="input-group input-group--reference">
+                <label for="vet-name">Name</label>
+                <input
+                  type="text"
+                  name="vet-name"
+                  id="vet-name"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  class="form-input form-input--text"
+                />
+                <label for="vet-phone">Phone</label>
+                <input
+                  type="tel"
+                  name="vet-phone"
+                  id="vet-phone"
+                  minlength="10"
+                  maxlength="12"
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  class="form-input form-input--text"
+                  placeholder="###-###-####"
+                />
+              </div>
+            </div>
+            <label for="care-consent" class="required">Care Consent</label>
+            <input
+              type="checkbox"
+              id="care-consent"
+              name="care-consent"
+              required
+            />
+            <p>I agree to provide all the necessary care for this pet, including but not limited to: veterinary care, proper diet, shelter, training, exercise, grooming, and love. If for any reason I am no longer able to care for this pet, I will return him/her and all necessary paperwork to Pioneers for Animal Welfare Society, Inc. I certify that all of the answers given on this form are true.</p>
 
-            <h2>Contact Information</h2>
-            <label for="name" class="required">Name(First and last)</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-              class="form-input form-input--text"
-              required
-            />
-            <div class="input-group">
-              <label for="input-group" class="required">Address</label>
-              <label for="street" class="sr-only">Street</label>
-              <input
-                type="text"
-                name="street"
-                id="street"
-                placeholder="Street"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <label for="city" class="sr-only">City</label>
-              <input
-                type="text"
-                name="city"
-                id="city"
-                placeholder="City"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <label for="state" class="sr-only">State</label>
-              <input
-                type="text"
-                name="state"
-                id="state"
-                placeholder="State"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <label for="zip-code" class="sr-only">ZIP Code</label>
-              <input
-                type="text"
-                name="zip-code"
-                id="zip-code"
-                minlength="5"
-                maxlength="10"
-                pattern="[0-9]{5}(-[0-9]{4}){0,1}"
-                placeholder="ZIP Code"
-                class="form-input form-input--text"
-                required
-              />
-            </div>
-            <label for="email" class="required">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="form-input form-input--text"
-              required
-            />
-            <label for="phone" class="required">Phone</label>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              minlength="10"
-              maxlength="12"
-              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-              class="form-input form-input--text"
-              placeholder="###-###-####"
-              required
-            />
-            <h2>About You</h2>
-            <label for="age" class="required">Age</label>
-            <input
-              type="text"
-              name="age"
-              id="age"
-              minlength="1"
-              maxlength="3"
-              pattern="[0-9]{1,3}"
-              class="form-input form-input--text"
-              required
-            />
-            <label for="occupation" class="required">Occupation</label>
-            <input
-              type="text"
-              name="occupation"
-              id="occupation"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-              class="form-input form-input--text"
-              required
-            />
-            <label for="work-hours" class="required">Work Hours</label>
-            <textarea
-              rows="5"
-              name="work-hours"
-              id="work-hours"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-              class="form-input form-input--text"
-              required
-            ></textarea>
+            <label for="signature" class="required">Full Legal Name</label>
+            <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/~`]+" class="form-input form-input--text" required>
+
             <button type="submit" class="btn btn--submit">Next</button>
           </fieldset>
         </form>
@@ -501,4 +577,5 @@ echo <<< _EOT
     </footer>
   </body>
 </html>
-_EOT; ?>
+_EOT;
+?>
