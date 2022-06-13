@@ -6,10 +6,24 @@ session_start() != FALSE
 set_error_handler("ErrorHandler");
 
 function ErrorHandler($no, $str, $file, $line) {
-  echo
-  "<div style='border:2px dotted; padding:5px 10px;background-color:tan'>" .
-  "Line $line: <span style='color:red'>$str</span> " .
-  "in <span style='color:blue'>$file</span></div>";
+  echo <<< _EOT
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAWS Adoption Fomr Error</title>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div style='border:2px dotted; padding:5px 10px;background-color:tan'>
+    Line $line: <span style='color:red'>$str</span> 
+    in <span style='color:blue'>$file</span></div>
+  </body>
+</html>
+_EOT;
 }
 
 // Parsing and scrubbing functions library

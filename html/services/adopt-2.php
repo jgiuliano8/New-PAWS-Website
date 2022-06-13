@@ -6,109 +6,70 @@ session_start() != FALSE
 set_error_handler("ErrorHandler");
 
 function ErrorHandler($no, $str, $file, $line) {
-  echo
-  "<div style='border:2px dotted; padding:5px 10px;background-color:tan'>" .
-  "Line $line: <span style='color:red'>$str</span> " .
-  "in <span style='color:blue'>$file</span></div>";
-}
-
-// Parsing and scrubbing functions library
-require "../../forms/parse_lib.php";
-
-// Initialize SESSION variables
-$_SESSION['pet'] = $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
-
-
-// Set SESSION variables to POST variables so they carry over
-// to other pages
-// Then scrub and validate SESSION variables
-
-foreach($_POST as $key => $value) {
-  if (isset($_POST[$key])) {
-    $_SESSION[$key] = $value;
-    $_SESSION[$key] = parse_input($_SESSION[$key]);
-    switch($key)
-    {
-      case 'pet':  if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the pet field. Please go back and input correctly. <br/> <br />");
-                    exit;
-                    }
-                    break;
-
-      case 'pet_type':  if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the pet type field. Please go back and input correctly. <br/> <br />");
-                    exit;
-                    }
-                    break;
-
-      case 'name':  if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the name field. Please go back and input correctly. <br/> <br />");
-                    exit;
-                    }
-                    break;
-
-      case 'email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
-                      echo("Invalid email format. Please go back and input a valid email. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'street':  if (!letters_numbers_space_only($_SESSION[$key])) {
-                        echo("Only letters, numbers and white space allowed in the street field. Please go back and input correctly. <br/> <br />");
-                        exit;  
-                      };
-                      break;
-
-      case 'city':  if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'state': if(!letters_space_only($_SESSION[$key])) {
-                      echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br/> <br />");
-                      exit;
-                    }
-                    break;
-
-      case 'zip-code': if(!zipcode_only($_SESSION[$key])) {
-                        echo("Please go back and input a valid ZIP Code, 5 digits or optionally ZIP+4. <br />");
-                        exit;
-                      }
-                      break;
-
-      case 'phone': if(!phone_number_only($_SESSION[$key])) {
-                      echo("Please go back and input a valid phone number in the form ###-###-####.");
-                      exit;
-                    }
-                    break;
-
-      case 'age':  if(!numbers_only($_SESSION[$key])) {
-                            echo("Please go back and input a valid birth year in the form ####.");
-                            exit;
-                          }
-                          break;
-
-      case 'occupation': if(!letters_space_only($_SESSION[$key])) {
-                        echo("Only letters and white space allowed in the emergency contact name field. Please go back and input correctly. <br/> $_SESSION[$key]<br />");
-                        exit;
-                      }
-                      break;
-
-      case 'work-hours': if(!textarea_only($_SESSION[$key])) {
-                                echo("Only letters and white space allowed in the emergency contact relationship field. Please go back and input correctly. <br/> <br />");
-                                exit;
-                              }
-                              break;
-
-      default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
-                exit;
-    }
-  }
-}
-
-// HTML Document
-echo <<< _EOT
+  echo <<< _EOT
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAWS Adoption Fomr Error</title>
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div style="border: 2px dotted; padding: 5px 10px; background-color: tan">
+      Line $line: <span style="color: red">$str</span> in
+      <span style="color: blue">$file</span>
+    </div>
+  </body>
+</html>
+_EOT; } // Parsing and scrubbing functions library require
+"../../forms/parse_lib.php"; // Initialize SESSION variables $_SESSION['pet'] =
+$_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] =
+$_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] =
+$_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] =
+$_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] =
+$_SESSION['ec-email'] = ''; // Set SESSION variables to POST variables so they
+carry over // to other pages // Then scrub and validate SESSION variables
+foreach($_POST as $key => $value) { if (isset($_POST[$key])) { $_SESSION[$key] =
+$value; $_SESSION[$key] = parse_input($_SESSION[$key]); switch($key) { case
+'pet': if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white
+space allowed in the pet field. Please go back and input correctly. <br />
+<br />"); exit; } break; case 'pet_type':
+if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white space
+allowed in the pet type field. Please go back and input correctly. <br />
+<br />"); exit; } break; case 'name': if(!letters_space_only($_SESSION[$key])) {
+echo("Only letters and white space allowed in the name field. Please go back and
+input correctly. <br />
+<br />"); exit; } break; case 'email': if (!filter_var($_SESSION[$key],
+FILTER_VALIDATE_EMAIL)) { echo("Invalid email format. Please go back and input a
+valid email. <br />
+<br />"); exit; } break; case 'street': if
+(!letters_numbers_space_only($_SESSION[$key])) { echo("Only letters, numbers and
+white space allowed in the street field. Please go back and input correctly.
+<br />
+<br />"); exit; }; break; case 'city': if(!letters_space_only($_SESSION[$key]))
+{ echo("Only letters and white space allowed in the city field. Please go back
+and input correctly. <br />
+<br />"); exit; } break; case 'state': if(!letters_space_only($_SESSION[$key]))
+{ echo("Only letters and white space allowed in the city field. Please go back
+and input correctly. <br />
+<br />"); exit; } break; case 'zip-code': if(!zipcode_only($_SESSION[$key])) {
+echo("Please go back and input a valid ZIP Code, 5 digits or optionally ZIP+4.
+<br />"); exit; } break; case 'phone': if(!phone_number_only($_SESSION[$key])) {
+echo("Please go back and input a valid phone number in the form ###-###-####.");
+exit; } break; case 'age': if(!numbers_only($_SESSION[$key])) { echo("Please go
+back and input a valid birth year in the form ####."); exit; } break; case
+'occupation': if(!letters_space_only($_SESSION[$key])) { echo("Only letters and
+white space allowed in the emergency contact name field. Please go back and
+input correctly. <br />
+$_SESSION[$key]<br />"); exit; } break; case 'work-hours':
+if(!textarea_only($_SESSION[$key])) { echo("Only letters and white space allowed
+in the emergency contact relationship field. Please go back and input correctly.
+<br />
+<br />"); exit; } break; default: echo("Invalid variable name: $key. Sorry,
+something went wrong. Please go back and try again."); exit; } } } // HTML
+Document echo <<< _EOT
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -122,8 +83,7 @@ echo <<< _EOT
     <link rel="stylesheet" href="/styles/forms.css" />
     <script defer src="/scripts/navigation.js"></script>
     <script defer src="/scripts/progress.js"></script>
-    <script defer src="/scripts/adopt.js">
-    </script>
+    <script defer src="/scripts/adopt.js"></script>
     <script
       src="https://kit.fontawesome.com/38f08b7a2b.js"
       crossorigin="anonymous"
@@ -396,7 +356,12 @@ echo <<< _EOT
 
       <section class="main-form">
         <form id="form" action="/html/services/adopt-3.php" method="post">
-          <input type="hidden" name="pet_type" id="pet-type-hidden" value="$_SESSION[pet_type]" />
+          <input
+            type="hidden"
+            name="pet_type"
+            id="pet-type-hidden"
+            value="$_SESSION[pet_type]"
+          />
           <p>Form Progress:</p>
           <div id="form-progress" data-max-step="4" data-current-step="2">
             <div id="step-1">1</div>
@@ -407,362 +372,478 @@ echo <<< _EOT
           <fieldset>
             <legend>Adopt a Pet</legend>
             <h2>Household Information</h2>
-              <label for="housing" class="required">Housing</label>
-              <select
-                name="housing"
-                id="housing"
-                class="form-input form-input--select"
-                required
-              >
+            <label for="housing" class="required">Housing</label>
+            <select
+              name="housing"
+              id="housing"
+              class="form-input form-input--select"
+              required
+            >
               <option value="">Please select your housing</option>
               <option value="Single-family house">Single-family house</option>
               <option value="Apartment">Apartment</option>
               <option value="Dormitory">Dormitory</option>
-              <option value="Duplex/Townhouse/Condo">Duplex/Townhouse/Condo</option>
+              <option value="Duplex/Townhouse/Condo">
+                Duplex/Townhouse/Condo
+              </option>
               <option value="Other">Other</option>
-              </select>
-              <div class="input-group input-group--other-housing hidden-display">
-                <label for="other-housing" class="required">Please describe your housing situation</label>
-                <textarea name="other-housing" id="other-housing" rows="5" class="form-input form-input--text"></textarea>
-              </div>
-              <div class="input-group input-group--own-rent">
-                <label for="own-rent" class="required">Do you own or rent?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="own-rent"
-                    id="own"
-                    value="own"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="own" class="input-group__sub-label">Own</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="own-rent"
-                    id="rent"
-                    value="rent"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="rent" class="input-group__sub-label"
-                    >Rent</label>
-                </div>
-              </div>
-              <div class="input-group input-group--landlord hidden-display">
-                <label for="pets-allowed" class="required">Does your landlord allow pets?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="pets-allowed"
-                    id="allowed-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                  />
-                  <label for="allowed-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="pets-allowed"
-                    id="allowed-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                  />
-                  <label for="allowed-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-                <label for="landlord-name" class="required">Landlord's name</label>
-                <input
-                 type="text"
-                 name="landlord-name"
-                 id="landlord-name"
-                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                 class="form-input form-input--text"
-                 />
-                <label for="landlord-phone" class="required">Landlord's phone</label>
-                <input
-                 type="tel"
-                 name="landlord-phone"
-                 id="landlord-phone"
-                 minlength="10"
-                 maxlength="12"
-                 pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                 class="form-input form-input--text"
-                 placeholder="###-###-####"
-                />
-              </div>
-              
-              <label for="length-residence" class="required">How long have you been living at your current residence?</label>
-              <input
-                type="text"
-                name="length-residence"
-                id="length-residence"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <div class="input-group">
-                <label for="moving" class="required">Are you planning on moving in the next 12 months?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="moving"
-                    id="moving-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="moving-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="moving"
-                    id="moving-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="moving-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-              </div>
-              <label for="adults" class="required">How many adults live in the household?</label>
-              <input
-                type="text"
-                name="adults"
-                id="adults"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <label for="adults-relation" class="required">What relation are they to you?</label>
-              <input
-                type="text"
-                name="adults-relation"
-                id="adults-relation"
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                class="form-input form-input--text"
-                required
-              />
-              <div class="input-group input-group--children">
-                <label for="children" class="required">Are there children in the household?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="children"
-                    id="children-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="children-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="children"
-                    id="children-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="children-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-              </div>
-              <div class="input-group input-group--children-yes hidden-display">
-                <label for="number-children" class="required">How many children are there in the household? (number only please)</label>
-                  <input
-                    type="text"
-                    name="number-children"
-                    id="number-children"
-                    pattern="[0-9]+"
-                    class="form-input form-input--text"
-                  />
-                  <label for="age-children" class="required">List children's age:</label>
-                  <textarea name="age-children" id="age-children" rows="5" class="form-input form-input--text"></textarea>
-              </div>
-              <div class="input-group">
-                <label for="other-children" class="required">Will the pet be in contact with other children? (neighbors, family, etc.)</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="other-children"
-                    id="other-children-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="other-children-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="other-children"
-                    id="other-children-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="children-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-              </div>
-              <div class="input-group">
-                <label for="all-willing" class="required">Do all of the members of the household want to adopt this pet?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="all-willing"
-                    id="all-willing-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="all-willing-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="all-willing"
-                    id="all-willing-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="all-willing-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-              </div>
-              <label for="caretaker" class="required">Who will be the main caretaker of this pet?</label>
-              <input
-               type="text"
-               name="caretaker"
-               id="caretaker"
-               pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-               class="form-input form-input--text"
-               required>
-              <div class="input-group input-group--allergies">
-                <label for="allergies" class="required">Are there people with allergies in the household?</label>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="allergies"
-                    id="allergies-yes"
-                    value="yes"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="allergies-yes" class="input-group__sub-label">Yes</label>
-                </div>
-                <div class="input-label-set">
-                  <input
-                    type="radio"
-                    name="allergies"
-                    id="allergies-no"
-                    value="no"
-                    class="form-input form-input--radio"
-                    required
-                  />
-                  <label for="allergies-no" class="input-group__sub-label"
-                    >No</label>
-                </div>
-              </div>
-              <div class="input-group input-group--allergies-yes hidden-display">
-                <label for="type-allergies" class="required">What types of allergies?</label>
-                <textarea name="type-allergies" id="type-allergies" rows="5" class="form-input form-input--text"></textarea>
-              </div>
-              <label for="adopt-reason" class="required">Reason for wanting to adopt this pet</label>
-              <select name="adopt-reason" id="adopt-reason"  class="form-input form-input--select">
-                <option value="">Please choose one</option>
-                <option value="Family companion">Family companion</option>
-                <option value="Gift">Gift</option>
-                <option value="Protection">Protection</option>
-                <option value="Hunting">Hunting</option>
-                <option value="For children">For children</option>
-              </select>
-              <div class="input-group input-group--where">
-                <label for="pet-kept" class="required">Where will the pet be kept?</label>
-                <select name="pet-kept" id="pet-kept" class="form-input form-input--select">
-                  <option value="">Please choose one</option>
-                  <option value="Indoors">Indoors</option>
-                  <option value="Outdoors">Outdoors</option>
-                  <option value="Indoors and outdoors">Indoors and outdoors</option>
-                </select>
-              </div>
-              <label for="hours-alone" class="required">How many hours a day will the pet be alone?</label>
-              <input
-               type="text"
-               name="hours-alone"
-               id="hours-alone"
-               pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-               class="form-input form-input--text"
-               required
+            </select>
+            <div class="input-group input-group--other-housing hidden-display">
+              <label for="other-housing" class="required"
+                >Please describe your housing situation</label
               >
-              <div class="input-group input-group--yard hidden-display">
-                <label for="yard-size" class="required">What is the size of your yard?</label>
+              <textarea
+                name="other-housing"
+                id="other-housing"
+                rows="5"
+                class="form-input form-input--text"
+              ></textarea>
+            </div>
+            <div class="input-group input-group--own-rent">
+              <label for="own-rent" class="required">Do you own or rent?</label>
+              <div class="input-label-set">
                 <input
-                  type="text"
-                  name="yard-size"
-                  id="yard-size"
-                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                  class="form-input form-input--text"
+                  type="radio"
+                  name="own-rent"
+                  id="own"
+                  value="own"
+                  class="form-input form-input--radio"
+                  required
                 />
-                <div class="input-group input-group--fully-fenced">
-                  <label for="fully-fenced" class="required">Is the yard fully fenced</label>
-                  <div class="input-label-set">
-                    <input
-                      type="radio"
-                      name="fully-fenced"
-                      id="fully-fenced-yes"
-                      value="yes"
-                      class="form-input form-input--radio"
-                    />
-                    <label for="fully-fenced-yes" class="input-group__sub-label">Yes</label>
-                  </div>
-                  <div class="input-label-set">
-                    <input
-                      type="radio"
-                      name="fully-fenced"
-                      id="fully-fenced-no"
-                      value="no"
-                      class="form-input form-input--radio"
-                    />
-                    <label for="fully-fenced-no" class="input-group__sub-label"
-                      >No</label>
-                  </div>
+                <label for="own" class="input-group__sub-label">Own</label>
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="own-rent"
+                  id="rent"
+                  value="rent"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="rent" class="input-group__sub-label">Rent</label>
+              </div>
+            </div>
+            <div class="input-group input-group--landlord hidden-display">
+              <label for="pets-allowed" class="required"
+                >Does your landlord allow pets?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="pets-allowed"
+                  id="allowed-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                />
+                <label for="allowed-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="pets-allowed"
+                  id="allowed-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                />
+                <label for="allowed-no" class="input-group__sub-label"
+                  >No</label
+                >
+              </div>
+              <label for="landlord-name" class="required"
+                >Landlord's name</label
+              >
+              <input
+                type="text"
+                name="landlord-name"
+                id="landlord-name"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                class="form-input form-input--text"
+              />
+              <label for="landlord-phone" class="required"
+                >Landlord's phone</label
+              >
+              <input
+                type="tel"
+                name="landlord-phone"
+                id="landlord-phone"
+                minlength="10"
+                maxlength="12"
+                pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                class="form-input form-input--text"
+                placeholder="###-###-####"
+              />
+            </div>
+
+            <label for="length-residence" class="required"
+              >How long have you been living at your current residence?</label
+            >
+            <input
+              type="text"
+              name="length-residence"
+              id="length-residence"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group">
+              <label for="moving" class="required"
+                >Are you planning on moving in the next 12 months?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="moving"
+                  id="moving-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="moving-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="moving"
+                  id="moving-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="moving-no" class="input-group__sub-label">No</label>
+              </div>
+            </div>
+            <label for="adults" class="required"
+              >How many adults live in the household?</label
+            >
+            <input
+              type="text"
+              name="adults"
+              id="adults"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              class="form-input form-input--text"
+              required
+            />
+            <label for="adults-relation" class="required"
+              >What relation are they to you?</label
+            >
+            <input
+              type="text"
+              name="adults-relation"
+              id="adults-relation"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group input-group--children">
+              <label for="children" class="required"
+                >Are there children in the household?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="children"
+                  id="children-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="children-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="children"
+                  id="children-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="children-no" class="input-group__sub-label"
+                  >No</label
+                >
+              </div>
+            </div>
+            <div class="input-group input-group--children-yes hidden-display">
+              <label for="number-children" class="required"
+                >How many children are there in the household? (number only
+                please)</label
+              >
+              <input
+                type="text"
+                name="number-children"
+                id="number-children"
+                pattern="[0-9]+"
+                class="form-input form-input--text"
+              />
+              <label for="age-children" class="required"
+                >List children's age:</label
+              >
+              <textarea
+                name="age-children"
+                id="age-children"
+                rows="5"
+                class="form-input form-input--text"
+              ></textarea>
+            </div>
+            <div class="input-group">
+              <label for="other-children" class="required"
+                >Will the pet be in contact with other children? (neighbors,
+                family, etc.)</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="other-children"
+                  id="other-children-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="other-children-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="other-children"
+                  id="other-children-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="children-no" class="input-group__sub-label"
+                  >No</label
+                >
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="all-willing" class="required"
+                >Do all of the members of the household want to adopt this
+                pet?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="all-willing"
+                  id="all-willing-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="all-willing-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="all-willing"
+                  id="all-willing-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="all-willing-no" class="input-group__sub-label"
+                  >No</label
+                >
+              </div>
+            </div>
+            <label for="caretaker" class="required"
+              >Who will be the main caretaker of this pet?</label
+            >
+            <input
+              type="text"
+              name="caretaker"
+              id="caretaker"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group input-group--allergies">
+              <label for="allergies" class="required"
+                >Are there people with allergies in the household?</label
+              >
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="allergies"
+                  id="allergies-yes"
+                  value="yes"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="allergies-yes" class="input-group__sub-label"
+                  >Yes</label
+                >
+              </div>
+              <div class="input-label-set">
+                <input
+                  type="radio"
+                  name="allergies"
+                  id="allergies-no"
+                  value="no"
+                  class="form-input form-input--radio"
+                  required
+                />
+                <label for="allergies-no" class="input-group__sub-label"
+                  >No</label
+                >
+              </div>
+            </div>
+            <div class="input-group input-group--allergies-yes hidden-display">
+              <label for="type-allergies" class="required"
+                >What types of allergies?</label
+              >
+              <textarea
+                name="type-allergies"
+                id="type-allergies"
+                rows="5"
+                class="form-input form-input--text"
+              ></textarea>
+            </div>
+            <label for="adopt-reason" class="required"
+              >Reason for wanting to adopt this pet</label
+            >
+            <select
+              name="adopt-reason"
+              id="adopt-reason"
+              class="form-input form-input--select"
+            >
+              <option value="">Please choose one</option>
+              <option value="Family companion">Family companion</option>
+              <option value="Gift">Gift</option>
+              <option value="Protection">Protection</option>
+              <option value="Hunting">Hunting</option>
+              <option value="For children">For children</option>
+            </select>
+            <div class="input-group input-group--where">
+              <label for="pet-kept" class="required"
+                >Where will the pet be kept?</label
+              >
+              <select
+                name="pet-kept"
+                id="pet-kept"
+                class="form-input form-input--select"
+              >
+                <option value="">Please choose one</option>
+                <option value="Indoors">Indoors</option>
+                <option value="Outdoors">Outdoors</option>
+                <option value="Indoors and outdoors">
+                  Indoors and outdoors
+                </option>
+              </select>
+            </div>
+            <label for="hours-alone" class="required"
+              >How many hours a day will the pet be alone?</label
+            >
+            <input
+              type="text"
+              name="hours-alone"
+              id="hours-alone"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              class="form-input form-input--text"
+              required
+            />
+            <div class="input-group input-group--yard hidden-display">
+              <label for="yard-size" class="required"
+                >What is the size of your yard?</label
+              >
+              <input
+                type="text"
+                name="yard-size"
+                id="yard-size"
+                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                class="form-input form-input--text"
+              />
+              <div class="input-group input-group--fully-fenced">
+                <label for="fully-fenced" class="required"
+                  >Is the yard fully fenced</label
+                >
+                <div class="input-label-set">
+                  <input
+                    type="radio"
+                    name="fully-fenced"
+                    id="fully-fenced-yes"
+                    value="yes"
+                    class="form-input form-input--radio"
+                  />
+                  <label for="fully-fenced-yes" class="input-group__sub-label"
+                    >Yes</label
+                  >
                 </div>
-                <div class="input-group input-group--fence hidden-display">
-                  <label for="fence" class="required">What height and type of fence is it?</label>
-                  <textarea name="fence" id="fence"
-                    pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                    rows="5"></textarea>
+                <div class="input-label-set">
+                  <input
+                    type="radio"
+                    name="fully-fenced"
+                    id="fully-fenced-no"
+                    value="no"
+                    class="form-input form-input--radio"
+                  />
+                  <label for="fully-fenced-no" class="input-group__sub-label"
+                    >No</label
+                  >
                 </div>
               </div>
-              <div class="input-group input-group--restraint hidden-display">
-                <label for="outside-restraint" class="required">How will the dog be restrained outside?</label>
-                <select name="outside-restraint" id="outside-restraint" class="form-input form-input--select">
-                  <option value="">Please choose one</option>
-                  <option value="Chain">Chain</option>
-                  <option value="Kennel">Kennel</option>
-                  <option value="Runner line">Runner line</option>
-                  <option value="Electric fence">Electric fence</option>
-                  <option value="Leashed walks only">Leashed walks only</option>
-                  <option value="No restraint">No restraint</option>
-                </select>
+              <div class="input-group input-group--fence hidden-display">
+                <label for="fence" class="required"
+                  >What height and type of fence is it?</label
+                >
+                <textarea
+                  name="fence"
+                  id="fence"
+                  pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+                  rows="5"
+                ></textarea>
               </div>
-              <label for="unacceptable-behavior" class="required">What types of behaviors do you consider unacceptable?</label>
-              <textarea name="unacceptable-behavior" id="unacceptable-behavior"   
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                rows="5" class="form-input form-input--text" required></textarea>
-              <label for="rehoming-reasons" class="required">What reasons justify rehoming your pet?</label>
-              <textarea name="rehoming-reasons" id="rehoming-reasons"   
-                pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
-                rows="5" class="form-input form-input--text" required></textarea>
+            </div>
+            <div class="input-group input-group--restraint hidden-display">
+              <label for="outside-restraint" class="required"
+                >How will the dog be restrained outside?</label
+              >
+              <select
+                name="outside-restraint"
+                id="outside-restraint"
+                class="form-input form-input--select"
+              >
+                <option value="">Please choose one</option>
+                <option value="Chain">Chain</option>
+                <option value="Kennel">Kennel</option>
+                <option value="Runner line">Runner line</option>
+                <option value="Electric fence">Electric fence</option>
+                <option value="Leashed walks only">Leashed walks only</option>
+                <option value="No restraint">No restraint</option>
+              </select>
+            </div>
+            <label for="unacceptable-behavior" class="required"
+              >What types of behaviors do you consider unacceptable?</label
+            >
+            <textarea
+              name="unacceptable-behavior"
+              id="unacceptable-behavior"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              rows="5"
+              class="form-input form-input--text"
+              required
+            ></textarea>
+            <label for="rehoming-reasons" class="required"
+              >What reasons justify rehoming your pet?</label
+            >
+            <textarea
+              name="rehoming-reasons"
+              id="rehoming-reasons"
+              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              rows="5"
+              class="form-input form-input--text"
+              required
+            ></textarea>
 
             <button type="submit" class="btn btn--submit">Next</button>
           </fieldset>
@@ -806,5 +887,4 @@ echo <<< _EOT
     </footer>
   </body>
 </html>
-_EOT;
-?>
+_EOT; ?>

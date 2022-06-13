@@ -24,7 +24,7 @@ function ErrorHandler($no, $str, $file, $line) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New PAWS Volunteer Error</title>
+    <title>PAWS Adoption Fomr Error</title>
     <style type="text/css">
     </style>
   </head>
@@ -38,7 +38,7 @@ _EOT;
 }
 
 // Initialize SESSION variable
-$_SESSION['signature'] = '';
+$_SESSION['ref1-name'] = $_SESSION['ref1-relationship'] = $_SESSION['ref1-phone'] = $_SESSION['ref1-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -130,22 +130,29 @@ foreach($_POST as $key => $value) {
                           }
                           break;
 
-      case 'vet-name':  if($_SESSION[$key] != '') {
-                          if (!letters_space_only($_SESSION[$key])) {            
+      case 'vet-name':  if (!letters_space_only($_SESSION[$key])) {            
                             echo("Only letters and white space allowed in the 'Veterinary name' field. Please go back and input correctly. <br/> <br />");
                             exit;
                           }
-                        }  
                         break;
 
-      case 'vet-phone': if($_SESSION[$key] != '') {
-                          if(!phone_number_only($_SESSION[$key])) {
+      case 'vet-phone': if(!phone_number_only($_SESSION[$key])) {
                             echo("Please go back and input a valid phone number in the 'Veterinary phone number' field, of the format ###-###-####.");
                             exit;
                           }
-                        }
                         break;
 
+      case 'care-consent': if ($_SESSION[$key] !== 'I agree') {            
+                            echo("Only letters and white space allowed in the 'care consent' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        break;
+
+      case 'signature':  if (!letters_space_only($_SESSION[$key])) {            
+                            echo("Only letters and white space allowed in the 'Full legal name' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        break;
 
       default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
                 exit;

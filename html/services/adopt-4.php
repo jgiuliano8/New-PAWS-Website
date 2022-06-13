@@ -6,10 +6,24 @@ session_start() != FALSE
 set_error_handler("ErrorHandler");
 
 function ErrorHandler($no, $str, $file, $line) {
-  echo
-  "<div style='border:2px dotted; padding:5px 10px;background-color:tan'>" .
-  "Line $line: <span style='color:red'>$str</span> " .
-  "in <span style='color:blue'>$file</span></div>";
+  echo <<< _EOT
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAWS Adoption Fomr Error</title>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div style='border:2px dotted; padding:5px 10px;background-color:tan'>
+    Line $line: <span style='color:red'>$str</span> 
+    in <span style='color:blue'>$file</span></div>
+  </body>
+</html>
+_EOT;
 }
 
 // Parsing and scrubbing functions library
@@ -500,17 +514,18 @@ echo <<< _EOT
               </div>
             </div>
             <div class="input-group">
-              <label>Please provide a Veterinary Reference if you are a current or previous pet guardian:</label>
+              <label class="required">Please provide the veterinary you are or will be using:</label>
               <div class="input-group input-group--reference">
-                <label for="vet-name">Name</label>
+                <label for="vet-name" class="required">Name</label>
                 <input
                   type="text"
                   name="vet-name"
                   id="vet-name"
                   pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   class="form-input form-input--text"
+                  required
                 />
-                <label for="vet-phone">Phone</label>
+                <label for="vet-phone" class="required">Phone</label>
                 <input
                   type="tel"
                   name="vet-phone"
@@ -520,6 +535,7 @@ echo <<< _EOT
                   pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
                   class="form-input form-input--text"
                   placeholder="###-###-####"
+                  required
                 />
               </div>
             </div>
@@ -528,6 +544,7 @@ echo <<< _EOT
               type="checkbox"
               id="care-consent"
               name="care-consent"
+              value="I agree"
               required
             />
             <p>I agree to provide all the necessary care for this pet, including but not limited to: veterinary care, proper diet, shelter, training, exercise, grooming, and love. If for any reason I am no longer able to care for this pet, I will return him/her and all necessary paperwork to Pioneers for Animal Welfare Society, Inc. I certify that all of the answers given on this form are true.</p>
@@ -535,7 +552,7 @@ echo <<< _EOT
             <label for="signature" class="required">Full Legal Name</label>
             <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/~`]+" class="form-input form-input--text" required>
 
-            <button type="submit" class="btn btn--submit">Next</button>
+            <button type="submit" class="btn btn--submit">Submit</button>
           </fieldset>
         </form>
       </section>
