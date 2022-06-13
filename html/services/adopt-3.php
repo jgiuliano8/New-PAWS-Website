@@ -598,7 +598,81 @@ echo <<< _EOT
                 </div>
               </div>
               <h2>Animal Care</h2>
-              
+              <div class="input-group input-group--dog-care hidden-display">
+                <label for="dog-sleep" class="required">Where in the house will your dog sleep?</label>
+                <input type="text" name="dog-sleep" id="dog-sleep"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="dog-bed" class="required">What will you use as a bed?</label>
+                <input type="text" name="dog-bed" id="dog-bed"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="dog-crated" class="required">Will the dog be crated?</label>
+                <input type="text" name="dog-crated" id="dog-crated"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="dog-day" class="required">Where will the dog be kept during the day?</label>
+                <input type="text" name="dog-day" id="dog-day"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="dog-problems" class="required">What will you do if the dog develops behavior problems?</label>
+                <input type="text" name="dog-problems" id="dog-problems"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="dog-restrictions" class="required">What restrictions will the dog have in your home?</label>
+                <textarea name="dog-restrictions" id="dog-restrictions"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"></textarea>
+                <label for="dog-exercise" class="required">How will you exercise the dog? </label>
+                <textarea name="dog-exercise" id="dog-exercise"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"></textarea>
+                <label for="dog-furniture" class="required">What is your feeling about dogs on furniture like couches, beds, etc.?</label>
+                <input type="text" name="dog-furniture" id="dog-furniture"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+" />
+                <label for="previous-shelter" class="required">If you have adopted from a shelter before, please list the name of the shelter:</label>
+                <textarea name="previous-shelter" id="previous-shelter"                 pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"></textarea>
+                <div class="input-group">
+                  <label for="dog-training" class="required"
+                    >Are you willing to take the dog to obedience training?</label
+                  >
+                  <div class="input-label-set">
+                    <input
+                      type="radio"
+                      name="dog-training"
+                      id="dog-training-yes"
+                      value="yes"
+                      class="form-input form-input--radio"
+                    />
+                    <label for="dog-training-yes" class="input-group__sub-label"
+                      >Yes</label
+                    >
+                  </div>
+                  <div class="input-label-set">
+                    <input
+                      type="radio"
+                      name="dog-training"
+                      id="dog-training-no"
+                      value="no"
+                      class="form-input form-input--radio"
+                    />
+                    <label for="dog-training-no" class="input-group__sub-label">No</label>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="dog-training-previous" class="required"
+                    >Have you been to obedience training with a previous dog?</label
+                  >
+                  <div class="input-label-set">
+                    <input
+                      type="radio"
+                      name="dog-training-previous"
+                      id="dog-training-previous-yes"
+                      value="yes"
+                      class="form-input form-input--radio"
+                    />
+                    <label for="dog-training-previous-yes" class="input-group__sub-label"
+                      >Yes</label
+                    >
+                  </div>
+                  <div class="input-label-set">
+                    <input
+                      type="radio"
+                      name="dog-training-previous"
+                      id="dog-training-previous-no"
+                      value="no"
+                      class="form-input form-input--radio"
+                    />
+                    <label for="dog-training-previous-no" class="input-group__sub-label">No</label>
+                  </div>
+                </div>
+
+              </div>
 
               <button type="submit" class="btn btn--submit">Next</button>
           </fieldset>

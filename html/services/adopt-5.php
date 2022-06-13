@@ -166,7 +166,7 @@ $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
 // Use 'include' to pull in email template for email message body.
 ob_start();
-include '../../forms/html_volunteer_email.php';
+include '../../forms/html_adopt_email.php';
 $body = ob_get_clean();
 
 //From email address and name

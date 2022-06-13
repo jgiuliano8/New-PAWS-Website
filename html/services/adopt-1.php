@@ -287,9 +287,10 @@ echo <<< _EOT
 
         <p class="content__p"></p>
         <p class="content__p content__p--info">
-          To fill out the pet adoption form we require three references. They
-          must not be family references and you will need a contact phone number
-          for them. Employer references are preferred.
+          To fill out the pet adoption form we require three references and a
+          veterinary contact. They must not be family references and you will
+          need a contact phone number for them. Employer and volunteer
+          references are preferred.
         </p>
       </section>
 

@@ -30,7 +30,7 @@ _EOT;
 require "../../forms/parse_lib.php";
 
 // Initialize SESSION variables
-$_SESSION['past-pets'] = $_SESSION['present-pets'] = $_SESSION['pets-what-happened'] = $_SESSION['age-deceased'] = $_SESSION['afford-medical'] = $_SESSION['afford-unexpected'] = $_SESSION['length-residence'] = $_SESSION['moving'] = $_SESSION['adults'] = $_SESSION['adults-relation'] = $_SESSION['children'] = $_SESSION['number-children'] = $_SESSION['age-chilren'] = $_SESSION['other-children'] = $_SESSION['all-willing'] = $_SESSION['caretaker'] = $_SESSION['allergies'] = $_SESSION['type-allergies'] = $_SESSION['adopt-reason'] = $_SESSION['pet-kept'] = $_SESSION['hours-alone'] = $_SESSION['yard-size'] = $_SESSION['fully-fenced'] = $_SESSION['fence'] = $_SESSION['outside-restraint'] = $_SESSION['unacceptable-behavior'] = $_SESSION['rehoming-reasons'] = '';
+$_SESSION['past-pets'] = $_SESSION['present-pets'] = $_SESSION['pets-what-happened'] = $_SESSION['age-deceased'] = $_SESSION['afford-medical'] = $_SESSION['afford-unexpected'] = $_SESSION['dog-sleep'] = $_SESSION['dog-bed'] = $_SESSION['dog-crated'] = $_SESSION['dog-day'] = $_SESSION['dog-problems'] = $_SESSION['dog-restrictions'] = $_SESSION['dog-exercise'] = $_SESSION['dog-furniture'] = $_SESSION['previoius-shelter'] = $_SESSION['dog-training'] = $_SESSION['dog-training-previous'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -78,6 +78,94 @@ foreach($_POST as $key => $value) {
                     exit;
                     }
                     break;
+
+      case 'dog-sleep': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'where will the dog sleep' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-day': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'where will the dog be during the day' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-crated': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'will the dog be crated' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-bed': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'what will you use for a dog bed' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-problems': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'what will you do for dog behavior problems' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-restrictions': if($_SESSION[$key] != '') {
+                          if(!textarea_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'what restrictions will you put on your dog' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-exercise': if($_SESSION[$key] != '') {
+                          if(!textarea_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'what will you do for dog behavior problems' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-furniture': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'how do you feel about dogs on furniture' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'previous-shelter': if($_SESSION[$key] != '') {
+                          if(!textarea_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'adopted from previous shelter' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-training': if($_SESSION[$key] != '') {
+                          if(!letters_space_only($_SESSION[$key])) {
+                            echo("Only letters and white space allowed in the 'would you bring your dog to obedience training' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
+
+      case 'dog-training-previous': if($_SESSION[$key] != '') {
+                          if(!letters_numbers_space_only($_SESSION[$key])) {
+                            echo("Only letters, numbers and white space allowed in the 'have you been to previous dog training' field. Please go back and input correctly. <br/> <br />");
+                            exit;
+                          }
+                        }
+                        break;
 
       default:  echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
                 exit;
