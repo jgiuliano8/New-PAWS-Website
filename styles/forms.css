@@ -302,7 +302,10 @@ th {
   outline-offset: 3px;
 }
 
-.hidden-display {
+/* Added div in front of class selector to make it higher
+   specificity, was not overriding .input-group display
+   in Firefox */
+div.hidden-display {
   display: none;
 }
 
