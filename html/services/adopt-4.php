@@ -460,9 +460,9 @@ echo <<< _EOT
       </section>
 
       <section class="main-form">
-        <form id="form" action="/html/services/adopt-4.php" method="post">
+        <form id="form" action="/html/services/adopt-5.php" method="post">
           <p>Form Progress:</p>
-          <div id="form-progress" data-max-step="4" data-current-step="3">
+          <div id="form-progress" data-max-step="4" data-current-step="4">
             <div id="step-1">1</div>
             <div id="step-2">2</div>
             <div id="step-3">3</div>
