@@ -306,7 +306,7 @@ echo <<< _EOT
                   >
                 </li>
                 <li class="sub-menu__li">
-                  <a class="sub-menu__text" href="/html/services/adopt.html"
+                  <a class="sub-menu__text" href="/html/services/adopt-1.php"
                     >Pet Adoption</a
                   >
                 </li>
