@@ -232,7 +232,7 @@
           <td><?php echo($_SESSION['afford-unexpected']) ?></td>
         </tr>
         <tr class="table-row table-header-row">
-          <th scope="row" colspan="2">References</th>
+          <th scope="row" colspan="2">References (No family references, prior volunteer organizations and employment references preferred.) </th>
         </tr>
         <tr class="table-row">
           <th class="table-header-col" scope="col">Reference 1 name</th>
