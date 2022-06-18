@@ -526,7 +526,7 @@ echo <<< _EOT
             <legend>Adopt a Pet</legend>
             <h2>Past and Present Pet Information</h2>
               <label for="past-pets" class="required">Please list the pets you have owned previously, within the past 5 years (i.e., dog, cat, ferret, rabbit, guinea pig, farm animals, etc.):</label>
-              <p>For each pet, please specify what animal it is, it's breed, sex, spayed/neutered status, vaccination status.</p>
+              <p>For each pet, please specify what animal it was, it's breed, sex, spayed/neutered status, vaccination status.</p>
               <textarea
                 rows="10"
                 name="past-pets"

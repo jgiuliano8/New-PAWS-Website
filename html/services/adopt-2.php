@@ -23,103 +23,51 @@ function ErrorHandler($no, $str, $file, $line) {
     </div>
   </body>
 </html>
-_EOT; }
-// Parsing and scrubbing functions library
-require "../../forms/parse_lib.php";
-// Initialize SESSION variables $_SESSION['pet'] =
+_EOT; } // Parsing and scrubbing functions library require
+"../../forms/parse_lib.php"; // Initialize SESSION variables $_SESSION['pet'] =
 $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] =
 $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] =
 $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] =
 $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] =
-$_SESSION['ec-email'] = '';
-
-// Set SESSION variables to POST variables so they carry over
-// to other pages // Then scrub and validate SESSION variables
-foreach($_POST as $key => $value) {
-  if (isset($_POST[$key])) {
-    $_SESSION[$key] = $value;
-    $_SESSION[$key] = parse_input($_SESSION[$key]);
-    switch($key) {
-      case 'pet': if(!letters_space_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the pet field. Please go back and input correctly. <br /><br />");
-        exit;
-        }
-        break;
-
-      case 'pet_type':  if(!letters_space_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the pet type field. Please go back and input correctly. <br /> <br />");
-        exit;
-        } 
-        break;
-
-      case 'name': if(!letters_space_only($_SESSION[$key])) {
-          echo("Only letters and white space allowed in the name field. Please go back and input correctly. <br />  <br />");
-          exit;
-          }
-        break;
-
-      case 'email': if (!filter_var($_SESSION[$key], FILTER_VALIDATE_EMAIL)) {
-        echo("Invalid email format. Please go back and input a valid email. <br /> <br />");
-        exit;
-      }
-      break;
-
-      case 'street': if (!letters_numbers_space_only($_SESSION[$key])) { 
-        echo("Only letters, numbers and white space allowed in the street field. Please go back and input correctly. <br /> <br />");
-        exit;
-      };
-      break;
-      
-      case 'city': if(!letters_space_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br /><br />");
-        exit;
-      }
-      break;
-      
-      case 'state': if(!letters_space_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the city field. Please go back and input correctly. <br /><br />");
-        exit;
-      }
-      break;
-      
-      case 'zip-code': if(!zipcode_only($_SESSION[$key])) {
-        echo("Please go back and input a valid ZIP Code, 5 digits or optionally ZIP+4.<br />");
-        exit;
-      }
-      break;
-      
-      case 'phone': if(!phone_number_only($_SESSION[$key])) {
-        echo("Please go back and input a valid phone number in the form ###-###-####.");
-        exit;
-      }
-      break;
-      
-      case 'age': if(!numbers_only($_SESSION[$key])) {
-        echo("Please go back and input a valid number in the age field.");
-        exit;
-      }
-      break;
-      
-      case 'occupation': if(!letters_space_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the occupation  field. Please go back and input correctly. <br /><br />");
-        exit;
-      }
-      break;
-
-      case 'work-hours': if(!textarea_only($_SESSION[$key])) {
-        echo("Only letters and white space allowed in the emergency contact relationship field. Please go back and input correctly.<br /><br />");
-        exit;
-      }
-      break;
-      
-      default: echo("Invalid variable name: $key. Sorry, something went wrong. Please go back and try again.");
-      exit;
-    }
-  }
-}
-      
-// HTML Document
-echo <<< _EOT
+$_SESSION['ec-email'] = ''; // Set SESSION variables to POST variables so they
+carry over // to other pages // Then scrub and validate SESSION variables
+foreach($_POST as $key => $value) { if (isset($_POST[$key])) { $_SESSION[$key] =
+$value; $_SESSION[$key] = parse_input($_SESSION[$key]); switch($key) { case
+'pet': if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white
+space allowed in the pet field. Please go back and input correctly.
+<br /><br />"); exit; } break; case 'pet_type':
+if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white space
+allowed in the pet type field. Please go back and input correctly. <br />
+<br />"); exit; } break; case 'name': if(!letters_space_only($_SESSION[$key])) {
+echo("Only letters and white space allowed in the name field. Please go back and
+input correctly. <br />
+<br />"); exit; } break; case 'email': if (!filter_var($_SESSION[$key],
+FILTER_VALIDATE_EMAIL)) { echo("Invalid email format. Please go back and input a
+valid email. <br />
+<br />"); exit; } break; case 'street': if
+(!letters_numbers_space_only($_SESSION[$key])) { echo("Only letters, numbers and
+white space allowed in the street field. Please go back and input correctly.
+<br />
+<br />"); exit; }; break; case 'city': if(!letters_space_only($_SESSION[$key]))
+{ echo("Only letters and white space allowed in the city field. Please go back
+and input correctly. <br /><br />"); exit; } break; case 'state':
+if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white space
+allowed in the city field. Please go back and input correctly. <br /><br />");
+exit; } break; case 'zip-code': if(!zipcode_only($_SESSION[$key])) {
+echo("Please go back and input a valid ZIP Code, 5 digits or optionally
+ZIP+4.<br />"); exit; } break; case 'phone':
+if(!phone_number_only($_SESSION[$key])) { echo("Please go back and input a valid
+phone number in the form ###-###-####."); exit; } break; case 'age':
+if(!numbers_only($_SESSION[$key])) { echo("Please go back and input a valid
+number in the age field."); exit; } break; case 'occupation':
+if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white space
+allowed in the occupation field. Please go back and input correctly.
+<br /><br />"); exit; } break; case 'work-hours':
+if(!textarea_only($_SESSION[$key])) { echo("Only letters and white space allowed
+in the emergency contact relationship field. Please go back and input
+correctly.<br /><br />"); exit; } break; default: echo("Invalid variable name:
+$key. Sorry, something went wrong. Please go back and try again."); exit; } } }
+// HTML Document echo <<< _EOT
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -642,7 +590,7 @@ echo <<< _EOT
                 rows="5"
                 class="form-input form-input--text"
                 pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
-></textarea>
+              ></textarea>
             </div>
             <div class="input-group">
               <label for="other-children" class="required"
@@ -855,6 +803,7 @@ echo <<< _EOT
                   id="fence"
                   pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
                   rows="5"
+                  class="form-input form-input--text"
                 ></textarea>
               </div>
             </div>
