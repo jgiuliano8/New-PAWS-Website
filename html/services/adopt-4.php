@@ -627,14 +627,17 @@ echo <<< _EOT
               </div>
             </div>
             <label for="care-consent" class="required">Care Consent</label>
-            <input
-              type="checkbox"
-              id="care-consent"
-              name="care-consent"
-              value="I agree"
-              required
-            />
             <p>I agree to provide all the necessary care for this pet, including but not limited to: veterinary care, proper diet, shelter, training, exercise, grooming, and love. If for any reason I am no longer able to care for this pet, I will return him/her and all necessary paperwork to Pioneers for Animal Welfare Society, Inc. I certify that all of the answers given on this form are true.</p>
+            <div class="input-label-set">
+              <p>I agree</p>
+              <input
+                type="checkbox"
+                id="care-consent"
+                name="care-consent"
+                value="I agree"
+                required
+              />
+            </div>
 
             <label for="signature" class="required">Full Legal Name</label>
             <input type="text" name="signature" id="signature" pattern="[^!@#$%^&\*()=\+\|\?><:;\/~`]+" class="form-input form-input--text" required>
