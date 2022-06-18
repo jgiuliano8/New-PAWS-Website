@@ -29,8 +29,11 @@ $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] =
 $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] =
 $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] =
 $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] =
-$_SESSION['ec-email'] = ''; // Set SESSION variables to POST variables so they
-carry over // to other pages // Then scrub and validate SESSION variables
+$_SESSION['ec-email'] = '';
+
+// Set SESSION variables to POST variables so they carry over
+// to other pages
+// Then scrub and validate SESSION variables
 foreach($_POST as $key => $value) { if (isset($_POST[$key])) { $_SESSION[$key] =
 $value; $_SESSION[$key] = parse_input($_SESSION[$key]); switch($key) { case
 'pet': if(!letters_space_only($_SESSION[$key])) { echo("Only letters and white
@@ -67,7 +70,8 @@ if(!textarea_only($_SESSION[$key])) { echo("Only letters and white space allowed
 in the emergency contact relationship field. Please go back and input
 correctly.<br /><br />"); exit; } break; default: echo("Invalid variable name:
 $key. Sorry, something went wrong. Please go back and try again."); exit; } } }
-// HTML Document echo <<< _EOT
+// HTML Document
+echo <<< _EOT
 <!DOCTYPE html>
 <html lang="en">
   <head>
