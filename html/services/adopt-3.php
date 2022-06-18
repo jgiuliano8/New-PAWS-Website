@@ -79,10 +79,12 @@ foreach($_POST as $key => $value) {
       };
       break;
 
-      case 'landlord-phone': if(!phone_number_only($_SESSION[$key])) {
+      case 'landlord-phone': if($_SESSION[$key] !== '') {
+                    if(!phone_number_only($_SESSION[$key])) {
                       echo("Please go back and input a valid phone number in the form ###-###-####, for your landlord's phone number.");
                       exit;
                     }
+                  }
                     break;
 
       case 'length-residence':  if(!letters_numbers_space_only($_SESSION[$key])) {              
@@ -115,17 +117,19 @@ foreach($_POST as $key => $value) {
                       }
                       break;
 
-      case 'number-children': if(!letters_numbers_space_only($_SESSION[$key])) {
+      case 'number-children': if($_SESSION[$key] != '') {
+                               if(!letters_numbers_space_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the number of children field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
-                              break;
+                            }                              break;
 
-      case 'age-children': if(!textarea_only($_SESSION[$key])) {
+      case 'age-children': if($_SESSION[$key] !== ''){
+                             if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the age of children field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
-                              break;
+                            }                              break;
 
       case 'other-children': if(!letters_space_only($_SESSION[$key])) {
                                 echo("Only letters and white space allowed in the other children field. Please go back and input correctly. <br/> <br />");
@@ -151,11 +155,12 @@ foreach($_POST as $key => $value) {
                               }
                               break;
 
-      case 'type-allergies': if(!textarea_only($_SESSION[$key])) {
+      case 'type-allergies': if($_SESSION[$key] !== '') {
+                               if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters and white space allowed in the type of allergies field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
-                              break;
+                            }                              break;
 
       case 'adopt-reason': if(!letters_space_only($_SESSION[$key])) {
                                 echo("Only letters and white space allowed in the reason for adopting field. Please go back and input correctly. <br/> <br />");
@@ -175,11 +180,12 @@ foreach($_POST as $key => $value) {
                               }
                               break;
 
-      case 'yard-size': if(!textarea_only($_SESSION[$key])) {
+      case 'yard-size': if($_SESSION[$key] !== '') {
+                         if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the yard size field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
-                              break;
+                            }                              break;
 
       case 'fully-fenced': if(!letters_space_only($_SESSION[$key])) {
                                 echo("Only letters and white space allowed in the fully fenced yes/no field. Please go back and input correctly. <br/> <br />");
@@ -187,17 +193,21 @@ foreach($_POST as $key => $value) {
                               }
                               break;
 
-      case 'fence': if(!textarea_only($_SESSION[$key])) {
+      case 'fence': if($_SESSION[$key]) {
+                      if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the allergies yes/no field. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
-                              break;
+                            }
+                            break;
 
-      case 'outside-restraint': if(!letters_space_only($_SESSION[$key])) {
-                                echo("Only letters and white space allowed in the outside restraint field. Please go back and input correctly. <br/> <br />");
-                                exit;
-                              }
-                              break;
+      case 'outside-restraint': if($_SESSION[$key] !== '') {
+                                  if(!letters_space_only($_SESSION[$key])) {
+                                    echo("Only letters and white space allowed in the outside restraint field. Please go back and input correctly. <br/> <br />");
+                                    exit;
+                                  }
+                                }
+                                break;
 
       case 'unacceptable-behavior': if(!textarea_only($_SESSION[$key])) {
                                 echo("Only letters, numbers and white space allowed in the unacceptable behavior field. Please go back and input correctly. <br/> <br />");
