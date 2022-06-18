@@ -39,7 +39,7 @@
       </thead>
       <tbody>
         <tr class="table-row">
-          <th class="table-header-col" scope="col">Which do you want to adopt animal?</th>
+          <th class="table-header-col" scope="col">Which pet do you want to adopt?</th>
           <td><?php echo($_SESSION['pet']) ?></td>
         </tr>
         <tr class="table-row">
