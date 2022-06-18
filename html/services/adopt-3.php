@@ -532,6 +532,7 @@ echo <<< _EOT
                 name="past-pets"
                 id="past-pets"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
                 required
               ></textarea>
               <label for="present-pets" class="required">Please list the pets you currently own (i.e., dog, cat, ferret, rabbit, guinea pig, farm animals, etc.):</label>
@@ -541,6 +542,7 @@ echo <<< _EOT
                 name="present-pets"
                 id="present-pets"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
                 required
               ></textarea>
               <label for="pets-what-happened" class="required">For animals no longer owned, what happened to the pet?</label>
@@ -549,6 +551,7 @@ echo <<< _EOT
                 name="pets-what-happened"
                 id="pets-what-happened"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
                 required
               ></textarea>
               <label for="age-deceased" class="required">If deceased, at what age did it pass?</label>
@@ -557,6 +560,7 @@ echo <<< _EOT
                 name="age-deceased"
                 id="age-deceased"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
                 required
               ></textarea>
               <div class="input-group input-group--afford-medical">

@@ -23,7 +23,7 @@ function letters_numbers_space_only($data) {
 }
 
 function textarea_only($data) {
-  if (!preg_match('/^[a-zA-Z0-9\'", ()\/\.\n\r-]*$/',$data)) {
+  if (!preg_match('/^[a-zA-Z0-9\'", ():\/\.\n\r-]*$/',$data)) {
     return(FALSE);
   }
   return(TRUE);

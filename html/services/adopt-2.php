@@ -447,6 +447,7 @@ echo <<< _EOT
                 id="other-housing"
                 rows="5"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
               ></textarea>
             </div>
             <div class="input-group input-group--own-rent">
@@ -640,7 +641,8 @@ echo <<< _EOT
                 id="age-children"
                 rows="5"
                 class="form-input form-input--text"
-              ></textarea>
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
+></textarea>
             </div>
             <div class="input-group">
               <label for="other-children" class="required"
@@ -686,6 +688,7 @@ echo <<< _EOT
                   id="all-willing-yes"
                   value="yes"
                   class="form-input form-input--radio"
+                  pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
                   required
                 />
                 <label for="all-willing-yes" class="input-group__sub-label"
@@ -757,6 +760,7 @@ echo <<< _EOT
                 id="type-allergies"
                 rows="5"
                 class="form-input form-input--text"
+                pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
               ></textarea>
             </div>
             <label for="adopt-reason" class="required"

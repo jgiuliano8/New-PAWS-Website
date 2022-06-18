@@ -476,7 +476,7 @@ echo <<< _EOT
               rows="5"
               name="work-hours"
               id="work-hours"
-              pattern="[^!@#$%^&\*()=\+\|\?><:;\/\\\~`]+"
+              pattern="[^!@#$%^&\*()=\+\|\?><;\/\\\~`]+"
               class="form-input form-input--text"
               required
             ></textarea>
