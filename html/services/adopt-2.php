@@ -30,7 +30,7 @@ _EOT;
 require "../../forms/parse_lib.php";
 
 // Initialize SESSION variables
-$_SESSION['pet'] = $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
+$_SESSION['pet'] = $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = '';
 
 // Set SESSION variables to POST variables so they carry over
 // to other pages
@@ -119,7 +119,7 @@ foreach($_POST as $key => $value) {
         
       case 'work-hours':
         if(!textarea_only($_SESSION[$key])) {
-          echo("Only letters and white space allowed in the emergency contact relationship field. Please go back and input correctly.<br /><br />");
+          echo("Only letters and white space allowed in the work hours field. Please go back and input correctly.<br /><br />");
           exit;
         }
         break;

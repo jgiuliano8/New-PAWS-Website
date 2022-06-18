@@ -85,13 +85,13 @@ foreach($_POST as $key => $value) {
                     break;
 
       case 'ref2-relationship': if(!letters_space_only($_SESSION[$key])) {
-                                echo("Only letters and white space allowed in the 'Reference 2relationship field'. Please go back and input correctly. <br/> <br />");
+                                echo("Only letters and white space allowed in the 'Reference 2 relationship field'. Please go back and input correctly. <br/> <br />");
                                 exit;
                               }
                               break;
 
       case 'ref2-phone': if(!phone_number_only($_SESSION[$key])) {
-                      echo("Please go back and input a valid phone number in the 'Reference 3 phone number' field, if the format ###-###-####.");
+                      echo("Please go back and input a valid phone number in the 'Reference 2 phone number' field, if the format ###-###-####.");
                       exit;
                     }
                     break;
