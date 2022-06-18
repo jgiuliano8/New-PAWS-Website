@@ -23,13 +23,14 @@ function ErrorHandler($no, $str, $file, $line) {
     </div>
   </body>
 </html>
-_EOT; } // Parsing and scrubbing functions library require
-"../../forms/parse_lib.php"; // Initialize SESSION variables $_SESSION['pet'] =
-$_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] =
-$_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] =
-$_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] =
-$_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] =
-$_SESSION['ec-email'] = '';
+_EOT;
+}
+
+// Parsing and scrubbing functions library
+require "../../forms/parse_lib.php";
+
+// Initialize SESSION variables
+$_SESSION['pet'] = $_SESSION['pet_type'] = $_SESSION['name'] = $_SESSION['email'] = $_SESSION['street'] = $_SESSION['city'] = $_SESSION['state'] = $_SESSION['zip-code'] = $_SESSION['phone'] = $_SESSION['age'] = $_SESSION['occupation'] = $_SESSION['work-hours'] = $_SESSION['ec-phone'] = $_SESSION['ec-email'] = '';
 
 // Set SESSION variables to POST variables so they carry over
 // to other pages
