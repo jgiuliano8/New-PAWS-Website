@@ -471,7 +471,6 @@ echo <<< _EOT
           <fieldset>
             <legend>Adopt a Pet</legend>
             <h2>References</h2>
-          <h2>References</h2>
             <label for="volunteer-work" class="required"
               >Please list three references: (Please note, employer and volunteer references are preferable to friend references. <span class="highlight">No family references</span>.)</label
             >

@@ -38,7 +38,7 @@ _EOT;
 }
 
 // Initialize SESSION variable
-$_SESSION['ref1-name'] = $_SESSION['ref1-relationship'] = $_SESSION['ref1-phone'] = $_SESSION['ref1-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = '';
+$_SESSION['ref1-name'] = $_SESSION['ref1-relationship'] = $_SESSION['ref1-phone'] = $_SESSION['ref1-email'] = $_SESSION['ref2-name'] = $_SESSION['ref2-relationship'] = $_SESSION['ref2-phone'] = $_SESSION['ref2-email'] = $_SESSION['ref3-name'] = $_SESSION['ref3-relationship'] = $_SESSION['ref3-phone'] = $_SESSION['ref3-email'] = $_SESSION['vet-name'] = $_SESSION['vet-phone'] = $_SESSION['care-consent'] = $_SESSION['signature'] = '';
 
 
 // Set SESSION variables to POST variables so they carry over
@@ -188,14 +188,14 @@ $mail->addReplyTo($_SESSION['email'], $_SESSION['name']);
 //Send HTML or Plain Text email
 $mail->isHTML(true);
 
-$mail->Subject = "New PAWS Volunteer!!";
+$mail->Subject = "New PAWS Adoption Application!";
 $mail->MsgHTML($body);
 
 $mail->AltBody = "This is the plain text version of the email content";
 
 try {
     $mail->send();
-    header('Refresh: 5; URL=http://development.paws-li.org/html/support/volunteer-1.php');
+    header('Refresh: 5; URL=http://development.paws-li.org/html/services/adopt-1.php');
     $success_message = <<<_EOT
 <!DOCTYPE html>
 <html lang="en">

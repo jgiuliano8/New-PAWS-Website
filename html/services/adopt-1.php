@@ -285,7 +285,27 @@ echo <<< _EOT
       <section class="content">
         <h1>Pet Adoption</h1>
 
-        <p class="content__p"></p>
+        <p class="content__p">
+          Looking for a furrever friend? Check out our
+          <a
+            href="https://www.petfinder.com/search/cats-for-adoption/?shelter_id%5B0%5D=NY1336&sort%5B0%5D=recently_added"
+            >cats</a
+          >
+          and
+          <a
+            href="https://www.petfinder.com/search/dogs-for-adoption/?shelter_id%5B0%5D=NY1336&sort%5B0%5D=recently_added"
+            >dogs</a
+          >
+          for adoption. Or
+          <a
+            href="https://www.petfinder.com/member/us/ny/huntington/pioneers-for-animal-welfare-society-inc-paws-ny1336/"
+            >check us out on Petfinder.com</a
+          >.
+        </p>
+        <p class="content__p">
+          Found a pet you are interested in? Fill out the adoption form below
+          and we will follow-up with you.
+        </p>
         <p class="content__p content__p--info">
           To fill out the pet adoption form we require three references and a
           veterinary contact. They must not be family references and you will
