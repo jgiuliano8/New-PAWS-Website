@@ -1,0 +1,16 @@
+/* Stylesheet for fundraisers.html */
+
+.fundraiser-img {
+  width: auto;
+  max-height: 3rem;
+  margin-top: 0.75em;
+  float: right;
+}
+
+.fundraiser-img--bauers {
+  background-color: #000;
+}
+
+.fundraiser-img--amazon-smile {
+  background-color: #131921;
+}
