@@ -493,8 +493,8 @@ echo <<< _EOT
       <!-- Breadcrumbs -->
       <p class="breadcrumbs">
         <a href="/index.html">PAWS LI</a> >
-        <a href="/html/support.html">Support</a> >
-        <span class="breadcrumb--current">Volunteer</span>
+        <a href="/html/services.html">Services</a> >
+        <span class="breadcrumb--current">Pet Adoption</span>
       </p>
 
       <!-- Donate & Volunteer buttons -->

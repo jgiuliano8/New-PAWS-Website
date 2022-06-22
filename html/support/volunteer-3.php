@@ -378,7 +378,7 @@ echo <<< _EOT
       <!-- Breadcrumbs -->
       <p class="breadcrumbs">
         <a href="/index.html">PAWS LI</a> >
-        <a href="/html/support.html">Support</a> >
+        <a href="/html/support.html">Support PAWS</a> >
         <span class="breadcrumb--current">Volunteer</span>
       </p>
 
